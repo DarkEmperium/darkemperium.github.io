@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="css/home style.css">
+<link rel="stylesheet" href="css/background video.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/navigate bar.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</head>
+<body data-aos="fade-up">
+    <section class="header">
+        <video id="vid" loop autoplay muted>
+            <source id="mp4" src="images/aot.mp4" type="video/mp4">
+        </video>
+        <a href="index.html"><img src="images/logo.png" class="logo"></a>
+
+
+        <!-------- Navigation Bar ---------->
+        <div id="sideNav">
+            <nav>
+                <ul>
+                    <li><a href="about.html"><em>ABOUT</em></a></li>
+                    <li><a href="gaming.html"><em>FAVORITE</em></a></li>
+                    <li><a href="favorite youtube video.html"><em>VIDEOS</em></a></li>
+                    <li><a href="mini game.html"><em>GAME</em></a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div id="menuBtn">
+            <img src="images/menu.png" id="menu">
+        </div>
+
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+
+            sideNav.style.right = "-250px";
+
+            menuBtn.onclick = function(){
+            if(sideNav.style.right == "-250px"){
+                sideNav.style.right = "0";
+                menu.src = "images/close.png";
+            }
+            else{
+                sideNav.style.right = "-250px";
+                menu.src = "images/menu.png";
+            }
+        }
+        </script>
+    
+    </section>
+
+        <!---------- title box ---------->
+        <div class="text-box-2">
+            <h1>Welcome To Dark Emperium<br>Personal Website</h1>
+            <p>Making website is one of the hardest thing in the world.<br>So Good Luck !</p>
+            <a href="about.html" class="hero-btn">Way To Contact Me</a>
+        </div>
+
+    <br>
+    <br>
+    <br>
+
+    <!---------- favorite places ---------->
+    <section class="favourite-places">
+        <h1>My Favourite Places</h1>
+            <div class="row">
+                <div class="campus-col">
+                    <img src="images/japan.gif">
+                    <div class="layer">
+                        <h3>JAPAN</h3>
+                    </div>
+                </div>
+                <div class="campus-col">
+                    <img src="images/newyork.gif">
+                    <div class="layer">
+                        <h3>NEW YORK</h3>
+                    </div>
+                </div>
+                <div class="campus-col">
+                    <img src="images/malaysia.gif">
+                    <div class="layer">
+                        <h3>MALAYSIA</h3>
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+    
+
+<!-------- footer ---------->
+
+    <section class="footer">
+        <div class="icons">
+            <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
+            <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
+            <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i class="fa fa-youtube"></i></a>
+            
+        </div>
+        <h6 style="color: rgb(0, 0, 0);">© 2022 Coded With Visual Studio Code - Website owned by Dark Emperium</h6></a>
+        <h6 style="color: rgb(0, 0, 0);">Coded By Dark Emperium Copyright Reserved</h6>
+    </section>    
+  
+</body>
+</html>
+
+
+
+
+
+
+
