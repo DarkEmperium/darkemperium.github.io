@@ -66,14 +66,14 @@
     display: inline-block;
     font-size: 18px;
     font-weight: 500;
-    background: #fff;
-    color: #81bde0;
+    background: rgb(170, 170, 170);
+    color: #000000;
     padding: 10px 30px;
     border-radius: 30px;
     margin: 30px 0 10px;
 }
 .btn:hover{
-    background-color:rgba(185, 185, 185, 0.671)
+    background-color:rgb(221, 221, 221);
 }
 .icons .fa{
     color: #35d7ff;
