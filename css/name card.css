@@ -71,7 +71,9 @@
     padding: 10px 30px;
     border-radius: 30px;
     margin: 30px 0 10px;
-
+}
+.btn:hover{
+    background-color:rgba(185, 185, 185, 0.671)
 }
 .icons .fa{
     color: #35d7ff;
