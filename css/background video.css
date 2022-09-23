@@ -9,3 +9,9 @@
     bottom: 0;
     z-index: -1;
 }
+.video-container{
+    width: auto;
+    height: 700px;
+    margin: 60px auto;
+    display: inline-table;
+}
