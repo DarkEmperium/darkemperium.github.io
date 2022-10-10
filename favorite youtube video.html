@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Favourite Video</title>
 <link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/loading page.css">
 <link rel="stylesheet" href="css/rgb text.css">
 <link rel="stylesheet" href="css/gaming.css">
 <link rel="stylesheet" href="css/background video.css">
@@ -10,8 +11,10 @@
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
 </head>
-<body>
-    <body style="text-align: center;">
+<body style="text-align: center;">
+    <div id="preloader">
+        <div class="circles"></div>
+    </div>
     
     
         <section class="sub-header-2">
@@ -161,6 +164,13 @@
                 <h6 style="color: rgb(0, 0, 0);">Coded By Dark Emperium Copyright Reserved</h6>
         </section>    
 </section>    
-    
+
+        <script>
+             var loader = document.getElementById("preloader");
+             window.addEventListener("load", function(){
+                 loader.style.display="none";
+             })
+        </script>
+
 </body>
 </html>    
