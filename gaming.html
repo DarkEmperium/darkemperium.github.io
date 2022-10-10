@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Favourite</title>
 <link rel="stylesheet" href="css/background video.css">
+<link rel="stylesheet" href="css/loading page.css">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/navigate bar.css">
 <link rel="stylesheet" href="css/gaming.css">
@@ -10,7 +11,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
 </head>
 <body>
-    
+    <div id="preloader">
+        <div class="circles"></div>
+    </div>
     <section class="sub-header-2">
         <video width="100%"id="background-video" playsinline loop autoplay>
             <source src="images/genshin.mp4" type="video/mp4"> 
@@ -106,7 +109,14 @@
     </div>
     <h6 style="color: rgb(255, 255, 255);">© 2022 Coded With Visual Studio Code - Website owned by Dark Emperium</h6></a>
     <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
-</section>   
+</section>  
+    
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            loader.style.display="none";
+        })
+    </script>
     
 </body>
 </html>    
