@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/about me.css">
         <link rel="stylesheet" href="css/name card.css">
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/loading page.css">
         <link rel="stylesheet" href="css/rgb text.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
@@ -14,6 +15,10 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
+        
+        <div id="preloader">
+            <div class="circles"></div>
+        </div>
 
         <audio loop autoplay>
             <source src="images/song 1.mp3" type="audio/mp3">
@@ -107,6 +112,13 @@
 
         <!-- MAIN JS -->
         <script src="javascript/main.js"></script>
+    
+        <script>
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
+                loader.style.display="none";
+            })
+        </script>
 
     </body>
 </html>
