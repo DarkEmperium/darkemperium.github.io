@@ -1,83 +1,93 @@
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Favourite Video</title>
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/loading page.css">
-<link rel="stylesheet" href="css/rgb text.css">
-<link rel="stylesheet" href="css/gaming.css">
-<link rel="stylesheet" href="css/background video.css">
-<link rel="stylesheet" href="css/navigate bar.css">
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
-</head>
-<body style="text-align: center;">
-    <div id="preloader">
-        <div class="circles"></div>
-    </div>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Favourite Video</title>
+        <!--CSS Section-->
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/loading page.css">
+        <link rel="stylesheet" href="css/rgb text.css">
+        <link rel="stylesheet" href="css/gaming.css">
+        <link rel="stylesheet" href="css/background video.css">
+        <link rel="stylesheet" href="css/navigate bar.css">
+        <!--Additional Link Section-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    </head>
+    <body style="text-align: center;">
+
+        <!--Website Preloader -->
+        <div id="preloader"><div class="circles"></div></div>
     
-    
+        <!--Website Header-->
         <section class="sub-header-2">
-        <a href="index.html"><img src="images/logo.png" class="logo"></a>
-        <!-------- Navigation Bar ---------->
-        <div id="sideNav">
-            <nav>
-                <ul>
-                    <li><a href="index.html"><em>HOME</em></a></li>
-                    <li><a href="about.html"><em>ABOUT</em></a></li>
-                    <li><a href="gaming.html"><em>FAVORITE</em></a></li>
-                    <li><a href="mini game.html"><em>GAME</em></a></li>
-                </ul>
-            </nav>
-        </div>
+
+            <a href="index.html"><img src="images/logo.png" class="logo"></a>
+            <!-------- Navigation Bar ---------->
+            <div id="sideNav">
+                <nav>
+                    <ul>
+                        <li><a href="index.html"><em>HOME</em></a></li>
+                        <li><a href="about.html"><em>ABOUT</em></a></li>
+                        <li><a href="gaming.html"><em>FAVORITE</em></a></li>
+                        <li><a href="mini game.html"><em>GAME</em></a></li>
+                    </ul>
+                </nav>
+            </div>
         
-        <div id="menuBtn">
-            <img src="images/menu.png" id="menu">
-        </div>
+            <div id="menuBtn">
+                <img src="images/menu.png" id="menu">
+            </div>
 
-        <script>
-            var menuBtn = document.getElementById("menuBtn")
-            var sideNav = document.getElementById("sideNav")
-            var menu = document.getElementById("menu")
+            <script>
+                var menuBtn = document.getElementById("menuBtn")
+                var sideNav = document.getElementById("sideNav")
+                var menu = document.getElementById("menu")
 
-            sideNav.style.right = "-250px";
-
-            menuBtn.onclick = function(){
-            if(sideNav.style.right == "-250px"){
-                sideNav.style.right = "0";
-                menu.src = "images/close.png";
-            }
-            else{
                 sideNav.style.right = "-250px";
-                menu.src = "images/menu.png";
-            }
-        }
-        </script>
-        <br>
-        <br>
-        <br>
-            
-        <h1 style="color:rgb(255, 255, 255)"><em>MY FAVORITE YOUTUBE VIDEO</em></h1>
+
+                menuBtn.onclick = function(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.png";
+                }
+                else{
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/menu.png";
+                    }
+                }
+            </script>
+            <br>
+            <br>
+            <br>
+            <h1 style="color:rgb(255, 255, 255)"><em>MY FAVORITE YOUTUBE VIDEO</em></h1>
+
         </section>
+        
+        <!--Website Background Video -->
         <video width="100%"id="background-video" playsinline loop autoplay muted>
             <source src="images/Summertime Rendering.mp4" type="video/mp4"> 
         </video>
     
-    <!---------- Video Content ---------->
-        
-        
         <br>
         <br>
         <br>
         <br>
         <br>
-          
+
+        <!--Video Content-->
            <div class="video-container">
               <iframe width="1200" height="700"
                    allowfullscreen
                    src="https://www.youtube.com/embed/mnta9Pp2LqA">
                </iframe>
            </div>
+
+           <div class="video-container">
+            <iframe width="1200" height="700"
+                 allowfullscreen
+                 src="https://www.youtube.com/embed/3RxlzJWWzdY">
+             </iframe>
+            </div>
     
            <div class="video-container">
               <iframe width="1200" height="700"
@@ -166,22 +176,20 @@
             <div class="video-container">
                 <iframe width="1200" height="700"
                     allowfullscreen
-                    src="https://www.youtube.com/embed/oG4eu4HMtbo">
+                    src="https://www.youtube.com/embed/kzdJkT4kp-A">
                 </iframe>
             </div>
 
             <div class="video-container">
                 <iframe width="1200" height="700"
                     allowfullscreen
-                    src="https://www.youtube.com/embed/sHshbPUOXo4">
+                    src="https://www.youtube.com/embed/pyDCubgU57g">
                 </iframe>
             </div>
-    </body>
-
-    <section style="text-align: center;">
-    <!-------- footer ---------->
-    <br>
-    <br>
+    
+        <br>
+        <br>
+        <!--Footer Section-->
         <section class="footer">
             <div class="icons">
                 <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
@@ -191,9 +199,9 @@
             </div>
                 <h6 style="color: rgb(0, 0, 0);">© 2022 Coded With Visual Studio Code - Website owned by Dark Emperium</h6></a>
                 <h6 style="color: rgb(0, 0, 0);">Coded By Dark Emperium Copyright Reserved</h6>
-        </section>    
-</section>    
+        </section>       
 
+        <!--Javasript Section-->
         <script>
              var loader = document.getElementById("preloader");
              window.addEventListener("load", function(){
@@ -201,5 +209,5 @@
              })
         </script>
 
-</body>
+    </body>
 </html>    
