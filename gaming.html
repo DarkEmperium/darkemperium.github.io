@@ -1,122 +1,133 @@
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Favourite</title>
-<link rel="stylesheet" href="css/background video.css">
-<link rel="stylesheet" href="css/loading page.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/navigate bar.css">
-<link rel="stylesheet" href="css/gaming.css">
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
-</head>
-<body>
-    <div id="preloader">
-        <div class="circles"></div>
-    </div>
-    <section class="sub-header-2">
-        <video width="100%"id="background-video" playsinline loop autoplay>
-            <source src="images/genshin.mp4" type="video/mp4"> 
-        </video>
-        <a href="index.html"><img src="images/logo.png" class="logo"></a>
-        <!-------- Navigation Bar ---------->
-        <div id="sideNav">
-            <nav>
-                <ul>
-                    <li><a href="index.html"><em>HOME</em></a></li>
-                    <li><a href="about.html"><em>ABOUT</em></a></li>
-                    <li><a href="favorite youtube video.html"><em>VIDEOS</em></a></li>
-                    <li><a href="mini game.html"><em>GAME</em></a></li>
-                </ul>
-            </nav>
-        </div>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Favourite</title>
+        <!--CSS Section-->
+        <link rel="stylesheet" href="css/background video.css">
+        <link rel="stylesheet" href="css/loading page.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/navigate bar.css">
+        <link rel="stylesheet" href="css/gaming.css">
+        <!--Additional Link Section-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    </head>
+    <body>
+     
+        <!--Website Preloader -->
+        <div id="preloader"><div class="circles"></div></div>
+ 
+        <!--Website Header Section-->
+        <section class="sub-header-2">
+
+            <!--Website Background Video-->
+            <video width="100%"id="background-video" playsinline loop autoplay>
+                <source src="images/genshin.mp4" type="video/mp4"> 
+            </video>
+
+            <!--Website Logo-->
+            <a href="index.html"><img src="images/logo.png" class="logo"></a>
+            
+            <!-------- Navigation Bar ---------->
+            <div id="sideNav">
+                <nav>
+                    <ul>
+                        <li><a href="index.html"><em>HOME</em></a></li>
+                        <li><a href="about.html"><em>ABOUT</em></a></li>
+                        <li><a href="favorite youtube video.html"><em>VIDEOS</em></a></li>
+                        <li><a href="mini game.html"><em>GAME</em></a></li>
+                    </ul>
+                </nav>
+            </div>
         
-        <div id="menuBtn">
-            <img src="images/menu.png" id="menu">
-        </div>
+            <div id="menuBtn">
+                <img src="images/menu.png" id="menu">
+            </div>
 
-        <script>
-            var menuBtn = document.getElementById("menuBtn")
-            var sideNav = document.getElementById("sideNav")
-            var menu = document.getElementById("menu")
+            <script>
+                var menuBtn = document.getElementById("menuBtn")
+                var sideNav = document.getElementById("sideNav")
+                var menu = document.getElementById("menu")
 
-            sideNav.style.right = "-250px";
-
-            menuBtn.onclick = function(){
-            if(sideNav.style.right == "-250px"){
-                sideNav.style.right = "0";
-                menu.src = "images/close.png";
-            }
-            else{
                 sideNav.style.right = "-250px";
-                menu.src = "images/menu.png";
-            }
-        }
-        </script>
-    </section>
 
-   <br>
-   <br>
-   <br> 
-   <br>
-<!---------- game ----------->
-    <section class="course">
-        
-        <h1 style="color:rgb(255, 255, 255)"><em>My Favourite Game</em></h1>
-        
-        <div class="row">
-            <div class="course-col">
-                <h3><em>Genshin Impact</em></h3>
-                <p><em>Genshin Impact takes place in the fantasy world of Teyvat, which is home to seven distinct nations, each of which is tied to a different element and ruled by a different god.</em></p>
-            </div>
-            <div class="course-col">
-                <h3><em>Valorant</em></h3>
-                <p><em>Valorant is a team-based first-person hero shooter set in the near future.Players play as one of a set of Agents, characters designed based on several countries and cultures around the world.</em></p>
-            </div>
-            <div class="course-col">
-                <h3><em>Rocket League</em></h3>
-                <p><em>Rocket League has up to eight players assigned to each of the two teams, using rocket-powered vehicles to hit a ball into their opponent's goal and score points over the course of a match.</em></p>
-            </div>
-        </div>
-    
-        <div class="row">
-            <div class="course-col">
-                <h3><em>Fall Guys</em></h3>
-                <p><em>Up to 60 players compete in matches with battle royale-style gameplay. Players represented as jellybean-like figures move around a three-dimensional playing field, with additional moves such as jumping, grabbing, climbing, or diving to assist gameplay.The aim is to qualify for subsequent rounds by successfully completing each of the randomly selected mini-games.</em></p>
-            </div>
-            <div class="course-col">
-                <h3><em>Minecraft</em></h3>
-                <p><em>Minecraft is a 3D sandbox game that has no required goals to accomplish, allowing players a large amount of freedom in choosing how to play the game.</em></p>
-            </div>
-            <div class="course-col">
-                <h3><em>Wallpaper Engine</em></h3>
-                <p><em>Wallpaper Engine is an application for Windows with a companion app on Android which allows users to use and create animated and interactive wallpapers, similar to the defunct Windows DreamScene.</em></p>
-            </div>
-        </div>
-    </section>
-<br>
-<br>
-<br>
-<!-------- footer ---------->
+                menuBtn.onclick = function(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.png";
+                }
+                else{
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/menu.png";
+                    }
+                }
+            </script>
+        </section>
 
-<section class="footer">
-    <div class="icons">
-        <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
-        <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
-        <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i class="fa fa-youtube"></i></a>
+        <br>
+        <br>
+        <br> 
+        <br>
+
+        <!--Favourite Game-->
+        <section class="course">
         
-    </div>
-    <h6 style="color: rgb(255, 255, 255);">© 2022 Coded With Visual Studio Code - Website owned by Dark Emperium</h6></a>
-    <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
-</section>  
+            <h1 style="color:rgb(255, 255, 255)"><em>My Favourite Game</em></h1>
+        
+            <div class="row">
+                <div class="course-col">
+                    <h3><em>Genshin Impact</em></h3>
+                    <p><em>Genshin Impact takes place in the fantasy world of Teyvat, which is home to seven distinct nations, each of which is tied to a different element and ruled by a different god.</em></p>
+                </div>
+                <div class="course-col">
+                    <h3><em>Valorant</em></h3>
+                    <p><em>Valorant is a team-based first-person hero shooter set in the near future.Players play as one of a set of Agents, characters designed based on several countries and cultures around the world.</em></p>
+                </div>
+                <div class="course-col">
+                    <h3><em>Rocket League</em></h3>
+                    <p><em>Rocket League has up to eight players assigned to each of the two teams, using rocket-powered vehicles to hit a ball into their opponent's goal and score points over the course of a match.</em></p>
+                </div>
+            </div>
     
-    <script>
-        var loader = document.getElementById("preloader");
-        window.addEventListener("load", function(){
+            <div class="row">
+                <div class="course-col">
+                    <h3><em>Fall Guys</em></h3>
+                    <p><em>Up to 60 players compete in matches with battle royale-style gameplay. Players represented as jellybean-like figures move around a three-dimensional playing field, with additional moves such as jumping, grabbing, climbing, or diving to assist gameplay.The aim is to qualify for subsequent rounds by successfully completing each of the randomly selected mini-games.</em></p>
+                </div>
+                <div class="course-col">
+                    <h3><em>Minecraft</em></h3>
+                    <p><em>Minecraft is a 3D sandbox game that has no required goals to accomplish, allowing players a large amount of freedom in choosing how to play the game.</em></p>
+                </div>
+                <div class="course-col">
+                    <h3><em>Wallpaper Engine</em></h3>
+                    <p><em>Wallpaper Engine is an application for Windows with a companion app on Android which allows users to use and create animated and interactive wallpapers, similar to the defunct Windows DreamScene.</em></p>
+                </div>
+            </div>
+        </section>
+        
+        <br>
+        <br>
+        <br>
+
+        <!--Footer Section-->
+        <section class="footer">
+            <div class="icons">
+                <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
+                <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
+                <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i class="fa fa-youtube"></i></a>
+            </div>
+            <h6 style="color: rgb(255, 255, 255);">© 2022 Coded With Visual Studio Code - Website owned by Dark Emperium</h6></a>
+            <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
+        </section>  
+    
+        <!--Javascript Section-->
+        <script>
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
             loader.style.display="none";
-        })
-    </script>
+            })
+        </script>
     
-</body>
+    </body>
 </html>    
