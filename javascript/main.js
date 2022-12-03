@@ -39,6 +39,8 @@ const sr = ScrollReveal({
 sr.reveal('.section__data',{origin: 'left',distance: '70px'}); 
 /*Skill*/
 sr.reveal('.section_skill',{origin: 'left',distance: '70px'}); 
+/*Favourite Video*/
+sr.reveal('.video-container',{origin: 'bottom',distance: '70px'}); 
 /*Favourite Places*/
 sr.reveal('.favourite-places',{origin: 'left',distance: '70px'}); 
 /*Imgs*/
