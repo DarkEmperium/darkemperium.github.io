@@ -1,0 +1,58 @@
+.title h2{
+	color: white;
+	font-size: 40px;
+	width: 1130px;
+	margin: 50px auto;
+	text-align: center;
+}
+.skill-box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 50px;
+	min-height: 400px;
+}
+.skill-card{
+	height: 400px;
+	width: 380px;
+	padding: 20px 35px;
+	background: #191919;
+	border-radius: 20px;
+	margin: 15px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+.skill-card i{
+	font-size: 100px;
+	display: block;
+	text-align: center;
+	margin: 25px 0px;
+
+}
+h5{
+	color: white;
+	font-size: 23px;
+	margin-bottom: 15px;
+}
+.pra p{
+	color: #fcfc;
+	font-size: 16px;
+	line-height: 27px;
+	margin-bottom: 25px;
+}
+.skill-card .button{
+	background-color:#f9004d;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.skill-card .button:hover{
+	background-color: transparent;
+	border: 2px solid #f9004d;
+	cursor: pointer;
+}
