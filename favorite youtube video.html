@@ -23,52 +23,35 @@
         <!--Website Header-->
         <section class="sub-header-2">
 
+            <!--Website Logo-->
             <a href="index.html"><img src="images/logo.gif" class="logo"></a>
-            <!-------- Navigation Bar ---------->
-            <div id="sideNav">
-                <nav>
-                    <ul>
-                        <li><a href="index.html"><em>HOME</em></a></li>
-                        <li><a href="about.html"><em>ABOUT</em></a></li>
-                        <li><a href="gaming.html"><em>FAVORITE</em></a></li>
-                        <li><a href="mini game.html"><em>GAME</em></a></li>
+
+            <!--Website Navigator-->
+            <div class="navigation">
+          
+                <input type="checkbox" class="navigation__checkbox" id="toggle">
+                <label for="toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+                </label>
+          
+                <div class="navigation__background">&nbsp;</div>
+          
+                <nav class="navigation__nav">
+                    <ul class="navigation__list">
+                        <li><a href="index.html" class="navigation__link">Home</a></li>
+                        <li><a href="about.html" class="navigation__link">About Me</a></li>
+                        <li><a href="gaming.html" class="navigation__link">Favourite</a></li>
+                        <li><a href="mini game.html" class="navigation__link">Mini Game</a></li>
                     </ul>
                 </nav>
             </div>
-        
-            <div id="menuBtn">
-                <img src="images/menu.png" id="menu">
-            </div>
-
-            <script>
-                var menuBtn = document.getElementById("menuBtn")
-                var sideNav = document.getElementById("sideNav")
-                var menu = document.getElementById("menu")
-
-                sideNav.style.right = "-250px";
-
-                menuBtn.onclick = function(){
-                if(sideNav.style.right == "-250px"){
-                    sideNav.style.right = "0";
-                    menu.src = "images/close.png";
-                }
-                else{
-                    sideNav.style.right = "-250px";
-                    menu.src = "images/menu.png";
-                    }
-                }
-            </script>
-            <br>
-            <br>
-            <br>
-            <h1 style="color:rgb(255, 255, 255)"><em>MY FAVORITE YOUTUBE VIDEO</em></h1>
+            
+            <h1 style="margin-top: 50px;"><em>MY FAVORITE YOUTUBE VIDEO</em></h1>
 
         </section>
         
         <!--Website Background Video -->
-        <video width="100%"id="background-video" playsinline loop autoplay muted>
-            <source src="images/Summertime Rendering.mp4" type="video/mp4"> 
-        </video>
+        <video width="100%"id="background-video" playsinline loop autoplay muted><source src="images/Summertime Rendering.mp4" type="video/mp4"></video>
     
         <br>
         <br>
