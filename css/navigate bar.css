@@ -71,7 +71,7 @@
 .navigation__icon::after {
   width: 40px;
   height: 3px;
-  background: #ad88f1;
+  background: #ff0000;
   display: inline-block;
 }
 .navigation__icon::before,
