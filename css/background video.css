@@ -83,4 +83,7 @@ h1{
         width: 350;
         height: 196.88;
     }
+    h1{
+        font-size: 12px;
+    }
 } 
