@@ -84,8 +84,3 @@ h1{
         height: 196.88;
     }
 } 
-@media (max-width:767px){
-   #background-video{
-        display: none;
-    }
-}
