@@ -135,6 +135,10 @@
     background: #ff0000;
     display: inline-block;
   }
+  .navigation__button {
+    top: 40px;
+    right: 20px;
+  }
   .navigation__icon::before {
     top: -6px;
   }
