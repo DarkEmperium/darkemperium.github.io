@@ -127,6 +127,10 @@
 }
 /*-Phone Size-*/
 @media (max-width:900px){
+  .navigation__button {
+    top: 40px;
+    right: 20px;
+  }
   .navigation__icon,
   .navigation__icon::before,
   .navigation__icon::after {
@@ -134,10 +138,6 @@
     height: 3px;
     background: #ff0000;
     display: inline-block;
-  }
-  .navigation__button {
-    top: 40px;
-    right: 20px;
   }
   .navigation__icon::before {
     top: -6px;
@@ -157,5 +157,9 @@
   .navigation__link {
     font-size: 15px;
     padding: 25px;
+  }
+  .logo{
+    top: 2%;
+    width: 90px;
   }
 } 
