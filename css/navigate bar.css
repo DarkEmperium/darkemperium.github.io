@@ -125,3 +125,32 @@
 ::-webkit-scrollbar-thumb:hover{
   background-color: #888888;
 }
+/*-Phone Size-*/
+@media (max-width:900px){
+  .navigation__icon,
+  .navigation__icon::before,
+  .navigation__icon::after {
+    width: 25px;
+    height: 3px;
+    background: #ff0000;
+    display: inline-block;
+  }
+  .navigation__icon::before {
+    top: -6px;
+  }
+  .navigation__icon::after {
+    top: 6px;
+  }
+  .navigation__button:hover .navigation__icon::before {
+    top: -10px;
+  }
+  .navigation__button:hover .navigation__icon::after {
+    top: 10px;
+  }
+  .navigation__list {
+    max-width: 60%;
+  }
+  .navigation__link {
+    font-size: 15px;
+  }
+} 
