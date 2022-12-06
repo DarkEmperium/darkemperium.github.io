@@ -128,7 +128,7 @@
 /*-Phone Size-*/
 @media (max-width:900px){
   .navigation__button {
-    top: 40px;
+    top: 30px;
     right: 20px;
   }
   .navigation__icon,
