@@ -20,3 +20,8 @@
 .fa-heart-o{
     color: #f44336;
 }
+@media (max-width:630px){
+    .footer{
+        font-size: 15px;
+    }
+} 
