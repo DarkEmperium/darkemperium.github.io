@@ -84,3 +84,56 @@
 .fa-heart-o{
     color: #f44336;
 }
+@media (max-width:1600px){
+    .card{
+        width: 70%;
+        max-width: 420px;
+        max-height: 430px;
+    }
+    .card img{
+        width: 100px;
+    }
+    .card h2{
+        font-size: 30px;
+    }
+    .card p{
+        font-size: 15px;
+    }
+    .card .links img{
+        width: 23px;
+    }
+    .btn{
+        font-size: 13px;
+        padding: 5px 15px;
+        margin: 10px auto;
+    }
+} 
+@media (max-width:540px){
+    .card{
+        width: 70%;
+        max-width: 380px;
+        max-height: 330px;
+    }
+    .card img{
+        width: 70px;
+    }
+    .card h2{
+        font-size: 20px;
+    }
+    .card p{
+        font-size: 10px;
+    }
+    .card .links img{
+        width: 17px;
+    }
+    .btn{
+        font-size: 10px;
+        padding: 5px 10px;
+        margin: 6px auto;
+    }
+    .container{
+        margin: 0 10px;
+        align-items: center;
+        justify-content: center;
+    }
+} 
