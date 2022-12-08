@@ -64,5 +64,8 @@ h3{
     p{
         font-size: 10px;
     }
+    .favourite-game{
+        padding-top: 0;
+    }
 } 
 
