@@ -36,7 +36,7 @@ const sr = ScrollReveal({
 });
 
 /*Data*/
-sr.reveal('.section__data',{origin: 'left',distance: '70px'}); 
+sr.reveal('.section',{origin: 'left',distance: '70px'}); 
 /*Skill*/
 sr.reveal('.section_skill',{origin: 'left',distance: '70px'}); 
 /*Favourite Video*/
