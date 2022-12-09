@@ -111,7 +111,7 @@
 @media (max-width:540px){
     .card{
         width: 70%;
-        max-width: 380px;
+        max-width: 400px;
         max-height: 330px;
     }
     .card img{
