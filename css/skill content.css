@@ -56,3 +56,54 @@ h5{
 	border: 2px solid #f9004d;
 	cursor: pointer;
 }
+@media (max-width:1200px){
+	.title h2{
+		font-size: 30px;
+		margin: 50px auto;
+		text-align: center;
+	}
+	.skill-card i{
+		font-size: 90px;
+		margin: 25px 0px;
+	}
+	h5{
+		font-size: 19px;
+		margin-bottom: 10px;
+	}
+	.pra p{
+		font-size: 15px;
+		margin-bottom: 21px;
+	}
+	.skill-card .button{
+		padding: 7px 20px;
+		border-radius: 30px;
+	}
+  } 
+@media (max-width:768px){
+	.title h2{
+		font-size: 25px;
+		margin: 50px auto;
+		text-align: center;
+	}
+	.skill-card{
+		height: 350px;
+		width: 330px;
+	}
+	.skill-card i{
+		font-size: 80px;
+		margin: 25px 0px;
+	}
+	h5{
+		font-size: 17px;
+		margin-bottom: 10px;
+	}
+	.pra p{
+		font-size: 12px;
+		line-height: 18px;
+		
+	}
+	.skill-card .button{
+		padding: 5px 18px;
+		border-radius: 30px;
+	}
+  } 
