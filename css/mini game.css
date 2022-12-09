@@ -10,9 +10,15 @@
     color: rgb(0, 0, 0);
 }
 .background {
-    background-color: #12181B;
+    width: 100vw;
     height: 100vh;
-    padding-top: 1px;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #12181B;
 }
 
 .title {
@@ -76,7 +82,6 @@
     border-radius: 8px;
     border: none;
     font-size: 20px;
-    margin-left: 1em;
     cursor: pointer;
 }
 
@@ -87,3 +92,9 @@
 #reset {
     background-color: #FF3860;
 }
+@media (max-width:900px){
+    .title {
+        font-size: 15px;
+        margin-top: 30%;
+    }
+} 
