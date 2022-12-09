@@ -228,7 +228,6 @@ img {
   background-color: var(--dark-color);
 }
 .section {
-  height: 100vh;
   max-width: 1500px;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -260,6 +259,7 @@ img {
 
 .section__text {
   font-size: var(--normal-font-size);
+  display: inline-block;
 }
 
 .section__img {
@@ -364,7 +364,7 @@ img {
   }
 } 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
   .bd-grid{
     margin-left: auto;
     margin-right: auto;
