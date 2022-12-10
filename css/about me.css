@@ -262,9 +262,9 @@ img {
   display: inline-block;
 }
 
-.section__img {
-  width: 285px;
-  border-radius: .5rem;
+.section__data img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*===Favorite Place===*/
@@ -346,9 +346,6 @@ img {
   }
   .section__text {
     padding-right: 4rem;
-  }
-  .section__img {
-    width: 50%;
   }
   .home__title {
     top: 27%;
