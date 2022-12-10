@@ -385,6 +385,10 @@ img {
     --h2-font-size: 0.9rem;
     --normal-font-size: 0.625rem;
   }
+  .section__data img {
+    max-width: 300px;
+    height: auto;
+  }
 } 
 
 @media screen and (min-width: 768px) {
