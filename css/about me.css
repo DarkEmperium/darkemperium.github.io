@@ -316,6 +316,16 @@ a {
   background: rgba(226, 0, 0, 0.7);
 }
 
+/*-Discord API-*/
+.discord-status{
+  width: 100%;
+}
+
+.section__data img{
+  width: 50%;
+  height: auto;
+}
+
 /*-Phone Size-*/
 @media (max-width:1600px){
   :root{
@@ -374,10 +384,6 @@ a {
     --biggest-font-size: 2.3rem;
     --h2-font-size: 0.9rem;
     --normal-font-size: 0.625rem;
-  }
-  .section__data img{
-    width: 300px;
-    height: 150px;
   }
 } 
 
