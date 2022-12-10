@@ -386,7 +386,7 @@ img {
     --normal-font-size: 0.625rem;
   }
   .section__data img {
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
   }
 } 
