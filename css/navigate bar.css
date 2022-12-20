@@ -108,9 +108,21 @@
 .logo{
   width: 120px;
   position: absolute;
+  animation: float 6s ease-in-out infinite;
   top: 1%;
   left: 1%;
   z-index: 100;
+}
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
 /*-Scrollbar-*/
 ::-webkit-scrollbar{
