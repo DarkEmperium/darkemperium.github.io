@@ -9,7 +9,7 @@
 #
 
 - <i>🔭 I’m currently working on anime.html ( Anime Showcase Pages )</i>
-- <i>🤔 I’m looking for help with fade animation with JavaScript</i>  
+- <i>🤔 I’m looking for help with fade animation using JavaScript</i>  
 
 
 
