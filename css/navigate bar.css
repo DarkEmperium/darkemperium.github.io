@@ -10,7 +10,7 @@
   height: 70px;
   border-radius: 20%;
   background: rgba(255, 255, 255, 0);
-  position: fixed;
+  position: absolute;
   top: 40px;
   right: 40px;
   z-index: 2000;
