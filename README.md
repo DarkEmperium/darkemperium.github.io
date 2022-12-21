@@ -5,7 +5,7 @@ This Website Is Made For Self Introduction
 
 #
 
-- 🔭 I’m currently working on anime-page 
+- 🔭 I’m currently working on anime.html ( Anime Showcase Pages )
 - 🤔 I’m looking for help with fade animation with JavaScript  
 
 
