@@ -6,8 +6,8 @@
 
 <i>This Website Is Made For Personal Introduction</i>
 
-<i> © 2022 Coded With Visual Studio Code - Website owned by Dark Emperium </i><br>
-<i> Coded By Dark Emperium Copyright Reserved </i>
+- <i> © 2022 Coded With Visual Studio Code - Website owned by Dark Emperium </i><br>
+- <i> Coded By Dark Emperium Copyright Reserved </i>
 
 #
 
