@@ -4,7 +4,7 @@
 
 ![](https://raw.githubusercontent.com/DarkEmperium/darkemperium.github.io/main/images/website%20banner.png)
 
-<i>This Website Is Made For Self Introduction</i>
+<i>This Website Is Made For Personal Introduction</i>
 
 #
 
