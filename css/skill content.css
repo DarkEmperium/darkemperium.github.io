@@ -1,9 +1,10 @@
 .title h2{
 	color: white;
-	font-size: 40px;
+	font-size: 50px;
 	margin-top : 150px;
 	margin-bottom: 30px;
 	text-align: center;
+	font-family: 'Caveat', cursive;
 }
 .skill-box{
 	display: flex;
@@ -57,7 +58,7 @@ h5{
 }
 @media (max-width:1200px){
 	.title h2{
-		font-size: 30px;
+		font-size: 40px;
 		margin-top : 130px;
 	    margin-bottom: 30px;
 		text-align: center;
@@ -81,7 +82,7 @@ h5{
   } 
 @media (max-width:768px){
 	.title h2{
-		font-size: 25px;
+		font-size: 30px;
 		margin-top : 90px;
 	    margin-bottom: 40px;
 		text-align: center;
