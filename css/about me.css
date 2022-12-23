@@ -325,7 +325,7 @@ a {
   }
 } 
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1350px) {
   .section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -345,7 +345,7 @@ a {
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1349px) {
   .section__data{
     text-align: center;
   }
