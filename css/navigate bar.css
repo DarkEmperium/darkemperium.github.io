@@ -139,6 +139,11 @@
   background-color: #888888;
 }
 /*-Phone Size-*/
+@media (max-width:1450px){
+  .navigation__list {
+    max-width: 45%;
+  }
+} 
 @media (max-width:900px){
   .navigation__button {
     top: 30px;
@@ -174,5 +179,10 @@
   .logo{
     top: 2%;
     width: 90px;
+  }
+} 
+@media (max-width:500px){
+  .navigation__list {
+    max-width: 75%;
   }
 } 
