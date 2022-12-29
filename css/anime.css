@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --red:#E50914;
+    --black:#000000;
+    --light-color:#181818;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+body{
+    background-color:var(--light-color);
+}
+
+html{
+    overflow-x: hidden;
+    scroll-padding-top:5.5rem;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+section:nth-child(even){
+    background:var(--light-color);
+}
+
+.home{
+    padding:0;
+}
+
+.home .box{
+    min-height: 100vh;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display: flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    justify-content:flex-end;
+    padding:2rem 9%;
+}
+
+.home .box{
+    justify-content: flex-start;
+}
+
+.home .box.second{
+    justify-content: flex-end;
+}
+
+.home .box .content h3{
+    font-size: 72px;
+    color: #fff;
+    padding-top: .5rem;
+    text-transform: uppercase;
+    font-family: 'Caveat', cursive;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.btn {
+    margin: 25px auto;
+    display: inline-block;
+    font-family: 'Caveat', cursive;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 20px;
+    background-color: #6e6e6eab;
+    border-radius: 10px;
+    border-style: solid;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+    vertical-align: middle;
+}
+
+.btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+}
+
+/*-- Anime Container --*/
+h1 {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 0px #00f7ff;
+    margin-top: 100px;
+}
+.heading {
+    font-family: 'Caveat', cursive;
+    color: #fff;
+    max-width: 1100px;
+    margin: 70px auto 30px auto;
+    font-size: 27px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ff2c1f;
+}
+.anime-container {
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.box .box-img {
+    width: 100%;
+    height: 270px;
+}
+.box .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.box .box-img img:hover {
+    transform: translateY(-10px);
+    transition: 0.2s all linear;
+}
+
+/*-- Anime Banner --*/
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: hsl(234 10% 20% / 60%);
+    z-index: 400;
+}
+
+.video-container.show-video {
+    display: flex;
+}
+  
+.video-box {
+    position: relative;
+    width: 82%;
+}
+
+.video-box #myvideo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
+}
+
+.close-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2.5rem;
+    color: rgb(85, 85, 85);
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.play-video {
+    font-size: 50px;
+    vertical-align: middle;
+}
+
+.btn + .bx-play-circle {
+    margin-left: 30px;
+}
+
+/*-- Video Fade In & Out Animation --*/
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+}
+
+/*-- media query --*/
+@media(max-width: 1100px){
+    
+    .home .box .content h3{
+        font-size: 55px;
+    }
+    header{
+        padding: 1rem 2rem;
+        font-size: 15px;
+    }
+    .heading{
+        font-size: 23px;
+    }
+    section{
+        padding:2rem;
+    }
+    .bx-play-circle {
+        font-size: 40px;
+    }
+    .close-video{
+        font-size: 35px;
+    }
+    .btn + .bx-play-circle {
+        margin-left: 22px;
+    }
+    .btn{
+        font-size: 15px;
+    }
+    h1{
+        font-size: 25px;
+    }
+}
+@media(max-width: 768px){
+    .heading{
+        font-size: 20px;
+    }
+    .home .box .content h3{
+        font-size: 45px;
+    }
+    .bx-play-circle {
+        font-size: 35px;
+    }
+    .btn + .bx-play-circle {
+        margin-left: 20px;
+    }
+    .close-video{
+        font-size: 30px;
+        padding: 12px;
+    }
+    .btn{
+        font-size: 12px;
+        margin: 20px auto;
+    }
+    h1{
+        font-size: 20px;
+    }
+}
+@media(max-width: 500px){
+    .heading{
+        font-size: 17px;
+    }
+    .home .box .content h3{
+        font-size: 30px;
+    }
+    .close-video{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .bx-play-circle {
+        font-size: 30px;
+    }
+    .btn + .bx-play-circle {
+        margin-left: 17px;
+    }
+    .btn{
+        font-size: 10px;
+        margin: 17px auto;
+    }
+}
