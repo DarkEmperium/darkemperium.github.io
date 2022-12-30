@@ -278,3 +278,8 @@ h1 {
         margin: 17px auto;
     }
 }
+@media(max-width: 470px){
+    .anime-container {
+        grid-template-columns: repeat(auto-fit, minmax(145px, auto));
+    }
+}
