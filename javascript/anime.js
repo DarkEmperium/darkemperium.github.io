@@ -56,7 +56,7 @@ animeShows.forEach(show => {
         { transform: 'none' }
       ], {
         // Animation options
-        duration: 1500,
+        duration: 2000,
         easing: 'ease-in-out',
         fill: 'both'
       });
