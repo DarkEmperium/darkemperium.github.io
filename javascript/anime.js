@@ -43,3 +43,27 @@ for (let stopButton of stopButtons) {
     swiper.autoplay.start();
   });
 }
+
+const animeShows = document.querySelectorAll('.anime');
+animeShows.forEach(show => {
+  const observer = new IntersectionObserver(entries => {
+    // Check if the element is intersecting the viewport
+    if (entries[0].isIntersecting) {
+      // Element is intersecting the viewport, so trigger the animation
+      show.animate([
+        // Keyframes for the animation
+        { transform: 'translateX(100%)' },
+        { transform: 'none' }
+      ], {
+        // Animation options
+        duration: 1000,
+        easing: 'ease-in-out',
+        fill: 'both'
+      });
+      // Stop observing the element
+      observer.unobserve(show);
+    }
+  });
+  // Start observing the element
+  observer.observe(show);
+});
