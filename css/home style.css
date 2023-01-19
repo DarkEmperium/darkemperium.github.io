@@ -20,14 +20,17 @@
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .text-box-2 h1{
     font-size: 62px;
 }
+
 .text-box-2 p{
     margin: 20px 0 40px;
     font-size: 14px;
     color: #fff;
 }
+
 .hero-btn {
     display: inline-block;
     text-decoration: none;
@@ -45,11 +48,103 @@
     border: 1px solid #f44336;
     background: #f44336;
 }
+
+.marquee-container{
+    width: 60%;
+    height: 50px;
+    margin: 50px auto;
+    background-color: yellow;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    font-size: 40px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+marquee{
+    color: rgb(0, 0, 0);
+    margin: 10px 10px;
+    font-size: 25px;
+    font-family: 'Caveat', cursive;
+    border-radius: 40px;
+}
+
+/*--Adjust To Fit Phone View--*/
+@media (max-width:1400px){
+    .text-box-2 h1{
+        font-size: 40px;
+    }
+    .text-box-2 p{
+        font-size: 12px;
+    }
+    .hero-btn {
+        padding: 10px 28px;
+        font-size: 10px;
+    }
+    .marquee-container{
+        width: 60%;
+        height: 40px;
+        margin: 50px auto;
+    }
+    .icon{
+        font-size: 35px;
+    }
+    marquee{
+        font-size: 20px;
+    }
+} 
+
 @media (max-width:900px){
     .text-box-2 h1{
         font-size: 35px;
     }
     .text-box-2 p{
-        font-size: 14px;
+        font-size: 10px;
+    }
+    .hero-btn {
+        padding: 9px 25px;
+        font-size: 10px;
+    }
+    .marquee-container{
+        width: 80%;
+        height: 35px;
+        margin-top: 120px;
+    }
+    .icon{
+        font-size: 32px;
+        margin-left: 3px;
+    }
+    marquee{
+        font-size: 17px;
+    }
+} 
+
+@media (max-width:580px){
+    .text-box-2 h1{
+        font-size: 25px;
+    }
+    .hero-btn {
+        padding: 7px 22px;
+        font-size: 8px;
+    }
+    .marquee-container{
+        height: 32px;
+    }
+    .icon{
+        font-size: 30px;
+        margin-left: 2px;
+    }
+    marquee{
+        font-size: 15px;
+    }
+} 
+
+@media (max-width:405px){
+    .text-box-2 h1{
+        font-size: 23px;
     }
 } 
