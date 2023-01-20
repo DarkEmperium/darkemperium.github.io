@@ -23,6 +23,7 @@
 
 .text-box-2 h1{
     font-size: 62px;
+    text-shadow: 2px 2px 0px #000000;
 }
 
 .text-box-2 p{
