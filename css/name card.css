@@ -17,7 +17,7 @@
     text-align: center;
 }
 .container{
-    width: 100%;
+    width: 125%;
     height: 100%;
     margin: 50px auto;
     background-position: center;
@@ -109,6 +109,11 @@
         margin: 10px auto;
     }
 } 
+@media screen and (max-width: 1349px) {
+    .container{
+        width: 100%;
+    }
+  }
 @media (max-width:540px){
     .card{
         width: 80%;
