@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-.text-box-2{
+.text-box{
     width: 90%;
     color: #fff;
     position: absolute;
@@ -21,12 +21,12 @@
     text-align: center;
 }
 
-.text-box-2 h1{
+.text-box h1{
     font-size: 62px;
     text-shadow: 2px 2px 0px #000000;
 }
 
-.text-box-2 p{
+.text-box p{
     margin: 20px 0 40px;
     font-size: 14px;
     color: #fff;
@@ -77,10 +77,10 @@ marquee{
 
 /*--Adjust To Fit Phone View--*/
 @media (max-width:1400px){
-    .text-box-2 h1{
+    .text-box h1{
         font-size: 40px;
     }
-    .text-box-2 p{
+    .text-box p{
         font-size: 12px;
     }
     .hero-btn {
@@ -101,10 +101,10 @@ marquee{
 } 
 
 @media (max-width:900px){
-    .text-box-2 h1{
+    .text-box h1{
         font-size: 35px;
     }
-    .text-box-2 p{
+    .text-box p{
         font-size: 10px;
     }
     .hero-btn {
@@ -126,7 +126,7 @@ marquee{
 } 
 
 @media (max-width:580px){
-    .text-box-2 h1{
+    .text-box h1{
         font-size: 25px;
     }
     .hero-btn {
@@ -146,7 +146,7 @@ marquee{
 } 
 
 @media (max-width:405px){
-    .text-box-2 h1{
+    .text-box h1{
         font-size: 23px;
     }
 } 
