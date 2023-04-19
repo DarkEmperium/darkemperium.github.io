@@ -23,6 +23,9 @@
 }
 
 h1{
+    font-size: 45px;
+    font-weight: 600;
+    font-family: 'Caveat', cursive;
     margin: 30px auto;
 }
 
