@@ -1,72 +1,395 @@
-/*---------- gaming --------*/
 *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
-.sub-header-2{
-    background-position: center;
-    background-size: cover;
-    text-align: center;
-    color: rgb(0, 0, 0);
+
+body{
+  background-color:black;
 }
-.favourite-game{
+
+.header{
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+  
+.main-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-wrap: break-word;
+  padding-left: -20%;
+  margin: 20px 20px 0;
+}
+
+.text-container{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 20px;
+}
+  
+.main-text hr{
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+}
+  
+.text-container p{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  margin: 25px auto;
+}
+  
+.fade-in .vid-one{
+  width: 35%;
+  float: left;
+  border-color: rgb(175, 175, 175);
+  border-style: solid;
+  border-radius: 20px;
+  display: flex;
+  vertical-align: middle;
+  margin: 25px auto;
+  margin-right: 25px;
+}
+
+.fade-in{
+  max-width: 1200px;
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-in.appear{
+  opacity: 1;
+}
+  
+.main-text-two{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-wrap: break-word;
+  margin: 20px 20px 0;
+}
+  
+.text-container-two{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 20px;
+}
+  
+.fade-in-two{
+  max-width: 1200px;
+  overflow-wrap: break-word;
+}
+  
+.text-container-two p{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  margin: 25px auto;
+  margin-bottom: 27px;
+}
+
+.text-container-two hr{
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+}
+
+.fade-in-two .vid-two{
+  width: 35%;
+  float: right;
+  border-color: rgb(175, 175, 175);
+  border-style: solid;
+  border-radius: 20px; 
+  display: flex;
+  vertical-align: middle;
+  margin: 25px auto;
+  margin-left: 25px;
+}
+
+.reveal{
+  opacity: 0;
+  transition: opacity 650ms ease-in;
+}
+  
+.reveal.active{
+  opacity: 1;
+}
+  
+.text-box{
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+.game-section-title h1{
+  font-size: 45px;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+}
+
+.text-box h2{
+  font-size: 40px;
+  color: #777;
+  text-shadow: 2px 2px 0px #000000;
+}
+
+.text-box p{
+  margin: 20px 0 40px;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 2px 2px 0px #000000;
+}
+
+.text-box span{
+  color: aqua;
+  font-size: 62px;
+}
+
+.hero-btn {
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 13px;
+  background-color: #6e6e6eab;
+  position: relative;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.hero-btn:hover{
+  border: 1px solid #ffffff;
+  background: #008cff;
+}
+
+.marquee-container{
+  width: 60%;
+  height: 50px;
+  margin: 60px auto 120px;
+  background-color: gray;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.icon{
+  font-size: 40px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+marquee{
+  color: rgb(0, 0, 0);
+  margin: 10px 10px;
+  font-size: 25px;
+  font-family: 'Caveat', cursive;
+  border-radius: 40px;
+}
+
+/*--Adjust To Fit Phone View--*/
+@media (max-width:1400px){
+  .text-box h2{
+    font-size: 30px;
+  }
+  .text-box span{
+    font-size: 50px;
+  }
+  .text-box p{
+    font-size: 10px;
+  }
+  .hero-btn {
+    padding: 10px 28px;
+    font-size: 10px;
+  }
+  .marquee-container{
+    width: 60%;
+    height: 40px;
+  }
+  .icon{
+    font-size: 35px;
+  }
+  marquee{
+    font-size: 20px;
+  }
+  .text-container p, .text-container-two p{
+    font-size: 13px;
+  }
+  .game-section-title h1{
+    font-size: 40px;
+  }
+} 
+
+@media (max-width:1000px){
+  .hero-btn {
+    padding: 9px 25px;
+    font-size: 10px;
+  }
+  .marquee-container{
     width: 80%;
-    margin: auto;
+    height: 35px;
+    margin-top: 50px;
+  }
+  .icon{
+    font-size: 30px;
+  }
+  marquee{
+    font-size: 17px;
+  }
+  .fade-in .vid-one, .fade-in-two .vid-two{
+    float: none;
+    margin: 25px auto;
+    width: 600;
+    height: 337.50;
+  }
+  .text-container p, .text-container-two p{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #ffff;
     text-align: center;
-    padding-top: 100px;
+  }
+  .game-section-title h1{
+    font-size: 35px;
+  }
+} 
+
+@media (max-width:650px){
+  .text-box h2{
+    font-size: 25px;
+  }
+  .text-box span{
+    font-size: 35px;
+  }
+  .hero-btn {
+    padding: 7px 22px;
+    font-size: 8px;
+  }
+  .marquee-container{
+    height: 32px;
+  }
+  .icon{
+    font-size: 25px;
+  }
+  marquee{
+    font-size: 15px;
+  }
+  .fade-in .vid-one, .fade-in-two .vid-two{
+    float: none;
+    margin: 25px auto;
+    width: 350;
+    height: 196.88;
+  }
+  .text-container p, .text-container-two p{
+    font-size: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #ffff;
+    text-align: center;
+  }
+  .game-section-title h1{
+    font-size: 30px;
+  }
+} 
+
+@media (max-width:405px){
+  .text-box h2{
+    font-size: 23px;
+  }
+  .text-box p{
+    font-size: 9px;
+  }
+} 
+
+
+/* Unused Previous Gaming Section CSS Code 
+
+.favourite-game{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
 }
+
 h1{
-    font-size: 45px;
-    font-weight: 600;
-    font-family: 'Caveat', cursive;
+  font-size: 45px;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
 }
+
 p{
-    color: #777;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
 }
+
 .row{
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;  
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;  
 }
   
 .game{
-    flex-basis: 31%;
-    background: #fff3f3;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    transition: .5s;
+  flex-basis: 31%;
+  background: #fff3f3;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  transition: .5s;
 }
+
 h3{
-    text-align: center;
-    font-weight: 600;
-    margin: 10px 0;
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
 }
+
 .game:hover{
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width:900px){
-    .row{
-        flex-direction: column;
-    }
-    h1{
-        font-size: 30px;
-    }
-    h3{
-        font-size: 15px;
-    }
-    p{
-        font-size: 10px;
-    }
-    .favourite-game{
-        padding-top: 0;
-    }
-} 
+  .row{
+    flex-direction: column;
+  }
+  h1{
+    font-size: 30px;
+  }
+  h3{
+    font-size: 15px;
+  }
+  p{
+    font-size: 10px;
+  }
+  .favourite-game{
+    padding-top: 0;
+  }
+} -- */
 
