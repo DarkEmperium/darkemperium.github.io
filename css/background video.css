@@ -13,6 +13,8 @@
 .video-container{
     margin: 60px auto;
     display: inline-table;
+    padding-left: 30px;
+    paddding-right: 30px;
 }
 
 .video-container iframe{
