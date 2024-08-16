@@ -61,6 +61,7 @@ section:nth-child(even){
 
 .home .box .content h3{
     font-size: 72px;
+    max-width: 900px;
     color: #fff;
     padding-top: .5rem;
     text-transform: uppercase;
@@ -119,7 +120,7 @@ h1 {
 }
 .box .box-img {
     width: 100%;
-    height: 270px;
+    height: 290px;
 }
 .box .box-img img {
     width: 100%;
@@ -128,8 +129,9 @@ h1 {
     border-radius: 15px;
 }
 .box .box-img img:hover {
-    transform: translateY(-10px);
-    transition: 0.2s all linear;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
 }
 
 /*-- Anime Banner --*/

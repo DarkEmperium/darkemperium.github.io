@@ -5,20 +5,28 @@
 }
 
 .header{
-    min-height: 100vh;
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
-.text-box{
-    width: 90%;
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 67vh;
+    position: relative;
+    z-index: 1000;
     text-align: center;
+    flex-direction: column;
+}
+
+.text-box{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    z-index: 1000;
+    
 }
 
 .text-box h1{
@@ -76,6 +84,12 @@ marquee{
 }
 
 /*--Adjust To Fit Phone View--*/
+@media (max-width:2000px){
+    .main-section {
+        min-height: 60vh;
+    }
+} 
+
 @media (max-width:1400px){
     .text-box h1{
         font-size: 40px;
@@ -97,6 +111,9 @@ marquee{
     }
     marquee{
         font-size: 20px;
+    }
+    .main-section {
+        min-height: 59vh;
     }
 } 
 
@@ -123,6 +140,9 @@ marquee{
     marquee{
         font-size: 17px;
     }
+    .main-section {
+        min-height: 58vh;
+    }
 } 
 
 @media (max-width:580px){
@@ -145,8 +165,11 @@ marquee{
     }
 } 
 
-@media (max-width:405px){
+@media (max-width:450px){
     .text-box h1{
         font-size: 23px;
+    }
+    .main-section {
+        min-height: 55vh;
     }
 } 
