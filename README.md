@@ -64,13 +64,5 @@
 
 ---
 
-<i>© <span id="currentYear"></span> Coded with Visual Studio Code - Website owned and created by Dark Emperium. All rights reserved.</i>
-
-<script>
-  // Fetch the current year
-  const currentYear = new Date().getFullYear();
-  document.getElementById("currentYear").textContent = currentYear;
-</script>
-
-
+<i>© 2025 Coded with Visual Studio Code - Website owned and created by Dark Emperium. All rights reserved.</i>
 
