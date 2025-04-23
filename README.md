@@ -2,7 +2,7 @@
 
 <br>
 
-![Website Banner](https://raw.githubusercontent.com/DarkEmperium/darkemperium.github.io/main/images/website%20banner.png)
+![Website Banner](https://github.com/DarkEmperium/darkemperium.github.io/blob/main/images/showcase.png)
 
 <i>A website for personal introduction, showcasing my passions and creativity.</i>
 
