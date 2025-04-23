@@ -19,7 +19,7 @@
 
 ## 🎯 <i>About This Website</i>
 
-This website serves as my digital portfolio and personal space where I share:
+*This website serves as my digital portfolio and personal space where I share :*
 - <i>A brief introduction about myself</i>
 - <i>Games I enjoy playing</i>
 - <i>Animes I've watched and loved</i>
@@ -30,7 +30,7 @@ This website serves as my digital portfolio and personal space where I share:
 ## 🌟 <i>Features</i>
 
 - *Interactive Anime Showcase Pages*  
-- *Anime slider functionality (currently troubleshooting Anime Slider Num 7 video display issue)*  
+- *Anime slider functionality ( currently troubleshooting Anime Slider Num 7 video display issue )*  
 - *Responsive design for seamless browsing across devices*  
 - *Game, Anime, and Video categories for organized content display*  
 
