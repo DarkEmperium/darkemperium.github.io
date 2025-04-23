@@ -45,8 +45,8 @@ This website serves as my digital portfolio and personal space where I share:
 
 ## 💻 <i>How To Access The Website</i>
 
-- Visit the hosted page [here](https://darkemperium.github.io).  
-- Navigate through the sections to explore my favorite games, anime, and videos.  
+- *Visit the hosted page [here](https://darkemperium.github.io)*
+- *Navigate through the sections to explore my favorite games, anime, and videos*
 
 ---
 
@@ -58,9 +58,9 @@ This website serves as my digital portfolio and personal space where I share:
 
 ## 🔧 <i>Future Enhancements</i>
 
-- Add a section for **gameplay reviews** and personal notes on games.  
-- Implement a **comment feature** for visitors to share their thoughts on the showcased anime or videos.  
-- Optimize slider functionality for a smoother user experience.  
+- *Add a section for **gameplay reviews** and personal notes on games*
+- *Implement a **comment feature** for visitors to share their thoughts on the showcased anime or videos*
+- *Optimize slider functionality for a smoother user experience*
 
 ---
 
