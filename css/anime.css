@@ -176,6 +176,7 @@ h1, #currentMonth {
 .play-video {
     font-size: 50px;
     vertical-align: middle;
+    color: lightcoral;
 }
 
 .btn + .bx-play-circle {
