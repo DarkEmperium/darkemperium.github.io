@@ -92,62 +92,56 @@ const username = "DarkEmperium"; // Replace with the MAL username
 const watchingStatus = 1;
 const completedStatus = 2;
 
+// Function to fetch anime list
+function fetchAnimeList(url, containerId, retryCount = 3, delay = 500) {
+    let attempt = 0;
+    const container = document.getElementById(containerId);
+    
+    // Show loading message
+    container.innerHTML = "<p class='loading-message'>Fetching Anime List From Server</p>";
+
+    function tryFetch() {
+        fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`)
+            .then(response => {
+                if (!response.ok) throw new Error("Bad Network Response !");
+                return response.json();
+            })
+            .then(data => {
+                // Clear loading message
+                container.innerHTML = "";
+
+                if (Array.isArray(data) && data.length > 0) {
+                    data.forEach((anime) => {
+                        let originalImageUrl = anime.anime_image_path.replace(/\/r\/\d+x\d+\//, "/"); // Remove the resizing part
+                        
+                        const box = document.createElement("div");
+                        box.className = "box";
+                        box.innerHTML = `<div class="box-img"><img src="${originalImageUrl}" alt="${anime.anime_title}"></div>`;
+                        container.appendChild(box);
+                    });
+                } else {
+                    container.innerHTML = "<p class='error-message'>No Anime Found In The List</p>";
+                }
+            })
+            .catch(error => {
+                console.error(`Error Fetching List : ${error}`);
+                attempt++;
+                if (attempt < retryCount) {
+                    console.log(`Retrying : (${attempt}/${retryCount})`);
+                    setTimeout(tryFetch, delay);
+                } else {
+                    container.innerHTML = "<p class='error-message'>Failed To Load Anime List</p>";
+                }
+            });
+    }
+
+    tryFetch();
+}
+
 // Fetch Watching List
 const watchingUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${watchingStatus}`;
-fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(watchingUrl)}`)
-    .then(response => {
-        if (!response.ok) throw new Error("Bad Network Response !");
-        return response.json();
-    })
-    .then(data => {
-        const watchingContainer = document.getElementById("watching-container");
-        
+fetchAnimeList(watchingUrl, "watching-container");
 
-        if (Array.isArray(data) && data.length > 0) {
-            data.forEach((anime) => {
-                let originalImageUrl = anime.anime_image_path.replace(/\/r\/\d+x\d+\//, "/"); // Remove the resizing part
-                
-                const box = document.createElement("div");
-                box.className = "box";
-                box.innerHTML = `<div class="box-img"><img src="${originalImageUrl}" alt="${anime.anime_title}"></div>`;
-                watchingContainer.appendChild(box);
-            });
-        } else {
-            watchingContainer.innerHTML = "<p class='error-message'>No anime found in the watching list !</p>";
-        }
-    })
-    .catch(error => {
-        console.error("Error fetching watching list : ", error);
-        const watchingContainer = document.getElementById("watching-container");
-        watchingContainer.innerHTML = "<p class='error-message'>Failed to load watching list !</p>";
-    });
-
-// Fetch Watched List
+// Fetch Completed List
 const completedUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${completedStatus}`;
-fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(completedUrl)}`)
-    .then(response => {
-        if (!response.ok) throw new Error("Bad Network Response !");
-        return response.json();
-    })
-    .then(data => {
-        const watchingContainer = document.getElementById("completed-container");
-        
-
-        if (Array.isArray(data) && data.length > 0) {
-            data.forEach((anime) => {
-                let originalImageUrl = anime.anime_image_path.replace(/\/r\/\d+x\d+\//, "/"); // Remove the resizing part
-                
-                const box = document.createElement("div");
-                box.className = "box";
-                box.innerHTML = `<div class="box-img"><img src="${originalImageUrl}" alt="${anime.anime_title}"></div>`;
-                watchingContainer.appendChild(box);
-            });
-        } else {
-            watchingContainer.innerHTML = "<p class='error-message'>No anime found in the watched list !</p>";
-        }
-    })
-    .catch(error => {
-        console.error("Error fetching watched list : ", error);
-        const watchingContainer = document.getElementById("completed-container");
-        watchingContainer.innerHTML = "<p class='error-message'>Failed to load watched list !</p>";
-    });
+fetchAnimeList(completedUrl, "completed-container");

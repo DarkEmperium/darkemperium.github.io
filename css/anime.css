@@ -176,6 +176,7 @@ h1, #currentMonth {
 .play-video {
     font-size: 50px;
     vertical-align: middle;
+    color: lightcoral;
 }
 
 .btn + .bx-play-circle {
@@ -184,6 +185,13 @@ h1, #currentMonth {
 
 .error-message {
     color: red;
+    font-size: 27px;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+}
+
+.loading-message {
+    color: aquamarine;
     font-size: 27px;
     font-family: 'Caveat', cursive;
     text-align: center;
