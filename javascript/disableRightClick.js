@@ -1,4 +1,5 @@
 var show_msg = '';
+
 if (show_msg !== '0') {
     var options = {view_src: "View Source is disabled!", inspect_elem: "Inspect Element is disabled!", right_click: "Right click is disabled!", copy_cut_paste_content: "Cut/Copy/Paste is disabled!", image_drop: "Image Drag-n-Drop is disabled!" }
 } else {
@@ -44,11 +45,3 @@ function addMultiEventListener(element, eventNames, listener) {
 addMultiEventListener(document, 'contextmenu', 'right_click');
 addMultiEventListener(document, 'cut copy paste print', 'copy_cut_paste_content');
 addMultiEventListener(document, 'drag drop', 'image_drop');
-function show_toast(text) {
-    var x = document.getElementById("amm_drcfw_toast_msg");
-    x.innerHTML = eval('options.' + text);
-    x.className = "show";
-    setTimeout(function () {
-        x.className = x.className.replace("show", "")
-    }, 3000);
-}
