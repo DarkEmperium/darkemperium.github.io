@@ -254,7 +254,7 @@ h1, #currentMonth {
         padding: 1rem 2rem;
         font-size: 15px;
     }
-    .heading, .error-message{
+    .heading, .error-message, .loading-message{
         font-size: 23px;
     }
     section{
@@ -277,7 +277,7 @@ h1, #currentMonth {
     }
 }
 @media(max-width: 768px){
-    .heading{
+    .heading, .error-message, .loading-message{
         font-size: 20px;
     }
     .home .box .content h3{
@@ -302,7 +302,7 @@ h1, #currentMonth {
     }
 }
 @media(max-width: 500px){
-    .heading, .error-message{
+    .heading, .error-message, .loading-message{
         font-size: 17px;
     }
     .home .box .content h3{
