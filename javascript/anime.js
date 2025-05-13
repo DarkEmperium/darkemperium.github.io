@@ -92,28 +92,28 @@ const username = "DarkEmperium"; // Replace with the MAL username
 const watchingStatus = 1;
 const completedStatus = 2;
 
-// Function to fetch anime list
-function fetchAnimeList(url, containerId, retryCount = 3, delay = 500) {
+function fetchAnimeList(url, containerId, expectedStatus, retryCount = 3, delay = 500) {
     let attempt = 0;
     const container = document.getElementById(containerId);
     
-    // Show loading message
     container.innerHTML = "<p class='loading-message'>Fetching Anime List From Server</p>";
 
     function tryFetch() {
-        fetch(`https://cors-anywhere.herokuapp.com/${url}`) // Backup option : https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
+        fetch(`https://corsproxy.io/${url}`) // Backup option: https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
             .then(response => {
+                console.log(response);
                 if (!response.ok) throw new Error("Bad Network Response !");
                 return response.json();
             })
             .then(data => {
-                // Clear loading message
                 container.innerHTML = "";
 
-                if (Array.isArray(data) && data.length > 0) {
-                    data.forEach((anime) => {
-                        let originalImageUrl = anime.anime_image_path.replace(/\/r\/\d+x\d+\//, "/"); // Remove the resizing part
-                        
+                const filteredData = Array.isArray(data) ? data.filter(anime => anime.status === expectedStatus) : [];
+
+                if (filteredData.length > 0) {
+                    filteredData.forEach((anime) => {
+                        let originalImageUrl = anime.anime_image_path.replace(/\/r\/\d+x\d+\//, "/"); // Remove resizing part
+
                         const box = document.createElement("div");
                         box.className = "box";
                         box.innerHTML = `<div class="box-img"><img src="${originalImageUrl}" alt="${anime.anime_title}"></div>`;
@@ -124,10 +124,10 @@ function fetchAnimeList(url, containerId, retryCount = 3, delay = 500) {
                 }
             })
             .catch(error => {
-                console.error(`Error Fetching List : ${error}`);
+                console.error(`Error Fetching List: ${error}`);
                 attempt++;
                 if (attempt < retryCount) {
-                    console.log(`Retrying : (${attempt}/${retryCount})`);
+                    console.log(`Retrying: (${attempt}/${retryCount})`);
                     setTimeout(tryFetch, delay);
                 } else {
                     container.innerHTML = "<p class='error-message'>Failed To Load Anime List</p>";
@@ -138,10 +138,8 @@ function fetchAnimeList(url, containerId, retryCount = 3, delay = 500) {
     tryFetch();
 }
 
-// Fetch Watching List
 const watchingUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${watchingStatus}`;
-fetchAnimeList(watchingUrl, "watching-container");
+fetchAnimeList(watchingUrl, "watching-container", watchingStatus);
 
-// Fetch Completed List
 const completedUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${completedStatus}`;
-fetchAnimeList(completedUrl, "completed-container");
+fetchAnimeList(completedUrl, "completed-container", completedStatus);
