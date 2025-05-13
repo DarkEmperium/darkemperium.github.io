@@ -1,24 +1,14 @@
 /*===== GOGGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
-/*===== VARIABLES SCSS =====*/
-/*===== VARIABLES CSS =====*/
-/*=== Colores ===*/
+
 :root {
+  --body-font: 'Open Sans', sans-serif;
+  --biggest-font-size: 8rem;
+  --h2-font-size: 1.5rem;
+  --normal-font-size: 0.7rem;
   --first-color: #0396A6;
   --dark-color: #000;
   --white-color: #F2F2F2;
-}
-
-/*=== Fuente y tipografia ===*/
-:root {
-  --body-font: 'Open Sans', sans-serif;
-  --biggest-font-size: 7rem;
-  --h2-font-size: 1.5rem;
-  --normal-font-size: 0.7rem;
-}
-
-/*=== z index ===*/
-:root {
   --z-back: -10;
   --z-normal: 1;
   --z-tooltip: 10;
@@ -188,9 +178,9 @@ a {
 }
 
 .home__title {
-  top: 32%;
   font-size: var(--biggest-font-size);
-  z-index: var(--z-normal);
+  margin-top: 130px;
+  z-index: 10;
 }
 
 .home__subtitle {
@@ -202,20 +192,28 @@ a {
 
 .home__scroll {
   position: absolute;
+  font-style: italic;
+  font-weight: bold;
   bottom: 2.5rem;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
   z-index: var(--z-modal);
 }
 
 .home__scroll .bx-mouse {
   color: var(--white-color);
+  font-size: 2rem;
+}
+
+.home__scroll p {
+  color: var(--white-color);
+  margin-top: 10px;
+  font-size: 1rem;
 }
 
 /*===== SECTION =====*/
@@ -349,6 +347,9 @@ a {
   .section__data{
     text-align: center;
   }
+  .home__title {
+    top: 27%;
+  }
 }
 
 @media (max-width:768px){
@@ -356,7 +357,7 @@ a {
       flex-direction: column;
   }
   :root{
-    --biggest-font-size: 2.5rem;
+    --biggest-font-size: 3.3rem;
     --h2-font-size: 0.9rem;
     --normal-font-size: 0.625rem;
   }
