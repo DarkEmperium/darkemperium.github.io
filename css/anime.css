@@ -69,6 +69,12 @@ section:nth-child(even){
     text-shadow: 2px 2px 0px #000000;
 }
 
+#watchlist-bg {
+    background-color: rgb(92, 92, 92);
+    padding: 1px 15px;
+    border-radius: 30px;
+}
+
 .btn {
     margin: 25px auto;
     display: inline-block;
@@ -92,7 +98,7 @@ section:nth-child(even){
 }
 
 /*-- Anime Container --*/
-h1, #currentMonth {
+h1, #currentMonth, #watchlist-bg {
     text-align: center;
     font-family: 'Caveat', cursive;
     font-size: 2rem;
@@ -272,7 +278,7 @@ h1, #currentMonth {
     .btn{
         font-size: 15px;
     }
-    h1, #currentMonth{
+    h1, #currentMonth, #watchlist-bg{
         font-size: 25px;
     }
 }
@@ -297,7 +303,7 @@ h1, #currentMonth {
         font-size: 12px;
         margin: 20px auto;
     }
-    h1, #currentMonth{
+    h1, #currentMonth, #watchlist-bg{
         font-size: 20px;
     }
 }
