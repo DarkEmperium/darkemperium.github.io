@@ -101,7 +101,7 @@ function fetchAnimeList(url, containerId, retryCount = 3, delay = 500) {
     container.innerHTML = "<p class='loading-message'>Fetching Anime List From Server</p>";
 
     function tryFetch() {
-        fetch(`https://cors-anywhere.herokuapp.com/${url}`) // Backup option : https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
+        fetch(`https://web-scrapping-api-stjj.onrender.com/${url}`) // Backup option : https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
             .then(response => {
                 if (!response.ok) throw new Error("Bad Network Response !");
                 return response.json();
