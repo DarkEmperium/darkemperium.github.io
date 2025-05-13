@@ -1,42 +1,47 @@
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <!--CSS Section-->
-        <link rel="stylesheet" href="css/home style.css">
-        <link rel="stylesheet" href="css/background video.css">
-        <link rel="stylesheet" href="css/loading page.css">
-        <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/navigate bar.css">
-        <!--Website Icon-->
-        <link rel="icon" type="image/x-icon" href="images/web icon.png">
-        <!--Additional Link Section-->
-        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Icon Link https://fontawesome.com/v4/ -->
-    </head>
-    <body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!--CSS Section-->
+    <link rel="stylesheet" href="css/home style.css">
+    <link rel="stylesheet" href="css/background video.css">
+    <link rel="stylesheet" href="css/loading page.css">
+    <link rel="stylesheet" href="css/navigate bar.css">
+    <!--Website Icon-->
+    <link rel="icon" type="image/x-icon" href="images/web icon.png">
+    <!--Additional Link Section-->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
 
         <!--Website Preloader-->
-        <div id="preloader"><div class="loader hill"><span class="binary"></span><span class="binary"></span><span class="loading-text">LOADING PAGE</span></div></div>
+        <div id="preloader">
+            <div class="loader hill"><span class="binary"></span><span class="binary"></span><span
+                    class="loading-text">LOADING PAGE</span></div>
+        </div>
 
         <!--Header Section-->
         <section class="header">
 
-            <!--Website Background Video Section-->
-            <video id="background-video" loop autoplay muted><source id="mp4" src="images/aot.mp4" type="video/mp4"></video>
-            
+            <!--Website Background Section-->
+            <div class="matrix-bg"><canvas id="matrix-canvas"></canvas></div>
+
             <a href="index.html"><img src="images/logo.gif" class="logo"></a>
 
             <!-------- Navigation Bar ---------->
             <div class="navigation">
-          
+
                 <input type="checkbox" class="navigation__checkbox" id="toggle">
                 <label for="toggle" class="navigation__button">
                     <span class="navigation__icon">&nbsp;</span>
                 </label>
-          
+
                 <nav class="navigation__nav">
                     <ul class="navigation__list">
                         <li><a href="about.html" class="navigation__link">About Me</a></li>
@@ -47,10 +52,15 @@
                     </ul>
                 </nav>
             </div>
-            
+
             <!------- Alert ------->
-            <div class="marquee-container"><i class='bx bx-error-circle icon'></i><marquee direction="left">I'm currently in the midst of building an even better website interface. I'm putting in a lot of effort to make it more user-friendly, visually appealing, and feature-packed. I apologize for the inconvenience and thank you for your patience as I work to make it the best it can be.</marquee></div>
-    
+            <div class="marquee-container"><i class='bx bx-error-circle icon'></i>
+                <marquee direction="left">I'm currently in the midst of building an even better website interface. I'm
+                    putting in a lot of effort to make it more user-friendly, visually appealing, and feature-packed. I
+                    apologize for the inconvenience and thank you for your patience as I work to make it the best it can
+                    be.</marquee>
+            </div>
+
         </section>
 
         <section class="main-section">
@@ -61,28 +71,34 @@
                 <a href="about.html" class="hero-btn"><b><i>Way To Contact Me</i></b></a>
             </div>
 
-        </section>        
-       
+        </section>
+
         <!--Footer Section-->
         <section class="footer">
             <div class="icons">
                 <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
                 <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
                 <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i class="fa fa-youtube-play"></i></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i
+                        class="fa fa-youtube-play"></i></a>
             </div>
-            <h6 style="color: rgb(255, 255, 255);">© <span id = "currentYear"></span> Coded With Visual Studio Code - Website owned by Dark Emperium</h6></a>
+            <h6 style="color: rgb(255, 255, 255);">© <span id="currentYear"></span> Coded With Visual Studio Code -
+                Website owned by Dark Emperium</h6></a>
             <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
         </section>
 
-        <!--Javascript Section-->
-    
-        <!-- PRELOADER -->
-        <script src="javascript/hidePreloader.js"></script>
-        <!-- COPYRIGHT YEAR UPDATE -->
-        <script src="javascript/copyrightDate.js"></script>
-        <!-- DISABLE VIEW SOURCE -->
-        <script src="javascript/disableRightClick.js"></script>
-    
-    </body>
+    </div>
+
+    <!--Javascript Section-->
+
+    <!-- PRELOADER -->
+    <script src="javascript/hidePreloader.js"></script>
+    <!-- COPYRIGHT YEAR UPDATE -->
+    <script src="javascript/copyrightDate.js"></script>
+    <!-- DISABLE VIEW SOURCE -->
+    <script src="javascript/disableRightClick.js"></script>
+    <!-- BINARY FALL BACKGROUND -->
+    <script src="javascript/home.js"></script>
+
+</body>
 </html>
