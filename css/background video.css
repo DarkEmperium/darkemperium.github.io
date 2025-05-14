@@ -22,7 +22,7 @@
     z-index: 1;
 }
 
-h1{
+h1, #title-exchange{
     font-size: 45px;
     font-weight: 600;
     font-family: 'Caveat', cursive;
@@ -48,7 +48,7 @@ h1{
         width: 1000;
         height: 562.50;
     }
-    h1{
+    h1, #title-exchange{
         margin-top: 50px;
         margin-bottom: 30px;
     }
@@ -60,7 +60,7 @@ h1{
         height: 450;
         border-radius: 25px;
     }
-    h1{
+    h1, #title-exchange{
         font-size: 30px;
         margin-top: 70px;
         margin-bottom: 30px;
@@ -89,7 +89,7 @@ h1{
     .video-container{
         margin: 20px auto;
     }
-    h1{
+    h1, #title-exchange{
         font-size: 17px;
     }
 } 
@@ -100,7 +100,7 @@ h1{
         height: 196.88;
         border-radius: 15px;
     }
-    h1{
+    h1, #title-exchange{
         font-size: 12px;
     }
 } 
