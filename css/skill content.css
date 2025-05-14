@@ -49,11 +49,10 @@ h5{
 	font-weight: bold;
 	padding: 9px 22px;
 	border-radius: 30px;
-	transition: .4s; 
+	transition: 1s; 
 }
 .skill-card .button:hover{
-	background-color: transparent;
-	border: 2px solid #f9004d;
+	background-color: #ff0000;
 	cursor: pointer;
 }
 @media (max-width:1200px){

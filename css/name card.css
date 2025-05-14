@@ -62,13 +62,13 @@
 
 .card .links img{
     width: 30px;
-    border-radius: 40%;
+    border-radius: 50%;
     margin: 10px 8px;
     transition: background 0.5s;
 }
 
 .card .links img:hover{
-    background: #1612ec75;
+    background: #c4c4c4;
 }
 
 .btn{
