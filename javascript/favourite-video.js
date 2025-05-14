@@ -37,28 +37,3 @@ const sr = ScrollReveal({
 });
 
 sr.reveal(".video-container", { origin: "bottom", distance: "70px" });
-
-var players = [];
-
-function onYouTubeIframeAPIReady() {
-  var iframes = document.querySelectorAll('.player');
-  iframes.forEach(function (iframe, index) {
-    players.push(new YT.Player(iframe, {
-      events: {
-        'onReady': function (event) { onPlayerReady(event, index); },
-        'onStateChange': function (event) { onPlayerStateChange(event, index); }
-      }
-    }));
-  });
-}
-
-function onPlayerReady(event, index) {
-  event.target.playVideo();
-  console.log("Player " + (index + 1) + " is ready");
-}
-
-function onPlayerStateChange(event, index) {
-  if (event.data == YT.PlayerState.PLAYING) {
-    console.log("Player " + (index + 1) + " is playing");
-  }
-}
