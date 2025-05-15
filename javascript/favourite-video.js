@@ -40,7 +40,7 @@ sr.reveal(".video-container", { origin: "bottom", distance: "70px" });
 
 document.addEventListener('DOMContentLoaded', function () {
     var typed = new Typed('#title-exchange', {
-        strings: ['YOUTUBE VIDEO', 'EDITED VIDEO'],
+        strings: ['YOUTUBE', 'EDITED'],
         typeSpeed: 80,
         loop: true,
         backSpeed: 80,
