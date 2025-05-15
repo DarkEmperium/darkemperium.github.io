@@ -16,6 +16,7 @@
   width: 1px;
   height: 1px;
   background: transparent;
+  border-radius: 60px;
   animation: animStar 50s linear infinite;
 }
 
