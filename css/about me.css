@@ -405,6 +405,11 @@ a {
   .home__scroll p {
     font-size: 0.6rem;
   }
+
+  .home__scroll .bx-mouse {
+    color: var(--white-color);
+    font-size: 1rem;
+  }
 }
 
 @media (max-width:480px) {
