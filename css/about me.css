@@ -336,6 +336,12 @@ a {
 }
 
 /*-Phone Size-*/
+@media (max-width:1920px) {
+  .home__title {
+    margin-top: 100px;
+  }
+
+}
 @media (max-width:1600px) {
   :root {
     --biggest-font-size: 5rem;
@@ -409,6 +415,10 @@ a {
   .home__scroll .bx-mouse {
     color: var(--white-color);
     font-size: 1rem;
+  }
+
+  .home__title {
+    margin-top: 150px;
   }
 }
 
