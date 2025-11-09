@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const sr = ScrollReveal({
   duration: 2500,
-  reset: true,
+  reset: false,
 });
 
 sr.reveal(".video-container", { origin: "bottom", distance: "70px" });

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 :root{
     --red:#E50914;
@@ -69,12 +70,6 @@ section:nth-child(even){
     text-shadow: 2px 2px 0px #000000;
 }
 
-#watchlist-bg {
-    background-color: rgb(92, 92, 92);
-    padding: 1px 15px;
-    border-radius: 30px;
-}
-
 .btn {
     margin: 25px auto;
     display: inline-block;
@@ -100,12 +95,13 @@ section:nth-child(even){
 /*-- Anime Container --*/
 h1, #currentMonth, #watchlist-bg {
     text-align: center;
-    font-family: 'Caveat', cursive;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
     font-size: 2rem;
     color: #fff;
-    text-shadow: 1px 1px 0px #00f7ff;
     margin-top: 100px;
 }
+
 .heading {
     font-family: 'Caveat', cursive;
     color: #fff;
@@ -115,6 +111,7 @@ h1, #currentMonth, #watchlist-bg {
     text-transform: uppercase;
     border-bottom: 1px solid #00f2ff;
 }
+
 .anime-container {
     max-width: 1100px;
     margin-right: auto;
