@@ -36,3 +36,11 @@
         margin-bottom: 100px;
     }
 }
+
+@media (max-width: 768px) {
+  .autoBlur {
+    animation: none;
+    filter: none;
+    opacity: 1;
+  }
+}
