@@ -1,37 +1,70 @@
+const monthSpan = document.querySelector('#currentMonth');
+const currentDate = new Date();
+const options = { month: 'long' };
+const monthName = currentDate.toLocaleString('default', options);
+const year = currentDate.getFullYear();
+const username = "DarkEmperium"; // myAnimeList MAL Username
+const watchingStatus = 1;
+const completedStatus = 2;
+const planToWatchStatus = 6;
+const animeShows = document.querySelectorAll('.anime');
+const stopButtons = document.querySelectorAll('.close-video');
+const playButtons = document.querySelectorAll('.play-video');
+const watchingUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${watchingStatus}`;
+const completedUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${completedStatus}`;
+const planToWatchUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${planToWatchStatus}`;
+
+monthSpan.innerHTML = `${monthName} ${year}`;
+
 var swiper = new Swiper(".home-slider", {
-  speed: 1500,
-  spaceBetween: 5,
+  speed: 1300,
   centeredSlides: true,
-  autoplay: { delay: 7000, disableOnInteraction: false, stopOnLast: true },
+  autoplay: {
+    delay: 7000,
+    disableOnInteraction: false,
+  },
   loop: true,
+  lazy: {
+    loadPrevNext: true,
+    loadPrevNextAmount: 2,
+  },
+  preloadImages: false,
 });
 
-const playButtons = document.querySelectorAll('.play-video');
 playButtons.forEach(playButton => {
     playButton.addEventListener('click', () => {
         const sliderId = playButton.getAttribute('data-slider');
-        const video = document.querySelector(`[data-slider="${sliderId}"] .video-container`);
+        const videoContainer = document.querySelector(`[data-slider="${sliderId}"] .video-container`);
 
-        if (video) {
-            const videoElement = video.querySelector('video');
+        if (videoContainer) {
+            const videoElement = videoContainer.querySelector('video');
+
+            if (videoElement && !videoElement.src) {
+                const realSrc = videoElement.getAttribute('data-src');
+                if (realSrc) {
+                    videoElement.src = realSrc;
+                }
+            }
+
             if (videoElement) {
-                video.classList.remove("fade-out");
-                video.classList.add("fade-in");
+                videoContainer.classList.remove("fade-out");
+                videoContainer.classList.add("fade-in");
                 videoElement.style.animation = "fadeIn 0.5s forwards";
                 setTimeout(() => {
-                    video.classList.add("show-video");
+                    videoContainer.classList.add("show-video");
                     videoElement.play();
                 }, 500);
             }
         }
 
-        if (typeof swiper !== 'undefined' && swiper.autoplay) {
+        if (typeof swiper !== 'undefined') {
             swiper.autoplay.stop();
+            swiper.allowTouchMove = false;
         }
+
     });
 });
 
-const stopButtons = document.querySelectorAll('.close-video');
 stopButtons.forEach(stopButton => {
     stopButton.addEventListener('click', () => {
         const sliderId = stopButton.getAttribute('data-slider');
@@ -50,47 +83,31 @@ stopButtons.forEach(stopButton => {
             }
         }
 
-        if (typeof swiper !== 'undefined' && swiper.autoplay) {
+        if (typeof swiper !== 'undefined') {
+            swiper.allowTouchMove = true;
             swiper.autoplay.start();
         }
+
     });
 });
 
-const animeShows = document.querySelectorAll('.anime');
 animeShows.forEach(show => {
   const observer = new IntersectionObserver(entries => {
-    // Check if the element is intersecting the viewport
+    
     if (entries[0].isIntersecting) {
-      // Element is intersecting the viewport, so trigger the animation
       show.animate([
-        // Keyframes for the animation
         { transform: 'translateX(100%)' },
         { transform: 'none' }
       ], {
-        // Animation options
         duration: 2000,
         easing: 'ease-in-out',
         fill: 'both'
       });
-      // Stop observing the element
       observer.unobserve(show);
     }
   });
-  // Start observing the element
   observer.observe(show);
 });
-
-const monthSpan = document.querySelector('#currentMonth');
-const currentDate = new Date();
-const options = { month: 'long' };
-const monthName = currentDate.toLocaleString('default', options);
-const year = currentDate.getFullYear();
-monthSpan.innerHTML = `${monthName} ${year}`;
-
-
-const username = "DarkEmperium"; // Replace with the MAL username
-const watchingStatus = 1;
-const completedStatus = 2;
 
 function fetchAnimeList(url, containerId, expectedStatus, retryCount = 3, delay = 500) {
     let attempt = 0;
@@ -99,7 +116,7 @@ function fetchAnimeList(url, containerId, expectedStatus, retryCount = 3, delay 
     container.innerHTML = "<p class='loading-message'>Fetching Anime List From Server</p>";
 
     function tryFetch() {
-        fetch(`https://corsproxy.io/?url=${url}`) // Backup option: https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
+        fetch(`https://corsproxy.io/?url=${url}`) // Alternative Option: https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
             .then(response => {
                 console.log(response);
                 if (!response.ok) throw new Error("Bad Network Response !");
@@ -112,7 +129,7 @@ function fetchAnimeList(url, containerId, expectedStatus, retryCount = 3, delay 
 
                 if (filteredData.length > 0) {
                     filteredData.forEach((anime) => {
-                        let originalImageUrl = anime.anime_image_path.replace(/\/r\/\d+x\d+\//, "/"); // Remove resizing part
+                        let originalImageUrl = anime.anime_image_path.replace(/\/r\/\d+x\d+\//, "/"); // Remove Resizing Part
 
                         const box = document.createElement("div");
                         box.className = "box";
@@ -138,8 +155,6 @@ function fetchAnimeList(url, containerId, expectedStatus, retryCount = 3, delay 
     tryFetch();
 }
 
-const watchingUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${watchingStatus}`;
 fetchAnimeList(watchingUrl, "watching-container", watchingStatus);
-
-const completedUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${completedStatus}`;
 fetchAnimeList(completedUrl, "completed-container", completedStatus);
+fetchAnimeList(planToWatchUrl, "plan-to-watch-container", planToWatchStatus);
