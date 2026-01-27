@@ -37,10 +37,10 @@
     }
 }
 
-@media (max-width: 768px) {
-  .autoBlur {
-    animation: none;
-    filter: none;
-    opacity: 1;
+@media(max-width:1100px) {    
+    .autoBlur{
+        animation: none;
+        filter: none;
+        opacity: 1;
   }
 }
