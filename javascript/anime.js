@@ -116,7 +116,7 @@ function fetchAnimeList(url, containerId, expectedStatus, retryCount = 3, delay 
     container.innerHTML = "<p class='loading-message'>Fetching Anime List From Server</p>";
 
     function tryFetch() {
-        fetch(`https://corsproxy.io/?url=${url}`) // Alternative Option: https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
+        fetch(`https://corsproxy.io/?key=0f2275e1&url=${url}`) // Alternative Option: https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
             .then(response => {
                 console.log(response);
                 if (!response.ok) throw new Error("Bad Network Response !");
