@@ -3,16 +3,16 @@ const currentDate = new Date();
 const options = { month: 'long' };
 const monthName = currentDate.toLocaleString('default', options);
 const year = currentDate.getFullYear();
-const username = "DarkEmperium"; // myAnimeList MAL Username
 const watchingStatus = 1;
 const completedStatus = 2;
 const planToWatchStatus = 6;
 const animeShows = document.querySelectorAll('.anime');
 const stopButtons = document.querySelectorAll('.close-video');
 const playButtons = document.querySelectorAll('.play-video');
-const watchingUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${watchingStatus}`;
-const completedUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${completedStatus}`;
-const planToWatchUrl = `https://myanimelist.net/animelist/${username}/load.json?status=${planToWatchStatus}`;
+const workerBaseUrl = "https://mal-api.darkemperium.workers.dev";
+const watchingUrl = `${workerBaseUrl}/anime?status=${watchingStatus}`;
+const completedUrl = `${workerBaseUrl}/anime?status=${completedStatus}`;
+const planToWatchUrl = `${workerBaseUrl}/anime?status=${planToWatchStatus}`;
 
 monthSpan.innerHTML = `${monthName} ${year}`;
 
@@ -117,7 +117,7 @@ function fetchAnimeList(url, containerId, expectedStatus, retryCount = 3, delay 
 
     function tryFetch() {
       
-        fetch(`https://corsproxy.io/?key=0f2275e1&url=${url}`) // Alternative Option: https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
+        fetch(url) // Alternative Option: https://api.allorigins.win/raw?url=${encodeURIComponent(url)}
             .then(response => {
                 console.log(response);
                 if (!response.ok) throw new Error("Bad Network Response !");
