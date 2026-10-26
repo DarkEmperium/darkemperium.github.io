@@ -1,545 +1,795 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+/*-- Gaming Page --*/
+
+/*-- Hero --*/
+.game-hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--header-h) + 40px) 0 22vh;
+    overflow: hidden;
+    isolation: isolate;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, rgba(0, 0, 0, 0.6) 86%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 72%, rgba(0, 0, 0, 0.6) 86%, transparent 100%);
 }
 
-body {
-  background-color: black;
+.game-hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.header {
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+.game-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(5, 10, 24, 0.95) 0%, rgba(5, 10, 24, 0.7) 40%, rgba(5, 10, 24, 0.2) 75%),
+        linear-gradient(0deg, rgba(5, 10, 24, 0.55) 0%, transparent 45%),
+        rgba(15, 40, 100, 0.25);
 }
 
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-current-time-display,
-video::-webkit-media-controls-time-remaining-display,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-fullscreen-button {
-  display: none !important;
-}
-
-.main-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-wrap: break-word;
-  padding-left: -20%;
-  margin: 20px 20px 0;
-}
-
-.text-container {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.main-text hr {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  margin: 0 auto;
-}
-
-.text-container p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  margin: 25px auto;
-}
-
-.fade-in .vid-one {
-  width: 35%;
-  float: left;
-  border-color: rgb(175, 175, 175);
-  border-style: solid;
-  border-radius: 20px;
-  display: flex;
-  vertical-align: middle;
-  margin: 25px auto;
-  margin-right: 25px;
-}
-
-.fade-in {
-  max-width: 1200px;
-  opacity: 0;
-  transition: opacity 1000ms ease-in;
-}
-
-.fade-in.appear {
-  opacity: 1;
-}
-
-.main-text-two {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-wrap: break-word;
-  margin: 20px 20px 0;
-}
-
-.text-container-two {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.fade-in-two {
-  max-width: 1200px;
-  overflow-wrap: break-word;
-}
-
-.text-container-two p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  margin: 25px auto;
-  margin-bottom: 27px;
-}
-
-.text-container-two hr {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  margin: 0 auto;
-}
-
-.fade-in-two .vid-two {
-  width: 35%;
-  float: right;
-  border-color: rgb(175, 175, 175);
-  border-style: solid;
-  border-radius: 20px;
-  display: flex;
-  vertical-align: middle;
-  margin: 25px auto;
-  margin-left: 25px;
-}
-
-.reveal {
-  opacity: 0;
-  transition: opacity 650ms ease-in;
-}
-
-.reveal.active {
-  opacity: 1;
-}
-
-.text-box {
-  width: 90%;
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: left;
-}
-
-.game-section-title h1 {
-  font-size: 45px;
-  font-weight: 600;
-  font-family: 'Caveat', cursive;
-}
-
-.text-box h2 {
-  font-size: 40px;
-  color: #777;
-  text-shadow: 2px 2px 0px #000000;
-}
-
-.text-box p {
-  margin: 20px 0 40px;
-  font-size: 14px;
-  color: #fff;
-  text-shadow: 2px 2px 0px #000000;
-}
-
-.text-box span {
-  color: aqua;
-  font-size: 62px;
-}
-
-.hero-btn {
-  display: inline-block;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 12px 34px;
-  font-size: 13px;
-  background-color: #6e6e6eab;
-  position: relative;
-  cursor: pointer;
-  transition: 1s;
-}
-
-.hero-btn:hover {
-  border: 1px solid #ffffff;
-  background: #008cff;
-}
-
-.marquee-container {
-  width: 60%;
-  height: 50px;
-  margin: 60px auto;
-  background-color: gray;
-  border-radius: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  font-size: 40px;
-  margin-left: 10px;
-  text-align: left;
-}
-
-marquee {
-  color: rgb(0, 0, 0);
-  margin: 10px 10px;
-  font-size: 25px;
-  font-family: 'Caveat', cursive;
-  border-radius: 40px;
-}
-
-.pc-spec-section {
-  padding: 2rem 5%;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 50px auto;
-}
-
-.pc-spec-section-h2 {
-  font-family: 'Orbitron', sans-serif;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2.5rem;
-  color: #00aaff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-style: italic;
-}
-
-.spec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-}
-
-.spec-card {
-  background-color: #1a1a2e;
-  border-radius: 10px;
-  border: 1px solid #2a2a4e;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.spec-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
-  border-color: #007bff;
-}
-
-.spec-image {
-  background-color: #2a2a4e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  height: 170px;
-}
-
-.spec-image img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.spec-card:hover .spec-image img {
-  transform: scale(1.05);
-}
-
-.spec-details {
-  padding: 1.5rem;
-  flex-grow: 1;
-}
-
-.spec-details h3 {
-  font-family: 'Orbitron', sans-serif;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #00aaff;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-.spec-details ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.spec-details ul li {
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.1rem;
-  /* Slightly larger font */
-  color: #e0e0e0;
-}
-
-.spec-details ul li .spec-icon {
-  color: #007bff;
-  margin-right: 12px;
-  width: 20px;
-  /* Aligns icons neatly */
-  text-align: center;
-}
-
-/*--Adjust To Fit Phone View--*/
-@media (max-width:1400px) {
-  .text-box h2 {
-    font-size: 30px;
-  }
-
-  .text-box span {
-    font-size: 50px;
-  }
-
-  .text-box p {
-    font-size: 10px;
-  }
-
-  .hero-btn {
-    padding: 10px 28px;
-    font-size: 10px;
-  }
-
-  .marquee-container {
-    width: 60%;
-    height: 40px;
-  }
-
-  .icon {
-    font-size: 35px;
-  }
-
-  marquee {
-    font-size: 20px;
-  }
-
-  .text-container p,
-  .text-container-two p {
-    font-size: 13px;
-  }
-
-  .game-section-title h1 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width:1000px) {
-  .hero-btn {
-    padding: 9px 25px;
-    font-size: 10px;
-  }
-
-  .marquee-container {
-    width: 80%;
-    height: 35px;
-    margin-top: 50px;
-  }
-
-  .icon {
-    font-size: 30px;
-  }
-
-  marquee {
-    font-size: 17px;
-  }
-
-  .fade-in .vid-one,
-  .fade-in-two .vid-two {
-    float: none;
-    margin: 25px auto;
-    width: 600;
-    height: 337.50;
-  }
-
-  .text-container p,
-  .text-container-two p {
-    margin-left: 5px;
-    margin-right: 5px;
-    color: #ffff;
-    text-align: center;
-  }
-
-  .game-section-title h1 {
-    font-size: 35px;
-  }
-
-  .pc-spec-section-h2 {
-    font-size: 2rem;
-  }
-
-  .spec-image img {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .spec-details h3 {
-    font-size: 1.3rem;
-  }
-  
-  .spec-details ul li {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width:650px) {
-  .text-box h2 {
-    font-size: 25px;
-  }
-
-  .text-box span {
-    font-size: 35px;
-  }
-
-  .hero-btn {
-    padding: 7px 22px;
-    font-size: 8px;
-  }
-
-  .marquee-container {
-    height: 32px;
-  }
-
-  .icon {
-    font-size: 25px;
-  }
-
-  marquee {
-    font-size: 15px;
-  }
-
-  .fade-in .vid-one,
-  .fade-in-two .vid-two {
-    float: none;
-    margin: 25px auto;
-    width: 350;
-    height: 196.88;
-  }
-
-  .text-container p,
-  .text-container-two p {
-    font-size: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    color: #ffff;
-    text-align: center;
-  }
-
-  .game-section-title h1 {
-    font-size: 30px;
-  }
-
-  .pc-spec-section-h2 {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width:405px) {
-  .text-box h2 {
-    font-size: 23px;
-  }
-
-  .text-box p {
-    font-size: 9px;
-  }
-}
-
-
-/* Unused Previous Gaming Section CSS Code 
-
-.favourite-game{
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  padding-top: 100px;
-}
-
-h1{
-  font-size: 45px;
-  font-weight: 600;
-  font-family: 'Caveat', cursive;
-}
-
-p{
-  color: #777;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22px;
-  padding: 10px;
-}
-
-.row{
-  margin-top: 5%;
-  display: flex;
-  justify-content: space-between;  
-}
-  
-.game{
-  flex-basis: 31%;
-  background: #fff3f3;
-  border-radius: 10px;
-  margin-bottom: 5%;
-  padding: 30px 20px;
-  box-sizing: border-box;
-  transition: .5s;
-}
-
-h3{
-  text-align: center;
-  font-weight: 600;
-  margin: 10px 0;
-}
-
-.game:hover{
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width:900px){
-  .row{
+.game-hero-content {
+    width: 100%;
+    max-width: none;
+    padding-inline: clamp(24px, 5vw, 88px);
+    display: flex;
     flex-direction: column;
-  }
-  h1{
-    font-size: 30px;
-  }
-  h3{
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.game-hero-content .display {
+    max-width: 14ch;
+}
+
+.scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 18vh;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    border-radius: 50%;
+    font-size: 26px;
+    color: var(--muted);
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    animation: cue 2.2s var(--ease-in-out) infinite;
+    transition: color 200ms ease-out, border-color 200ms ease-out;
+}
+
+.scroll-cue:hover {
+    color: #fff;
+    border-color: rgba(96, 165, 250, 0.6);
+}
+
+@keyframes cue {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+/*-- Specs --*/
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.spec {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 26px;
+}
+
+.spec-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.spec-top .icon-tile {
+    transition: transform 400ms var(--spring);
+}
+
+.spec:hover .icon-tile {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.spec-kind {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dim);
+}
+
+.spec h3 {
+    margin-top: 2px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.spec-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+}
+
+.spec-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
     font-size: 15px;
-  }
-  p{
-    font-size: 10px;
-  }
-  .favourite-game{
-    padding-top: 0;
-  }
-} -- */
+}
+
+.spec-list dt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+}
+
+.spec-list dt i {
+    font-size: 18px;
+    color: var(--primary-2);
+}
+
+.spec-list dd {
+    font-weight: 600;
+    color: #fff;
+    text-align: right;
+}
+
+/*-- Library --*/
+@media (max-width: 960px) {
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*-- Steam : profile, medals, library and the game detail dialog --*/
+/* these set their own display, so make sure the hidden attribute still wins */
+.steam-avatar[hidden],
+.steam-stats[hidden],
+.steam-play[hidden],
+.steam-more[hidden],
+.steam-card[hidden],
+.steam-filters[hidden],
+.steam-block[hidden],
+.steam-status[hidden] {
+    display: none !important;
+}
+
+.steam-profile {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 18px 28px;
+    padding: 22px 26px;
+}
+
+.steam-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.5);
+}
+
+.steam-link {
+    grid-column: -2;
+    justify-self: end;
+}
+
+.steam-id h3 {
+    font-size: 22px;
+}
+
+.steam-id p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.steam-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 30px;
+}
+
+.steam-stats dt {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dim);
+}
+
+.steam-stats dd {
+    margin-top: 2px;
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.steam-block {
+    margin-top: 44px;
+}
+
+.steam-block-head {
+    margin-bottom: 18px;
+}
+
+.steam-block-head h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+}
+
+.steam-block-head h3 i {
+    color: var(--accent);
+}
+
+.steam-block-head p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* medals : a ribbon over a ringed badge, the ring colour is the rarity tier */
+.medal-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.medal {
+    --tier: #8aa0c4;
+    --tier-2: #4a5d80;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 30px 14px 18px;
+    border-radius: var(--radius);
+    text-align: center;
+    background:
+        radial-gradient(120px 90px at 50% 34%, color-mix(in srgb, var(--tier) 22%, transparent), transparent 70%),
+        var(--surface);
+    border: 1px solid var(--border);
+    transition: transform 300ms var(--spring), border-color 250ms ease-out;
+}
+
+.medal:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--tier) 55%, transparent);
+}
+
+.medal.is-gold { --tier: #fbbf24; --tier-2: #b45309; }
+.medal.is-silver { --tier: #e2e8f0; --tier-2: #64748b; }
+.medal.is-bronze { --tier: #f0a36b; --tier-2: #9a4a1c; }
+
+.medal-ribbon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 34px;
+    height: 26px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--tier-2) 0 33%, var(--tier) 33% 66%, var(--tier-2) 66%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+    opacity: 0.9;
+}
+
+.medal-badge {
+    display: grid;
+    place-items: center;
+    width: 78px;
+    height: 78px;
+    padding: 5px;
+    border-radius: 50%;
+    background: conic-gradient(from 210deg, var(--tier), var(--tier-2), var(--tier), var(--tier-2), var(--tier));
+    box-shadow: 0 0 0 3px rgba(5, 10, 24, 0.9), 0 8px 26px color-mix(in srgb, var(--tier) 35%, transparent);
+}
+
+.medal-badge img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(5, 10, 24, 0.9);
+}
+
+.medal-tier {
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tier);
+}
+
+.medal h4 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.medal-game,
+.medal-rarity {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.medal-rarity {
+    color: var(--dim);
+}
+
+/* library cards */
+.steam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.steam-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 300ms var(--ease-out), border-color 250ms ease-out;
+}
+
+.steam-card:hover,
+.steam-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.5);
+}
+
+.steam-card-media {
+    position: relative;
+    aspect-ratio: 460 / 215;
+    overflow: hidden;
+    background: linear-gradient(135deg, #10203f, #0a1430);
+}
+
+.steam-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 600ms var(--ease-out);
+}
+
+.steam-card-media.is-missing img {
+    visibility: hidden;
+}
+
+.steam-card:hover .steam-card-media img {
+    transform: scale(1.05);
+}
+
+.steam-card-play {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 22px;
+    color: #fff;
+    background: rgba(8, 18, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    transition: transform 350ms var(--spring), background 250ms ease-out;
+}
+
+.steam-card:hover .steam-card-play {
+    transform: scale(1.12);
+    background: var(--primary);
+}
+
+/* games played outside Steam carry their launcher as a tag */
+.steam-card-tag {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background: rgba(8, 18, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.steam-card.is-off-steam .steam-card-media img {
+    object-position: 50% 30%;
+}
+
+.steam-card-body {
+    display: grid;
+    gap: 6px;
+    padding: 16px 18px 18px;
+}
+
+.steam-card-body h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.steam-card-meta,
+.steam-card-ach {
+    font-size: 12.5px;
+    color: var(--muted);
+}
+
+.steam-card-ach {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--dim);
+}
+
+.steam-bar {
+    height: 5px;
+    margin-top: 4px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: rgba(120, 160, 255, 0.14);
+}
+
+.steam-bar.is-large {
+    height: 8px;
+}
+
+.steam-bar i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--gradient);
+}
+
+.steam-more {
+    display: flex;
+    margin: 22px auto 0;
+}
+
+/* genre filters : the shared pill bar, scrolling sideways when it runs out of room */
+.steam-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 20px;
+    margin-bottom: 18px;
+}
+
+.steam-filters {
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.steam-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.steam-filters .filter {
+    flex: none;
+    white-space: nowrap;
+}
+
+.steam-count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--dim);
+}
+
+.steam-empty {
+    grid-column: 1 / -1;
+    padding: 28px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.steam-status {
+    margin-top: 24px;
+    padding: 18px;
+    border-radius: var(--radius);
+    border: 1px dashed var(--border-strong);
+    text-align: center;
+    color: var(--muted);
+}
+
+/* loading placeholders */
+.medal.is-skeleton,
+.steam-card.is-skeleton {
+    min-height: 210px;
+    background: linear-gradient(100deg, rgba(120, 160, 255, 0.05) 20%, rgba(120, 160, 255, 0.12) 50%, rgba(120, 160, 255, 0.05) 80%) 0 0 / 200% 100%;
+    animation: steam-shimmer 1.4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes steam-shimmer {
+    to { background-position: -200% 0; }
+}
+
+/* game detail dialog */
+.steam-modal {
+    width: min(920px, calc(100% - 32px));
+    max-height: calc(100% - 48px);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    color: var(--text);
+    background: #0a1430;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+}
+
+.steam-modal::backdrop {
+    background: rgba(2, 6, 18, 0.72);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.steam-modal[open] {
+    animation: steam-in 400ms var(--spring);
+}
+
+@keyframes steam-in {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+}
+
+.steam-modal-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+}
+
+/* the native bar runs edge to edge and ignores the rounded corners, so steam.js draws this thumb instead */
+.steam-modal-panel::-webkit-scrollbar {
+    display: none;
+}
+
+.steam-scroll {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    z-index: 3;
+    width: 5px;
+    border-radius: 5px;
+    background: rgba(150, 180, 255, 0.45);
+    opacity: 0;
+    cursor: grab;
+    touch-action: none;
+    transition: opacity 300ms ease-out, width 150ms ease-out, right 150ms ease-out, background-color 150ms ease-out;
+}
+
+.steam-modal:hover .steam-scroll,
+.steam-scroll.is-active {
+    opacity: 1;
+}
+
+.steam-scroll:hover,
+.steam-scroll.is-dragging {
+    right: 4px;
+    width: 7px;
+    background: rgba(150, 180, 255, 0.75);
+}
+
+.steam-scroll.is-dragging {
+    cursor: grabbing;
+}
+
+.steam-scroll[hidden] {
+    display: none;
+}
+
+.steam-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(8, 18, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 300ms var(--spring), background 200ms ease-out;
+}
+
+.steam-close:hover {
+    transform: rotate(90deg);
+    background: var(--primary);
+}
+
+.steam-player {
+    position: relative;
+    flex: none;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.steam-player video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+}
+
+.steam-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px 12px 16px;
+    border-radius: 999px;
+    font: 600 15px var(--font-body);
+    color: #fff;
+    background: var(--gradient);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.55);
+    transform: translate(-50%, -50%);
+    transition: transform 300ms var(--spring), opacity 200ms ease-out;
+}
+
+.steam-play i {
+    font-size: 24px;
+}
+
+.steam-play:hover:not(:disabled) {
+    transform: translate(-50%, -50%) scale(1.06);
+}
+
+.steam-play:disabled {
+    cursor: default;
+    opacity: 0.75;
+    background: rgba(8, 18, 42, 0.8);
+    box-shadow: none;
+}
+
+.steam-modal-body {
+    padding: 22px 24px 26px;
+}
+
+.steam-modal-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.steam-modal-head h3 {
+    font-size: 22px;
+}
+
+.steam-modal-head p {
+    margin-top: 4px;
+    font-size: 13.5px;
+    color: var(--muted);
+}
+
+.ach-progress {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.ach-count {
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+.ach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 14px 10px;
+    margin-top: 18px;
+}
+
+.ach {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    cursor: help;
+}
+
+.ach img {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    border: 1px solid var(--border-strong);
+    transition: transform 250ms var(--spring);
+}
+
+.ach:hover img {
+    transform: scale(1.1);
+}
+
+.ach.is-locked img {
+    filter: grayscale(1);
+    opacity: 0.35;
+}
+
+.ach-name {
+    font-size: 11px;
+    line-height: 1.3;
+    color: var(--muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ach.is-locked .ach-name {
+    color: var(--dim);
+}
+
+@media (max-width: 760px) {
+    .steam-profile {
+        grid-template-columns: auto 1fr;
+    }
+
+    .steam-stats,
+    .steam-link {
+        grid-column: 1 / -1;
+    }
+
+    .steam-link {
+        justify-self: start;
+    }
+
+    .steam-stats dd {
+        font-size: 22px;
+    }
+
+    .medal-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .medal.is-skeleton,
+    .steam-card.is-skeleton {
+        animation: none;
+    }
+}

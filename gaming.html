@@ -1,288 +1,245 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Gaming Corner</title>
-    <!--CSS Section-->
-    <link rel="stylesheet" href="css/background video.css">
-    <link rel="stylesheet" href="css/loading page.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/navigate bar.css">
-    <link rel="stylesheet" href="css/gaming.css">
-    <link rel="stylesheet" href="css/animation.css">
+    <title>Gaming Corner</title>
+    <meta name="description" content="Dark Emperium's gaming corner: PC specs and the games I play, with trailers.">
+    <meta name="theme-color" content="#050a18">
     <!--Website Icon-->
     <link rel="icon" type="image/x-icon" href="images/web icon.png">
-    <!--Additional Link Section-->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <!--Fonts & Icons-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500,600,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <!--CSS Section-->
+    <link rel="stylesheet" href="css/site.css?v=202610261203">
+    <link rel="stylesheet" href="css/ui.css?v=202610260001">
+    <link rel="stylesheet" href="css/gaming.css?v=202610271600">
+    <!--Page fade : a skipped page-to-page transition is expected, so its promises are marked handled-->
+    <script>for(const t of["pageswap","pagereveal"])addEventListener(t,e=>{const v=e.viewTransition;if(v)for(const p of[v.ready,v.finished,v.updateCallbackDone])p&&p.catch(()=>{})});</script>
 </head>
 
 <body>
 
-    <!--Website Preloader -->
+    <!--Website Preloader-->
     <div id="preloader">
-        <div class="loader hill"><span class="binary"></span><span class="binary"></span><span class="loading-text">LOADING PAGE</span></div>
+        <canvas class="ld-canvas" aria-hidden="true"></canvas>
+        <div class="ld-ui" role="status">
+            <span class="ld-num">000</span>
+            <span class="ld-msg">Initialising</span>
+            <span class="ld-line"><i></i></span>
+        </div>
     </div>
+    <noscript><style>#preloader { display: none; }</style></noscript>
 
-    <!--Website Header Section-->
-    <section class="header autoblur">
-
-        <!--Website Background Video-->
-        <video id="vid" playsinline loop autoplay muted>
-            <source src="images/Game Banner.mp4" type="video/mp4">
-        </video>
-
-        <!--Website Logo-->
-        <a href="index.html"><img src="images/logo.gif" class="logo"></a>
-
-        <!-------- Navigation Bar ---------->
-        <div class="navigation">
-
-            <input type="checkbox" class="navigation__checkbox" id="toggle">
-            <label for="toggle" class="navigation__button">
-                <span class="navigation__icon">&nbsp;</span>
-            </label>
-
-            <nav class="navigation__nav">
-                <ul class="navigation__list">
-                    <li><a href="index.html" class="navigation__link">Home</a></li>
-                    <li><a href="about.html" class="navigation__link">About Me</a></li>
-                    <li><a href="favorite youtube video.html" class="navigation__link">Videos</a></li>
-                    <li><a href="anime.html" class="navigation__link">Anime</a></li>
-                    <li><a href="mini game.html" class="navigation__link">Mini Game</a></li>
-                </ul>
+    <!--Header-->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="index.html" class="brand" aria-label="Dark Emperium home"><span>Dark <b>Emperium</b></span></a>
+            <nav class="nav-links" id="nav-links" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gaming.html" aria-current="page">Gaming</a>
+                <a href="anime.html">Anime</a>
+                <a href="favorite youtube video.html">Videos</a>
+                <a href="night-walk.html">Night Walk</a>
             </nav>
-        </div>
-
-        <!--Website Title Text-->
-        <div class="text-box">
-            <h2><i><span>Dark Emperium .</span><br>Gaming Corner</i></h2>
-            <p><b><i>Discover my gaming passions and explore the advanced hardware<br>that fuels up my immersive gaming experiences.</i></b></p>
-            <a href="#section" class="hero-btn"><b><i>Discover Now</i></b></a>
-        </div>
-
-    </section>
-
- 
-
-    <div id="section"></div>
-
-    <!------- Alert ------->
-    <div class="marquee-container"><i class='bx bx-bell icon'></i>
-        <marquee direction="left">Welcome to Dark Emperium Gaming Corner. From here you can discover my favorite games, my PC build, and look into my digital world !</marquee>
-    </div>
-
-    <section class="pc-spec-section reveal">
-        <h2 class="pc-spec-section-h2">PC Specs</h2>
-        <div class="spec-grid">
-            <!-- CPU Card -->
-            <div class="spec-card">
-                <div class="spec-image">
-                    <img src="https://placehold.co/150x150/007BFF/FFFFFF?text=CPU&font=orbitron" alt="CPU">
-                </div>
-                <div class="spec-details">
-                    <h3>Processor</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-microchip spec-icon"></i><strong>CPU :</strong>&nbsp;Intel Core i5-14400</li>
-                        <li><i class="fa-solid fa-gauge-high spec-icon"></i><strong>Clock :</strong>&nbsp;4.7 GHz Boost</li>
-                        <li><i class="fa-solid fa-network-wired spec-icon"></i><strong>Cores :</strong>&nbsp;10 (6P + 4E)</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- GPU Card -->
-            <div class="spec-card">
-                <div class="spec-image">
-                    <img src="https://placehold.co/150x150/00A36C/FFFFFF?text=GPU&font=orbitron" alt="GPU">
-                </div>
-                <div class="spec-details">
-                    <h3>Graphics Card</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-microchip spec-icon"></i><strong>GPU :</strong>&nbsp;NVIDIA RTX 3050</li>
-                        <li><i class="fa-solid fa-memory spec-icon"></i><strong>VRAM :</strong>&nbsp;8GB GDDR6</li>
-                        <li><i class="fa-solid fa-gauge-high spec-icon"></i><strong>Boost Clock :</strong>&nbsp;1.78 GHz</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- RAM Card -->
-            <div class="spec-card">
-                <div class="spec-image">
-                    <img src="https://placehold.co/150x150/FF4500/FFFFFF?text=RAM&font=orbitron" alt="RAM">
-                </div>
-                <div class="spec-details">
-                    <h3>Memory</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-sd-card spec-icon"></i><strong>Type :</strong>&nbsp;DDR5</li>
-                        <li><i class="fa-solid fa-layer-group spec-icon"></i><strong>Capacity :</strong>&nbsp;16GB (2 x 8GB)</li>
-                        <li><i class="fa-solid fa-gauge-high spec-icon"></i><strong>Speed :</strong>&nbsp;5600MHz</li>
-                    </ul>
-                </div>
+            <div class="nav-actions">
+                <button class="search-trigger" data-palette-open aria-label="Search the site"><i class='bx bx-search'></i><span>Search</span><kbd>Ctrl K</kbd></button>
+                <a href="about.html#contact" class="btn btn-primary btn-sm">Contact</a>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Game Section -->
-    <div class="game-section-title reveal">
-        <h2 class="pc-spec-section-h2">Game Lists</h2>
-    </div>
+    <main>
 
-    <div class="main-text reveal">
-        <div class="text-container">
-            <div class="fade-in reveal">
-                <hr><br><video class="vid-one" poster="images/Rocket-League.png" controls disablePictureInPicture
-                    controlslist="nodownload noplaybackrate">
-                    <source src="images/Rocket League Trailer.mp4" type="video/mp4">
-                </video></hr>
-                <p><i>Rocket League has up to eight players assigned to each of the two teams, using rocket powered
-                        vehicles to hit a ball into their opponent's goal and score points over the course of a
-                        match.</i></p>
-                <hr>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-text-two reveal">
-        <div class="text-container-two">
-            <div class="fade-in-two reveal">
-                <hr><br><video class="vid-two" poster="images/wukong.png" controls disablePictureInPicture
-                    controlslist="nodownload noplaybackrate">
-                    <source src="images/wukong trailer.mp4" type="video/mp4">
-                </video></hr>
-                <p><i>Black Myth Wukong is an action RPG rooted in Chinese mythology. The story is based on Journey to
-                        the West, one of the Four Great Classical Novels of Chinese literature. You shall set out as the
-                        Destined One to venture into the challenges and marvels ahead, to uncover the obscured truth
-                        beneath the veil of a glorious legend from the past.</i></p>
-                <hr>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-text reveal">
-        <div class="text-container">
-            <div class="fade-in reveal">
-                <hr><br><video class="vid-one" poster="images/Genshin.jpg" controls disablePictureInPicture
-                    controlslist="nodownload noplaybackrate">
-                    <source src="images/Genshin Trailer.mp4" type="video/mp4">
-                </video></hr>
-                <p><i>Genshin Impact takes place in the fantasy world of Teyvat, which is home to seven distinct
-                        nations, each of which is tied to a different element and ruled by a different god.</i></p>
-                <hr>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-text-two reveal">
-        <div class="text-container-two">
-            <div class="fade-in-two reveal">
-                <hr><br><video class="vid-two" poster="images/Overwatch-2.jpg" controls disablePictureInPicture
-                    controlslist="nodownload noplaybackrate">
-                    <source src="images/Overwatch 2 Trailer.mp4" type="video/mp4">
-                </video></hr>
-                <p><i>Overwatch 2 is a hero shooter where players are split into two teams and select a hero from a
-                        roster of 35 characters. Like its predecessor, primarily centers on player versus player (PvP)
-                        combat across several different modes and maps, and includes both casual and ranked competitive
-                        matches.</i></p>
-                <hr>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-text reveal">
-        <div class="text-container">
-            <div class="fade-in reveal">
-                <hr><br><video class="vid-one" poster="images/Valorant.jpg" controls disablePictureInPicture
-                    controlslist="nodownload noplaybackrate">
-                    <source src="images/Valorant Trailer.mp4" type="video/mp4">
-                </video></hr>
-                <p><i>Valorant is a team-based first-person hero shooter set in the near future. Players play as one of
-                        a set of Agents, characters designed based on several countries and cultures around the
-                        world.</i></p>
-                <hr>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-text-two reveal">
-        <div class="text-container-two">
-            <div class="fade-in-two reveal">
-                <hr><br><video class="vid-two" poster="images/Honkai-Starrail.jpg" controls disablePictureInPicture
-                    controlslist="nodownload noplaybackrate">
-                    <source src="images/Honkai Starrail Trailer.mp4" type="video/mp4">
-                </video></hr>
-                <p><i>Honkai Star Rail is a fantasy role-playing video game in which has players control one of up to
-                        four characters, which make up a team. Elements of open world and dungeon exploration are
-                        present, with focus being on turn-based strategic combat.</i></p>
-                <hr>
-            </div>
-        </div>
-    </div>
-
-    <!-- Previous Game Section
-        <section class="favourite-game">
-        
-            <h1 style="color:rgb(255, 255, 255)">My Favourite Game</h1>
-        
-            <div class="row">
-                <div class="game">
-                    <h3><em>Genshin Impact</em></h3>
-                    <p><em>Genshin Impact takes place in the fantasy world of Teyvat, which is home to seven distinct nations, each of which is tied to a different element and ruled by a different god.</em></p>
-                </div>
-                <div class="game">
-                    <h3><em>Valorant</em></h3>
-                    <p><em>Valorant is a team-based first-person hero shooter set in the near future.Players play as one of a set of Agents, characters designed based on several countries and cultures around the world.</em></p>
-                </div>
-                <div class="game">
-                    <h3><em>Rocket League</em></h3>
-                    <p><em>Rocket League has up to eight players assigned to each of the two teams, using rocket-powered vehicles to hit a ball into their opponent's goal and score points over the course of a match.</em></p>
+        <!--Hero Section-->
+        <section class="game-hero">
+            <video class="game-hero-video" playsinline loop autoplay muted aria-hidden="true">
+                <source src="images/Game Banner.mp4" type="video/mp4">
+            </video>
+            <div class="container game-hero-content" data-parallax="-0.18">
+                <span class="eyebrow" data-intro><i class='bx bx-joystick'></i> Gaming corner</span>
+                <h1 class="display" data-intro>Dark Emperium<br><span class="gradient-text">Gaming Corner</span></h1>
+                <p class="lead" data-intro>An overview of the games I play and the hardware that powers them.</p>
+                <div class="hero-actions" data-intro>
+                    <a href="#setup" class="btn btn-primary">View my setup <i class='bx bx-right-arrow-alt'></i></a>
+                    <a href="#games" class="btn btn-ghost"><i class='bx bx-library'></i> Game library</a>
                 </div>
             </div>
-    
-            <div class="row">
-                <div class="game">
-                    <h3><em>Fall Guys</em></h3>
-                    <p><em>Up to 60 players compete in matches with battle royale-style gameplay. Players represented as jellybean-like figures move around a three-dimensional playing field, with additional moves such as jumping, grabbing, climbing, or diving to assist gameplay.The aim is to qualify for subsequent rounds by successfully completing each of the randomly selected mini-games.</em></p>
+            <a href="#setup" class="scroll-cue" aria-label="Scroll to PC specs"><i class='bx bx-chevron-down'></i></a>
+        </section>
+
+        <!--PC Specs Section-->
+        <section class="section" id="setup">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><i class='bx bx-desktop'></i> My setup</span>
+                    <h2>PC <span class="gradient-text">specifications</span></h2>
+                    <p>The core components of my current gaming build.</p>
                 </div>
-                <div class="game">
-                    <h3><em>Minecraft</em></h3>
-                    <p><em>Minecraft is a 3D sandbox game that has no required goals to accomplish, allowing players a large amount of freedom in choosing how to play the game.</em></p>
-                </div>
-                <div class="game">
-                    <h3><em>Wallpaper Engine</em></h3>
-                    <p><em>Wallpaper Engine is an application for Windows with a companion app on Android which allows users to use and create animated and interactive wallpapers, similar to the defunct Windows DreamScene.</em></p>
+
+                <div class="spec-grid" data-reveal-group>
+                    <article class="card card-hover spec">
+                        <div class="spec-top">
+                            <span class="icon-tile"><i class='bx bx-chip'></i></span>
+                            <div>
+                                <p class="spec-kind">Processor</p>
+                                <h3>Intel Core i5-14400</h3>
+                            </div>
+                        </div>
+                        <dl class="spec-list">
+                            <div><dt><i class='bx bx-tachometer'></i> Clock</dt><dd>4.7 GHz boost</dd></div>
+                            <div><dt><i class='bx bx-grid-small'></i> Cores</dt><dd>10 (6P + 4E)</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card card-hover spec">
+                        <div class="spec-top">
+                            <span class="icon-tile"><i class='bx bx-tv'></i></span>
+                            <div>
+                                <p class="spec-kind">Graphics card</p>
+                                <h3>NVIDIA RTX 3050</h3>
+                            </div>
+                        </div>
+                        <dl class="spec-list">
+                            <div><dt><i class='bx bx-memory-card'></i> VRAM</dt><dd>8GB GDDR6</dd></div>
+                            <div><dt><i class='bx bx-tachometer'></i> Boost clock</dt><dd>1.78 GHz</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card card-hover spec">
+                        <div class="spec-top">
+                            <span class="icon-tile"><i class='bx bx-layer'></i></span>
+                            <div>
+                                <p class="spec-kind">Memory</p>
+                                <h3>16GB DDR5</h3>
+                            </div>
+                        </div>
+                        <dl class="spec-list">
+                            <div><dt><i class='bx bx-category'></i> Layout</dt><dd>2 x 8GB</dd></div>
+                            <div><dt><i class='bx bx-tachometer'></i> Speed</dt><dd>5600 MHz</dd></div>
+                        </dl>
+                    </article>
                 </div>
             </div>
-        </section>  -->
+        </section>
 
-    <!--Footer Section-->
-    <section class="footer">
-        <div class="icons">
-            <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
-            <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
-            <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i
-                    class="fa fa-youtube-play"></i></a>
+
+        <!--Steam Section : live from the site API worker (workers/api)-->
+        <section class="section is-loading" id="steam" data-steam-api="https://api.darkemperium.workers.dev">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><i class='bx bxl-steam'></i> Live from Steam</span>
+                    <h2>Steam <span class="gradient-text">profile</span></h2>
+                    <p>My games, hours on record and the achievements I have earned, fetched live from my Steam profile.</p>
+                </div>
+
+                <div class="steam-profile card" data-steam-profile aria-busy="true">
+                    <img class="steam-avatar" alt="" hidden>
+                    <div class="steam-id">
+                        <h3 data-steam-name>Dark Emperium</h3>
+                        <p data-steam-since>Loading profile</p>
+                    </div>
+                    <dl class="steam-stats">
+                        <div><dt>Steam level</dt><dd data-stat="level">&ndash;</dd></div>
+                        <div><dt>Steam library</dt><dd data-stat="games">&ndash;</dd></div>
+                        <div><dt>Hours played</dt><dd data-stat="hours">&ndash;</dd></div>
+                        <div><dt>Achievements</dt><dd data-stat="achievements">&ndash;</dd></div>
+                    </dl>
+                    <a class="btn btn-ghost btn-sm steam-link" href="https://steamcommunity.com/id/Dark_Emperium/" target="_blank" rel="noopener"><i class='bx bxl-steam'></i> View on Steam</a>
+                </div>
+
+                <div class="steam-block">
+                    <div class="steam-block-head">
+                        <h3><i class='bx bx-medal'></i> Hall of medals</h3>
+                        <p>My rarest achievements, ranked by how few players have earned them.</p>
+                    </div>
+                    <div class="medal-row" data-steam-medals>
+                        <div class="medal is-skeleton"></div><div class="medal is-skeleton"></div><div class="medal is-skeleton"></div><div class="medal is-skeleton"></div>
+                    </div>
+                </div>
+
+                <div class="steam-block" id="games">
+                    <div class="steam-block-head">
+                        <h3><i class='bx bx-library'></i> Game library</h3>
+                        <p>Everything in my Steam library plus the games I play outside Steam. Select one to watch its trailer and browse its achievements.</p>
+                    </div>
+                    <div class="steam-toolbar">
+                        <div class="filters steam-filters" role="group" aria-label="Filter the library by genre" data-steam-filters hidden></div>
+                        <p class="steam-count" aria-live="polite" data-steam-count></p>
+                    </div>
+                    <!-- games that are not on Steam, shown first; data only, rendered by steam.js -->
+                    <div class="steam-grid" data-steam-library data-extra-games='[{"name": "Valorant", "image": "images/Valorant.jpg", "trailer": "images/Valorant Trailer.mp4", "platform": "Riot Client", "link": "https://playvalorant.com/", "genres": ["shooter"]}, {"name": "Genshin Impact", "image": "images/Genshin.jpg", "trailer": "images/Genshin Trailer.mp4", "platform": "HoYoPlay", "link": "https://genshin.hoyoverse.com/", "genres": ["rpg", "story"]}]'>
+                        <div class="steam-card card is-skeleton"></div><div class="steam-card card is-skeleton"></div><div class="steam-card card is-skeleton"></div>
+                    </div>
+                    <button class="btn btn-ghost steam-more" type="button" data-steam-more hidden></button>
+                </div>
+
+                <p class="steam-status" data-steam-status hidden></p>
+            </div>
+        </section>
+
+        <!--Steam game detail : trailer and achievements-->
+        <dialog class="steam-modal" data-steam-modal aria-labelledby="steam-modal-title">
+            <div class="steam-modal-panel">
+                <button class="steam-close" type="button" data-steam-close aria-label="Close"><i class='bx bx-x'></i></button>
+                <div class="steam-player">
+                    <video playsinline controls preload="none" controlslist="nodownload"></video>
+                    <button class="steam-play" type="button" data-steam-play><i class='bx bx-play'></i><span>Play trailer</span></button>
+                </div>
+                <div class="steam-modal-body">
+                    <div class="steam-modal-head">
+                        <div>
+                            <h3 id="steam-modal-title"></h3>
+                            <p data-steam-modal-meta></p>
+                        </div>
+                        <a class="btn btn-ghost btn-sm" data-steam-store target="_blank" rel="noopener"><i class='bx bxl-steam'></i> Store page</a>
+                    </div>
+                    <div class="ach-progress" data-steam-ach-progress></div>
+                    <div class="ach-grid" data-steam-ach-grid></div>
+                </div>
+            </div>
+        </dialog>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bar">
+                <p class="footer-copy">&copy; <span id="currentYear"></span> Dark Emperium<span class="footer-sep" aria-hidden="true"></span>Coded with Visual Studio Code</p>
+                <nav class="footer-socials" aria-label="Social links">
+                    <a href="https://github.com/DarkEmperium/" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://discord.com/users/508126529847296002/" aria-label="Discord"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://www.twitch.tv/dark_emperium" aria-label="Twitch"><i class='bx bxl-twitch'></i></a>
+                    <a href="https://www.instagram.com/dark_emperium/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://steamcommunity.com/id/Dark_Emperium/" aria-label="Steam"><i class='bx bxl-steam'></i></a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+                </nav>
+            </div>
+            <div class="footer-wordmark" aria-hidden="true">Dark Emperium</div>
         </div>
-        <h6 style="color: rgb(255, 255, 255);">© <span id="currentYear"></span> Coded With Visual Studio Code - Website
-            owned by Dark Emperium</h6></a>
-        <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
-    </section>
+    </footer>
 
     <!--Javascript Section-->
-
     <!-- PRELOADER -->
-    <script src="javascript/hidePreloader.js"></script>
-    <!-- GAMING JS -->
-    <script src="javascript/gaming.js"></script>
+    <script src="javascript/preloader.js?v=202610261302"></script>
     <!-- COPYRIGHT YEAR UPDATE -->
-    <script src="javascript/copyrightDate.js"></script>
+    <script src="javascript/copyrightDate.js?v=202610260001"></script>
     <!-- DISABLE VIEW SOURCE -->
-    <script src="javascript/disableRightClick.js"></script>
+    <script src="javascript/disableRightClick.js?v=202610260001"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP SCROLLTRIGGER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SHARED UI INTERACTIONS -->
+    <script src="javascript/interactions.js?v=202610260600"></script>
+    <!-- STEAM (live data from workers/api) -->
+    <script src="javascript/steam.js?v=202610271600"></script>
 
 </body>
-
 </html>

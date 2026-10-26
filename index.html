@@ -1,100 +1,268 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!--CSS Section-->
-    <link rel="stylesheet" href="css/home style.css">
-    <link rel="stylesheet" href="css/background video.css">
-    <link rel="stylesheet" href="css/loading page.css">
-    <link rel="stylesheet" href="css/navigate bar.css">
+    <title>Dark Emperium</title>
+    <meta name="description" content="The personal website of Dark Emperium. Computer Science student and web developer. Code and games and anime in one place.">
+    <meta name="theme-color" content="#050a18">
     <!--Website Icon-->
     <link rel="icon" type="image/x-icon" href="images/web icon.png">
-    <!--Additional Link Section-->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Fonts & Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500,600,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <!--CSS Section-->
+    <link rel="stylesheet" href="css/site.css?v=202610261203">
+    <link rel="stylesheet" href="css/ui.css?v=202610260001">
+    <link rel="stylesheet" href="css/home.css?v=202610260901">
+    <!--Page fade : a skipped page-to-page transition is expected, so its promises are marked handled-->
+    <script>for(const t of["pageswap","pagereveal"])addEventListener(t,e=>{const v=e.viewTransition;if(v)for(const p of[v.ready,v.finished,v.updateCallbackDone])p&&p.catch(()=>{})});</script>
 </head>
 
 <body>
 
-    <div class="wrapper">
-
-        <!--Website Preloader-->
-        <div id="preloader">
-            <div class="loader hill"><span class="binary"></span><span class="binary"></span><span class="loading-text">LOADING PAGE</span></div>
+    <!--Website Preloader-->
+    <div id="preloader">
+        <canvas class="ld-canvas" aria-hidden="true"></canvas>
+        <div class="ld-ui" role="status">
+            <span class="ld-num">000</span>
+            <span class="ld-msg">Initialising</span>
+            <span class="ld-line"><i></i></span>
         </div>
+    </div>
+    <noscript><style>#preloader { display: none; }</style></noscript>
 
-        <!--Header Section-->
-        <section class="header">
+    <!--Header-->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="index.html" class="brand" aria-label="Dark Emperium home"><span>Dark <b>Emperium</b></span></a>
+            <nav class="nav-links" id="nav-links" aria-label="Main">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="about.html">About</a>
+                <a href="gaming.html">Gaming</a>
+                <a href="anime.html">Anime</a>
+                <a href="favorite youtube video.html">Videos</a>
+                <a href="night-walk.html">Night Walk</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="search-trigger" data-palette-open aria-label="Search the site"><i class='bx bx-search'></i><span>Search</span><kbd>Ctrl K</kbd></button>
+                <a href="about.html#contact" class="btn btn-primary btn-sm">Contact</a>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
 
-            <!--Website Background Section-->
-            <div class="matrix-bg"><canvas id="matrix-canvas"></canvas></div>
+    <main>
 
-            <a href="index.html"><img src="images/logo.gif" class="logo"></a>
+        <!--Hero Section-->
+        <section class="hero">
+            <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow" data-intro><span class="dot"></span>All systems operational</span>
+                    <h1 class="display" data-intro>Welcome to<br><span class="gradient-text">Dark Emperium</span></h1>
+                    <p class="lead" data-intro>Computer Science student and web developer. This is my personal space for code and games and anime. Every page is designed and built by hand.</p>
+                    <p class="motto" data-intro>
+                        <span>Code with purpose</span>
+                        <span>Powered by anime</span>
+                    </p>
+                    <div class="hero-actions" data-intro>
+                        <a href="about.html" class="btn btn-primary">About me <i class='bx bx-right-arrow-alt'></i></a>
+                        <a href="anime.html" class="btn btn-ghost"><i class='bx bx-tv'></i> View watch list</a>
+                    </div>
+                    <dl class="hero-stats" data-intro>
+                        <div><dt data-count="9">9</dt><dd>Technical skills</dd></div>
+                        <div><dt data-count="6">6</dt><dd>Featured games</dd></div>
+                        <div><dt data-count="16">16</dt><dd>Curated videos</dd></div>
+                    </dl>
+                </div>
 
-            <!-------- Navigation Bar ---------->
-            <div class="navigation">
+                <div class="hero-visual" data-intro data-depth-root>
+                    <div class="avatar-orbit">
+                        <div class="orbit-ring" data-depth="10"></div>
+                        <div class="orbit-ring orbit-ring--2"></div>
+                        <img src="images/profile.png" alt="Dark Emperium avatar" class="avatar" data-depth="14">
+                        <span class="float-chip chip-1" data-depth="40"><i class='bx bx-code-alt'></i> Web Developer</span>
+                        <span class="float-chip chip-2" data-depth="-32"><i class='bx bx-chip'></i> Computer Technician</span>
+                        <span class="float-chip chip-3" data-depth="28"><i class='bx bx-joystick'></i> Gamer</span>
+                        <span class="float-chip chip-4" data-depth="-44"><i class='bx bxs-heart'></i> Anime Enthusiast</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <input type="checkbox" class="navigation__checkbox" id="toggle">
-                <label for="toggle" class="navigation__button">
-                    <span class="navigation__icon">&nbsp;</span>
-                </label>
+        <!--Toolkit Marquee-->
+        <section class="toolkit" aria-label="Technologies I work with">
+            <p class="toolkit-label" data-reveal>Tools and technologies I work with</p>
+            <div class="toolkit-track" data-reveal>
+                <div class="toolkit-row">
+                    <span class="tool" style="--c: #e34c26"><i class='bx bxl-html5'></i>HTML</span>
+                    <span class="tool" style="--c: #2965f1"><i class='bx bxl-css3'></i>CSS</span>
+                    <span class="tool" style="--c: #f0db4f"><i class='bx bxl-javascript'></i>JavaScript</span>
+                    <span class="tool" style="--c: #ffd43b"><i class='bx bxl-python'></i>Python</span>
+                    <span class="tool" style="--c: #659ad2"><i class='bx bxl-c-plus-plus'></i>C++</span>
+                    <span class="tool" style="--c: #f89820"><i class='bx bxl-java'></i>Java</span>
+                    <span class="tool" style="--c: #38bdf8"><i class='bx bxl-tailwind-css'></i>Tailwind</span>
+                    <span class="tool" style="--c: #e6edf3"><i class='bx bxl-github'></i>GitHub</span>
+                    <span class="tool" style="--c: #22a6f2"><i class='bx bxl-visual-studio'></i>VS Code</span>
+                </div>
+                <div class="toolkit-row" aria-hidden="true">
+                    <span class="tool" style="--c: #e34c26"><i class='bx bxl-html5'></i>HTML</span>
+                    <span class="tool" style="--c: #2965f1"><i class='bx bxl-css3'></i>CSS</span>
+                    <span class="tool" style="--c: #f0db4f"><i class='bx bxl-javascript'></i>JavaScript</span>
+                    <span class="tool" style="--c: #ffd43b"><i class='bx bxl-python'></i>Python</span>
+                    <span class="tool" style="--c: #659ad2"><i class='bx bxl-c-plus-plus'></i>C++</span>
+                    <span class="tool" style="--c: #f89820"><i class='bx bxl-java'></i>Java</span>
+                    <span class="tool" style="--c: #38bdf8"><i class='bx bxl-tailwind-css'></i>Tailwind</span>
+                    <span class="tool" style="--c: #e6edf3"><i class='bx bxl-github'></i>GitHub</span>
+                    <span class="tool" style="--c: #22a6f2"><i class='bx bxl-visual-studio'></i>VS Code</span>
+                </div>
+                <div class="toolkit-row" aria-hidden="true">
+                    <span class="tool" style="--c: #e34c26"><i class='bx bxl-html5'></i>HTML</span>
+                    <span class="tool" style="--c: #2965f1"><i class='bx bxl-css3'></i>CSS</span>
+                    <span class="tool" style="--c: #f0db4f"><i class='bx bxl-javascript'></i>JavaScript</span>
+                    <span class="tool" style="--c: #ffd43b"><i class='bx bxl-python'></i>Python</span>
+                    <span class="tool" style="--c: #659ad2"><i class='bx bxl-c-plus-plus'></i>C++</span>
+                    <span class="tool" style="--c: #f89820"><i class='bx bxl-java'></i>Java</span>
+                    <span class="tool" style="--c: #38bdf8"><i class='bx bxl-tailwind-css'></i>Tailwind</span>
+                    <span class="tool" style="--c: #e6edf3"><i class='bx bxl-github'></i>GitHub</span>
+                    <span class="tool" style="--c: #22a6f2"><i class='bx bxl-visual-studio'></i>VS Code</span>
+                </div>
+                <div class="toolkit-row" aria-hidden="true">
+                    <span class="tool" style="--c: #e34c26"><i class='bx bxl-html5'></i>HTML</span>
+                    <span class="tool" style="--c: #2965f1"><i class='bx bxl-css3'></i>CSS</span>
+                    <span class="tool" style="--c: #f0db4f"><i class='bx bxl-javascript'></i>JavaScript</span>
+                    <span class="tool" style="--c: #ffd43b"><i class='bx bxl-python'></i>Python</span>
+                    <span class="tool" style="--c: #659ad2"><i class='bx bxl-c-plus-plus'></i>C++</span>
+                    <span class="tool" style="--c: #f89820"><i class='bx bxl-java'></i>Java</span>
+                    <span class="tool" style="--c: #38bdf8"><i class='bx bxl-tailwind-css'></i>Tailwind</span>
+                    <span class="tool" style="--c: #e6edf3"><i class='bx bxl-github'></i>GitHub</span>
+                    <span class="tool" style="--c: #22a6f2"><i class='bx bxl-visual-studio'></i>VS Code</span>
+                </div>
+            </div>
+        </section>
 
-                <nav class="navigation__nav">
-                    <ul class="navigation__list">
-                        <li><a href="about.html" class="navigation__link">About Me</a></li>
-                        <li><a href="gaming.html" class="navigation__link">Gaming</a></li>
-                        <li><a href="favorite youtube video.html" class="navigation__link">Videos</a></li>
-                        <li><a href="anime.html" class="navigation__link">Anime</a></li>
-                        <li><a href="mini game.html" class="navigation__link">Mini Game</a></li>
-                    </ul>
+        <!--Explore Section-->
+        <section class="section">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><i class='bx bx-compass'></i> Explore</span>
+                    <h2>Discover the <span class="gradient-text">collection</span></h2>
+                    <p>Each section highlights a different interest. Choose one to begin.</p>
+                </div>
+
+                <div class="bento" data-reveal-group>
+                    <a href="about.html" class="card card-hover tile tile-about">
+                        <div class="tile-body">
+                            <span class="icon-tile"><i class='bx bx-user'></i></span>
+                            <h3>About me</h3>
+                            <p>Computer Science student at the University of Wollongong. Learn about my education and skills and the best ways to get in touch.</p>
+                            <span class="tile-link">Read more <i class='bx bx-right-arrow-alt'></i></span>
+                        </div>
+                        <img src="images/profile.png" alt="" class="tile-avatar" loading="lazy">
+                    </a>
+
+                    <a href="gaming.html" class="card card-hover tile tile-media tile-gaming" data-cursor="Open">
+                        <div class="tile-slides" data-slides='[{"src": "images/Valorant.jpg", "label": "Valorant"}, {"src": "images/Overwatch-2.jpg", "label": "Overwatch 2"}, {"src": "images/Genshin.jpg", "label": "Genshin Impact"}, {"src": "images/Rocket-League.png", "label": "Rocket League"}, {"src": "images/Honkai-Starrail.jpg", "label": "Honkai: Star Rail"}, {"src": "images/wukong.png", "label": "Black Myth: Wukong"}]' aria-hidden="true"></div>
+                        <div class="tile-body">
+                            <span class="chip"><i class='bx bx-joystick'></i> Gaming</span>
+                            <h3>Gaming corner</h3>
+                            <p class="tile-meta" data-slide-label>Valorant</p>
+                        </div>
+                    </a>
+
+                    <a href="anime.html" class="card card-hover tile tile-media tile-anime" data-cursor="Open">
+                        <div class="tile-slides" data-watching aria-hidden="true"></div>
+                        <div class="tile-body">
+                            <span class="chip"><i class='bx bx-tv'></i> Watching now</span>
+                            <h3>Watch list</h3>
+                            <p class="tile-meta" data-slide-label>Live from MyAnimeList</p>
+                        </div>
+                    </a>
+
+                    <a href="favorite youtube video.html" class="card card-hover tile tile-media tile-videos" data-cursor="Watch">
+                        <img src="https://i.ytimg.com/vi/2HuI7QD1xTs/maxresdefault.jpg" alt="" loading="lazy">
+                        <span class="tile-play" aria-hidden="true"><i class='bx bx-play'></i></span>
+                        <div class="tile-body">
+                            <span class="chip"><i class='bx bxs-star'></i> Top pick</span>
+                            <h3>Favourite videos</h3>
+                            <p class="tile-meta">ミセカイ · 泡沫少女</p>
+                        </div>
+                    </a>
+
+                    <a href="night-walk.html" class="card card-hover tile tile-walk" data-cursor="Play">
+                        <img class="walk-shot" src="images/night-walk-storefront.jpg?v=2" alt="" loading="lazy">
+                        <div class="tile-body">
+                            <span class="chip"><i class='bx bx-joystick'></i> Browser game</span>
+                            <h3>Night Walk</h3>
+                            <p>A self-written, open-source game that runs right in your browser. Walk a rainy neon street in first person, shop at the corner store and climb the stairs to the flat upstairs.</p>
+                            <span class="tile-link">Play now <i class='bx bx-right-arrow-alt'></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Connect Section-->
+        <section class="section section-tight">
+            <div class="container">
+                <div class="card cta-band glow-border" data-reveal>
+                    <div>
+                        <h2>Let's <span class="gradient-text">connect</span></h2>
+                        <p>Follow along on social media or reach out directly.</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="about.html#contact" class="btn btn-primary">Contact options <i class='bx bx-right-arrow-alt'></i></a>
+                        <div class="socials">
+                            <a href="https://www.twitch.tv/dark_emperium" aria-label="Twitch"><i class='bx bxl-twitch'></i></a>
+                            <a href="https://www.instagram.com/dark_emperium/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://steamcommunity.com/id/Dark_Emperium/" aria-label="Steam"><i class='bx bxl-steam'></i></a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bar">
+                <p class="footer-copy">&copy; <span id="currentYear"></span> Dark Emperium<span class="footer-sep" aria-hidden="true"></span>Coded with Visual Studio Code</p>
+                <nav class="footer-socials" aria-label="Social links">
+                    <a href="https://github.com/DarkEmperium/" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://discord.com/users/508126529847296002/" aria-label="Discord"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://www.twitch.tv/dark_emperium" aria-label="Twitch"><i class='bx bxl-twitch'></i></a>
+                    <a href="https://www.instagram.com/dark_emperium/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://steamcommunity.com/id/Dark_Emperium/" aria-label="Steam"><i class='bx bxl-steam'></i></a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
                 </nav>
             </div>
-
-            <!------- Alert ------->
-            <div class="marquee-container"><i class='bx bx-error-circle icon'></i>
-                <marquee direction="left">⚙️ Status Update : The website is fully operational! 🚀 Currently fine-tuning features, fixing minor bugs, and upgrading systems for maximum performance and stability. 💡 Stay tuned for future updates and improvements — Dark Emperium never stops evolving! 🔥</marquee>
-            </div>
-
-        </section>
-
-        <section class="main-section">
-
-            <div class="text-box">
-                <h1><i>Welcome To Dark Emperium<br>Personal Website</i></h1>
-                <p><b><i>A Weeb That Love Website Coding<br><span id="span-color-1"><span id="span-large">NO</span> Coding <span id="span-large">No</span> Life </span><span id="span-color-2"><span id="span-large">NO</span> Anime <span id="span-large">NO</span> Life </span></b></i></p>
-                <a href="about.html" class="hero-btn"><b><i>Way To Contact Me</i></b></a>
-            </div>
-
-        </section>
-
-        <!--Footer Section-->
-        <section class="footer">
-            <div class="icons">
-                <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
-                <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
-                <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i
-                        class="fa fa-youtube-play"></i></a>
-            </div>
-            <h6 style="color: rgb(255, 255, 255);">© <span id="currentYear"></span> Coded With Visual Studio Code -
-                Website owned by Dark Emperium</h6></a>
-            <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
-        </section>
-
-    </div>
+            <div class="footer-wordmark" aria-hidden="true">Dark Emperium</div>
+        </div>
+    </footer>
 
     <!--Javascript Section-->
-
     <!-- PRELOADER -->
-    <script src="javascript/hidePreloader.js"></script>
+    <script src="javascript/preloader.js?v=202610261302"></script>
     <!-- COPYRIGHT YEAR UPDATE -->
-    <script src="javascript/copyrightDate.js"></script>
+    <script src="javascript/copyrightDate.js?v=202610260001"></script>
     <!-- DISABLE VIEW SOURCE -->
-    <script src="javascript/disableRightClick.js"></script>
+    <script src="javascript/disableRightClick.js?v=202610260001"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP SCROLLTRIGGER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SHARED UI INTERACTIONS -->
+    <script src="javascript/interactions.js?v=202610260600"></script>
     <!-- BINARY FALL BACKGROUND -->
-    <script src="javascript/home.js"></script>
+    <script src="javascript/home.js?v=202610271400"></script>
 
 </body>
 </html>

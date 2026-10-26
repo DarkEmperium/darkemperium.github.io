@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#040a1e"/>
+      <stop offset="0.6" stop-color="#0f2453"/>
+      <stop offset="1" stop-color="#1e4f8f"/>
+    </linearGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c3366"/>
+      <stop offset="1" stop-color="#132552"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1a3c"/>
+      <stop offset="1" stop-color="#070f26"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10264f"/>
+      <stop offset="1" stop-color="#040a1c"/>
+    </linearGradient>
+    <pattern id="windows" width="10" height="12" patternUnits="userSpaceOnUse">
+      <rect x="2" y="3" width="4" height="5" fill="#ffd89a"/>
+    </pattern>
+    <pattern id="windowsBlue" width="10" height="12" patternUnits="userSpaceOnUse">
+      <rect x="2" y="3" width="4" height="5" fill="#9cc8ff"/>
+    </pattern>
+  </defs>
+  <style>
+    .lit { animation: flicker 4s ease-in-out infinite; }
+    .l2 { animation-delay: -1.3s; animation-duration: 5s; } .l3 { animation-delay: -2.6s; animation-duration: 3.5s; }
+    @keyframes flicker { 50% { opacity: 0.35; } }
+    .beacon { animation: beacon 1.6s ease-in-out infinite; }
+    @keyframes beacon { 50% { opacity: 0.15; } }
+    .car { animation: drive 6s linear infinite; }
+    .c2 { animation-duration: 8s; animation-delay: -3s; animation-direction: reverse; }
+    @keyframes drive { from { transform: translateX(-60px); } to { transform: translateX(440px); } }
+    .search { transform-origin: 300px 500px; animation: sweep 7s ease-in-out infinite alternate; }
+    @keyframes sweep { from { transform: rotate(-18deg); } to { transform: rotate(14deg); } }
+    .star { fill: #dbe7ff; animation: tw 3s ease-in-out infinite; }
+    @keyframes tw { 50% { opacity: 0.25; } }
+  </style>
+
+  <rect width="400" height="500" fill="url(#sky)"/>
+  <path class="search" d="M300 500 L250 40 L290 40 Z" fill="#8ec5ff" opacity="0.08"/>
+  <circle class="star" cx="50" cy="40" r="1.2"/>
+  <circle class="star" cx="150" cy="70" r="0.9" style="animation-delay:-1s"/>
+  <circle class="star" cx="340" cy="55" r="1.1" style="animation-delay:-2s"/>
+  <circle cx="70" cy="95" r="22" fill="#f6efe0" opacity="0.9"/>
+  <circle cx="70" cy="95" r="40" fill="#f6efe0" opacity="0.08"/>
+
+  <g fill="url(#far)">
+    <rect x="0" y="250" width="40" height="110"/>
+    <rect x="36" y="215" width="34" height="145"/>
+    <rect x="260" y="230" width="40" height="130"/>
+    <rect x="330" y="205" width="38" height="155"/>
+    <rect x="365" y="240" width="40" height="120"/>
+  </g>
+
+  <g>
+    <path d="M180 360 L180 150 L186 150 L186 130 L192 130 L192 95 L196 95 L196 60 L200 40 L204 60 L204 95 L208 95 L208 130 L214 130 L214 150 L220 150 L220 360 Z" fill="#0e1d44"/>
+    <rect x="184" y="160" width="32" height="196" fill="url(#windows)" class="lit l2" opacity="0.8"/>
+    <circle class="beacon" cx="200" cy="40" r="3" fill="#ff5a5a"/>
+  </g>
+
+  <g fill="url(#near)">
+    <rect x="70" y="190" width="56" height="170"/>
+    <rect x="122" y="235" width="46" height="125"/>
+    <rect x="226" y="175" width="48" height="185"/>
+    <rect x="292" y="245" width="44" height="115"/>
+  </g>
+  <rect x="76" y="198" width="44" height="156" fill="url(#windows)" class="lit" opacity="0.7"/>
+  <rect x="128" y="242" width="34" height="112" fill="url(#windowsBlue)" class="lit l3" opacity="0.6"/>
+  <rect x="232" y="184" width="36" height="170" fill="url(#windowsBlue)" class="lit l2" opacity="0.65"/>
+  <rect x="298" y="252" width="32" height="102" fill="url(#windows)" class="lit l3" opacity="0.6"/>
+  <rect x="40" y="224" width="26" height="130" fill="url(#windowsBlue)" class="lit" opacity="0.35"/>
+  <rect x="336" y="214" width="28" height="140" fill="url(#windows)" class="lit l2" opacity="0.35"/>
+
+  <rect y="360" width="400" height="140" fill="url(#river)"/>
+  <g opacity="0.25">
+    <rect x="76" y="364" width="44" height="40" fill="url(#windows)"/>
+    <rect x="184" y="364" width="32" height="70" fill="url(#windows)"/>
+    <rect x="232" y="364" width="36" height="50" fill="url(#windowsBlue)"/>
+  </g>
+
+  <g stroke="#7fa6e6" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M-10 400 L410 400"/>
+    <path d="M60 330 L60 400 M340 330 L340 400"/>
+    <path d="M-10 395 Q60 320 60 330 Q200 400 340 330 Q340 320 410 395"/>
+  </g>
+  <g stroke="#7fa6e6" stroke-width="0.8" opacity="0.5">
+    <path d="M90 352 L90 400 M120 366 L120 400 M150 376 L150 400 M180 382 L180 400 M220 382 L220 400 M250 376 L250 400 M280 366 L280 400 M310 352 L310 400"/>
+  </g>
+  <circle class="car" cx="0" cy="398" r="2.2" fill="#fff4cc"/>
+  <circle class="car c2" cx="0" cy="402" r="2.2" fill="#ff6a6a"/>
+  <circle class="car" cx="0" cy="398" r="2" fill="#fff4cc" style="animation-delay:-2.5s"/>
+</svg>

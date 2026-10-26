@@ -1,217 +1,278 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Anime Profile</title>
-    <!-- Additional Link Secction -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--Icon Link https://fontawesome.com/v4/ -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-    <!-- Website Icon -->
+    <title>Anime Watch List</title>
+    <meta name="description" content="Dark Emperium's favourite anime and live MyAnimeList watch list: currently watching, completed and plan to watch.">
+    <meta name="theme-color" content="#050a18">
+    <!--Website Icon-->
     <link rel="icon" type="image/x-icon" href="images/web icon.png">
-    <!-- CSS Section -->
-    <link rel="stylesheet" href="css/anime.css">
-    <link rel="stylesheet" href="css/navigate bar.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/loading page.css">
-    <link rel="stylesheet" href="css/animation.css">
+    <!--Fonts & Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500,600,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <!--CSS Section-->
+    <link rel="stylesheet" href="css/site.css?v=202610261203">
+    <link rel="stylesheet" href="css/ui.css?v=202610260001">
+    <link rel="stylesheet" href="css/anime.css?v=202610260600">
+    <!--Page fade : a skipped page-to-page transition is expected, so its promises are marked handled-->
+    <script>for(const t of["pageswap","pagereveal"])addEventListener(t,e=>{const v=e.viewTransition;if(v)for(const p of[v.ready,v.finished,v.updateCallbackDone])p&&p.catch(()=>{})});</script>
 </head>
 
 <body>
 
-    <!--Website Preloader -->
+    <!--Website Preloader-->
     <div id="preloader">
-        <div class="loader hill"><span class="binary"></span><span class="binary"></span><span class="loading-text">LOADING PAGE</span></div>
+        <canvas class="ld-canvas" aria-hidden="true"></canvas>
+        <div class="ld-ui" role="status">
+            <span class="ld-num">000</span>
+            <span class="ld-msg">Initialising</span>
+            <span class="ld-line"><i></i></span>
+        </div>
     </div>
+    <noscript><style>#preloader { display: none; }</style></noscript>
 
-    <!-- Website Logo -->
-    <a href="index.html"><img src="images/logo.gif" class="logo"></a>
-
-    <!-- Navigation Bar -->
-    <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="toggle">
-        <label for="toggle" class="navigation__button"><span class="navigation__icon">&nbsp;</span></label>
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li><a href="index.html" class="navigation__link">Home</a></li>
-                <li><a href="about.html" class="navigation__link">About Me</a></li>
-                <li><a href="favorite youtube video.html" class="navigation__link">Videos</a></li>
-                <li><a href="gaming.html" class="navigation__link">Gaming</a></li>
-                <li><a href="mini game.html" class="navigation__link">Mini Game</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Anime Banner -->
-    <section class="home autoblur" id="home">
-        <div class="swiper home-slider">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide" data-slider="1"><!-- Banner 1 -->
-                    <div class="box" style="background: url(images/The-Apothecary-Diaries.png) no-repeat;">
-                        <div class="content">
-                            <h3>The Apothecary Diaries</h3>
-                            <a href="https://kusuriyanohitorigoto.jp/" class="btn">Learn More !</a>
-                            <i class='bx bx-play-circle play-video' data-slider="1"></i>
-                            <div class="video-container">
-                                <div class="video-box">
-                                    <video id="myvideo" data-src="images/The Apothecary Diaries ED.mp4" controls preload="none"></video>
-                                    <i class='bx bx-x-circle close-video' data-slider="1"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" data-slider="2"><!-- Banner 2 -->
-                    <div class="box" style="background: url(images/The-Fragrant-Flower-Blooms-with-Dignity.jpg) no-repeat;">
-                        <div class="content">
-                            <h3>The Fragrant Flower Blooms with Dignity</h3>
-                            <a href="https://kaoruhana-anime.com/" class="btn">Learn More !</a>
-                            <i class='bx bx-play-circle play-video' data-slider="2"></i>
-                            <div class="video-container">
-                                <div class="video-box">
-                                    <video id="myvideo" data-src="images/The Fragrant Flower Blooms with Dignity OP.mp4" controls preload="none"></video>
-                                    <i class='bx bx-x-circle close-video' data-slider="2"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" data-slider="3"><!-- Banner 3 -->
-                    <div class="box" style="background: url(images/WorldEnd.jpg) no-repeat;">
-                        <div class="content">
-                            <h3>WorldEnd</h3>
-                            <a href="https://sukasuka-anime.com/" class="btn">Learn More !</a>
-                            <i class='bx bx-play-circle play-video' data-slider="3"></i>
-                            <div class="video-container">
-                                <div class="video-box">
-                                    <video id="myvideo" data-src="images/WorldEnd ED.mp4" controls preload="none"></video>
-                                    <i class='bx bx-x-circle close-video' data-slider="3"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" data-slider="4"><!-- Banner 4 -->
-                    <div class="box" style="background: url(images/Frieren.png) no-repeat;">
-                        <div class="content">
-                            <h3>Frieren: Beyond Journey's End</h3>
-                            <a href="https://frieren-anime.jp/" class="btn">Learn More !</a>
-                            <i class='bx bx-play-circle play-video' data-slider="4"></i>
-                            <div class="video-container">
-                                <div class="video-box">
-                                    <video id="myvideo" data-src="images/Frieren ED.mp4" controls preload="none"></video>
-                                    <i class='bx bx-x-circle close-video' data-slider="4"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" data-slider="5"><!-- Banner 5 -->
-                    <div class="box" style="background: url(images/My-Happy-Marriage.png) no-repeat;">
-                        <div class="content">
-                            <h3>My Happy Marriage</h3>
-                            <a href="https://watakon-anime.com/" class="btn">Learn More !</a>
-                            <i class='bx bx-play-circle play-video' data-slider="5"></i>
-                            <div class="video-container">
-                                <div class="video-box">
-                                    <video id="myvideo" data-src="images/My Happy Marriage OP.mp4" controls preload="none"></video>
-                                    <i class='bx bx-x-circle close-video' data-slider="5"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" data-slider="6"><!-- Banner 6 -->
-                    <div class="box" style="background: url(images/Summer-Time-Rendering.jpg) no-repeat;">
-                        <div class="content">
-                            <h3>Summer Time Rendering</h3>
-                            <a href="https://summertime-anime.com/" class="btn">Learn More !</a>
-                            <i class='bx bx-play-circle play-video' data-slider="6"></i>
-                            <div class="video-container">
-                                <div class="video-box">
-                                    <video id="myvideo" data-src="images/Summer Time Rendering ED.mp4" controls preload="none"></video>
-                                    <i class='bx bx-x-circle close-video' data-slider="6"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" data-slider="7"><!-- Banner 7 -->
-                    <div class="box" style="background: url(images/Plastic-Memories.jpg) no-repeat;">
-                        <div class="content">
-                            <h3>Plastic Memories</h3>
-                            <a href="https://www.plastic-memories.jp/" class="btn">Learn More !</a>
-                            <i class='bx bx-play-circle play-video' data-slider="7"></i>
-                            <div class="video-container">
-                                <div class="video-box">
-                                    <video id="myvideo" data-src="images/Plastic Memories OP.mp4" controls preload="none"></video>
-                                    <i class='bx bx-x-circle close-video' data-slider="7"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <!--Header-->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="index.html" class="brand" aria-label="Dark Emperium home"><span>Dark <b>Emperium</b></span></a>
+            <nav class="nav-links" id="nav-links" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gaming.html">Gaming</a>
+                <a href="anime.html" aria-current="page">Anime</a>
+                <a href="favorite youtube video.html">Videos</a>
+                <a href="night-walk.html">Night Walk</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="search-trigger" data-palette-open aria-label="Search the site"><i class='bx bx-search'></i><span>Search</span><kbd>Ctrl K</kbd></button>
+                <a href="about.html#contact" class="btn btn-primary btn-sm">Contact</a>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <h1>Anime Watch List<br><span id="watchlist-bg">Upadated on <span id="currentMonth"></span></span></h1>
+    <main>
 
-    <!-- Anime Showcase Section 1 -->
-    <section class="anime">
-        <h2 class="heading">Currently Watching</h2>
-        <div class="anime-container" id="watching-container"></div>
-    </section>
+        <!-- Anime Banner -->
+        <section class="home" id="home">
+            <div class="swiper home-slider">
+                <div class="swiper-wrapper">
 
-    <!-- Anime Showcase Section 2 -->
-    <section class="anime">
-        <h2 class="heading">Previously Watched</h2>
-        <div class="anime-container" id="completed-container"></div>
-    </section>
+                    <div class="swiper-slide" data-slider="1"><!-- Banner 1 -->
+                        <div class="box" style="background-image: url('images/The-Apothecary-Diaries.png')">
+                            <div class="content">
+                                <span class="tag"><i class='bx bxs-heart'></i> Favourite</span>
+                                <h3>The Apothecary Diaries</h3>
+                                <div class="actions">
+                                    <a href="https://kusuriyanohitorigoto.jp/" class="btn btn-primary">Official site <i class='bx bx-right-arrow-alt'></i></a>
+                                    <i class='bx bx-play-circle play-video' data-slider="1"></i>
+                                </div>
+                                <div class="video-container">
+                                    <div class="video-box">
+                                        <video id="myvideo" data-src="images/The Apothecary Diaries ED.mp4" controls preload="none"></video>
+                                        <i class='bx bx-x-circle close-video' data-slider="1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Anime Showcase Section 3 -->
-    <section class="anime">
-        <h2 class="heading">Plan to Watch</h2>
-        <div class="anime-container" id="plan-to-watch-container"></div>
-    </section>
+                    <div class="swiper-slide" data-slider="2"><!-- Banner 2 -->
+                        <div class="box" style="background-image: url('images/The-Fragrant-Flower-Blooms-with-Dignity.jpg')">
+                            <div class="content">
+                                <span class="tag"><i class='bx bxs-heart'></i> Favourite</span>
+                                <h3>The Fragrant Flower Blooms with Dignity</h3>
+                                <div class="actions">
+                                    <a href="https://kaoruhana-anime.com/" class="btn btn-primary">Official site <i class='bx bx-right-arrow-alt'></i></a>
+                                    <i class='bx bx-play-circle play-video' data-slider="2"></i>
+                                </div>
+                                <div class="video-container">
+                                    <div class="video-box">
+                                        <video id="myvideo" data-src="images/The Fragrant Flower Blooms with Dignity OP.mp4" controls preload="none"></video>
+                                        <i class='bx bx-x-circle close-video' data-slider="2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!--Footer Section-->
-    <section class="footer">
-        <div class="icons">
-            <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
-            <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
-            <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i class="fa fa-youtube-play"></i></a>
+                    <div class="swiper-slide" data-slider="3"><!-- Banner 3 -->
+                        <div class="box" style="background-image: url('images/WorldEnd.jpg')">
+                            <div class="content">
+                                <span class="tag"><i class='bx bxs-heart'></i> Favourite</span>
+                                <h3>WorldEnd</h3>
+                                <div class="actions">
+                                    <a href="https://sukasuka-anime.com/" class="btn btn-primary">Official site <i class='bx bx-right-arrow-alt'></i></a>
+                                    <i class='bx bx-play-circle play-video' data-slider="3"></i>
+                                </div>
+                                <div class="video-container">
+                                    <div class="video-box">
+                                        <video id="myvideo" data-src="images/WorldEnd ED.mp4" controls preload="none"></video>
+                                        <i class='bx bx-x-circle close-video' data-slider="3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" data-slider="4"><!-- Banner 4 -->
+                        <div class="box" style="background-image: url('images/Frieren.png')">
+                            <div class="content">
+                                <span class="tag"><i class='bx bxs-heart'></i> Favourite</span>
+                                <h3>Frieren: Beyond Journey's End</h3>
+                                <div class="actions">
+                                    <a href="https://frieren-anime.jp/" class="btn btn-primary">Official site <i class='bx bx-right-arrow-alt'></i></a>
+                                    <i class='bx bx-play-circle play-video' data-slider="4"></i>
+                                </div>
+                                <div class="video-container">
+                                    <div class="video-box">
+                                        <video id="myvideo" data-src="images/Frieren ED.mp4" controls preload="none"></video>
+                                        <i class='bx bx-x-circle close-video' data-slider="4"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" data-slider="5"><!-- Banner 5 -->
+                        <div class="box" style="background-image: url('images/My-Happy-Marriage.png')">
+                            <div class="content">
+                                <span class="tag"><i class='bx bxs-heart'></i> Favourite</span>
+                                <h3>My Happy Marriage</h3>
+                                <div class="actions">
+                                    <a href="https://watakon-anime.com/" class="btn btn-primary">Official site <i class='bx bx-right-arrow-alt'></i></a>
+                                    <i class='bx bx-play-circle play-video' data-slider="5"></i>
+                                </div>
+                                <div class="video-container">
+                                    <div class="video-box">
+                                        <video id="myvideo" data-src="images/My Happy Marriage OP.mp4" controls preload="none"></video>
+                                        <i class='bx bx-x-circle close-video' data-slider="5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" data-slider="6"><!-- Banner 6 -->
+                        <div class="box" style="background-image: url('images/Summer-Time-Rendering.jpg')">
+                            <div class="content">
+                                <span class="tag"><i class='bx bxs-heart'></i> Favourite</span>
+                                <h3>Summer Time Rendering</h3>
+                                <div class="actions">
+                                    <a href="https://summertime-anime.com/" class="btn btn-primary">Official site <i class='bx bx-right-arrow-alt'></i></a>
+                                    <i class='bx bx-play-circle play-video' data-slider="6"></i>
+                                </div>
+                                <div class="video-container">
+                                    <div class="video-box">
+                                        <video id="myvideo" data-src="images/Summer Time Rendering ED.mp4" controls preload="none"></video>
+                                        <i class='bx bx-x-circle close-video' data-slider="6"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" data-slider="7"><!-- Banner 7 -->
+                        <div class="box" style="background-image: url('images/Plastic-Memories.jpg')">
+                            <div class="content">
+                                <span class="tag"><i class='bx bxs-heart'></i> Favourite</span>
+                                <h3>Plastic Memories</h3>
+                                <div class="actions">
+                                    <a href="https://www.plastic-memories.jp/" class="btn btn-primary">Official site <i class='bx bx-right-arrow-alt'></i></a>
+                                    <i class='bx bx-play-circle play-video' data-slider="7"></i>
+                                </div>
+                                <div class="video-container">
+                                    <div class="video-box">
+                                        <video id="myvideo" data-src="images/Plastic Memories OP.mp4" controls preload="none"></video>
+                                        <i class='bx bx-x-circle close-video' data-slider="7"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Watch List Header -->
+        <section class="watchlist-header">
+            <span class="eyebrow" data-reveal><i class='bx bx-list-ul'></i> Live from MyAnimeList</span>
+                <h1 data-reveal>Anime <span class="gradient-text">Watch List</span></h1>
+            <p class="watchlist-updated" data-reveal>Updated on <span id="currentMonth"></span></p>
+            <div class="watchlist-toolbar" data-reveal>
+                <nav class="pill-tabs" aria-label="Watch list sections">
+                    <span class="pill-indicator"></span>
+                    <a href="#watching" class="pill-tab is-active">Watching<span class="count" id="watching-count">–</span></a>
+                    <a href="#completed" class="pill-tab">Completed<span class="count" id="completed-count">–</span></a>
+                    <a href="#plan-to-watch" class="pill-tab">Plan to Watch<span class="count" id="plan-to-watch-count">–</span></a>
+                </nav>
+                <label class="search"><i class='bx bx-search'></i><input type="search" id="anime-search" placeholder="Search titles..." autocomplete="off"></label>
+            </div>
+        </section>
+
+        <!-- Anime Showcase Section 1 -->
+        <section class="anime" id="watching">
+            <h2 class="heading" data-reveal>Currently Watching</h2>
+            <div class="anime-container" id="watching-container"></div>
+        </section>
+
+        <!-- Anime Showcase Section 2 -->
+        <section class="anime" id="completed">
+            <h2 class="heading" data-reveal>Previously Watched</h2>
+            <div class="anime-container" id="completed-container"></div>
+        </section>
+
+        <!-- Anime Showcase Section 3 -->
+        <section class="anime" id="plan-to-watch">
+            <h2 class="heading" data-reveal>Plan to Watch</h2>
+            <div class="anime-container" id="plan-to-watch-container"></div>
+        </section>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bar">
+                <p class="footer-copy">&copy; <span id="currentYear"></span> Dark Emperium<span class="footer-sep" aria-hidden="true"></span>Coded with Visual Studio Code</p>
+                <nav class="footer-socials" aria-label="Social links">
+                    <a href="https://github.com/DarkEmperium/" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://discord.com/users/508126529847296002/" aria-label="Discord"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://www.twitch.tv/dark_emperium" aria-label="Twitch"><i class='bx bxl-twitch'></i></a>
+                    <a href="https://www.instagram.com/dark_emperium/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://steamcommunity.com/id/Dark_Emperium/" aria-label="Steam"><i class='bx bxl-steam'></i></a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+                </nav>
+            </div>
+            <div class="footer-wordmark" aria-hidden="true">Dark Emperium</div>
         </div>
-        <h6 style="color: rgb(255, 255, 255);">© <span id="currentYear"></span> Coded With Visual Studio Code - Website
-            owned by Dark Emperium</h6></a>
-        <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
-    </section>
+    </footer>
 
-    <!-- Javascript Section -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <!-- Anime JS -->
-    <script src="javascript/anime.js"></script>
+    <!--Javascript Section-->
     <!-- PRELOADER -->
-    <script src="javascript/hidePreloader.js"></script>
+    <script src="javascript/preloader.js?v=202610261302"></script>
     <!-- COPYRIGHT YEAR UPDATE -->
-    <script src="javascript/copyrightDate.js"></script>
+    <script src="javascript/copyrightDate.js?v=202610260001"></script>
     <!-- DISABLE VIEW SOURCE -->
-    <script src="javascript/disableRightClick.js"></script>
+    <script src="javascript/disableRightClick.js?v=202610260001"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP SCROLLTRIGGER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SHARED UI INTERACTIONS -->
+    <script src="javascript/interactions.js?v=202610260600"></script>
+    <!-- SWIPER -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- ANIME JS -->
+    <script src="javascript/anime.js?v=202610271400"></script>
 
 </body>
-
 </html>

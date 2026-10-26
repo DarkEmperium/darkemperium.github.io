@@ -1,164 +1,254 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favourite Video</title>
-    <!--CSS Section-->
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/loading page.css">
-    <link rel="stylesheet" href="css/gaming.css">
-    <link rel="stylesheet" href="css/favourite video.css">
-    <link rel="stylesheet" href="css/background video.css">
-    <link rel="stylesheet" href="css/navigate bar.css">
+    <title>Favourite Videos</title>
+    <meta name="description" content="A collection of YouTube videos and edits Dark Emperium keeps coming back to.">
+    <meta name="theme-color" content="#050a18">
     <!--Website Icon-->
     <link rel="icon" type="image/x-icon" href="images/web icon.png">
-    <!--Additional Link Section-->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Fonts & Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500,600,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <!--CSS Section-->
+    <link rel="stylesheet" href="css/site.css?v=202610261203">
+    <link rel="stylesheet" href="css/ui.css?v=202610260001">
+    <link rel="stylesheet" href="css/videos.css?v=202610260001">
+    <!--Page fade : a skipped page-to-page transition is expected, so its promises are marked handled-->
+    <script>for(const t of["pageswap","pagereveal"])addEventListener(t,e=>{const v=e.viewTransition;if(v)for(const p of[v.ready,v.finished,v.updateCallbackDone])p&&p.catch(()=>{})});</script>
 </head>
 
-<body style="text-align: center;">
+<body>
 
-    <!--Website Preloader -->
-    <div id="preloader"><div class="loader hill"><span class="binary"></span><span class="binary"></span><span class="loading-text">LOADING PAGE</span></div></div>
+    <!--Website Preloader-->
+    <div id="preloader">
+        <canvas class="ld-canvas" aria-hidden="true"></canvas>
+        <div class="ld-ui" role="status">
+            <span class="ld-num">000</span>
+            <span class="ld-msg">Initialising</span>
+            <span class="ld-line"><i></i></span>
+        </div>
+    </div>
+    <noscript><style>#preloader { display: none; }</style></noscript>
 
-    <!--Website Header-->
-    <section class="sub-header-2">
-
-        <!--Website Logo-->
-        <a href="index.html"><img src="images/logo.gif" class="logo"></a>
-
-        <!--Website Navigator-->
-        <div class="navigation">
-
-            <input type="checkbox" class="navigation__checkbox" id="toggle">
-            <label for="toggle" class="navigation__button">
-                <span class="navigation__icon">&nbsp;</span>
-            </label>
-
-            <nav class="navigation__nav">
-                <ul class="navigation__list">
-                    <li><a href="index.html" class="navigation__link">Home</a></li>
-                    <li><a href="about.html" class="navigation__link">About Me</a></li>
-                    <li><a href="gaming.html" class="navigation__link">Gaming</a></li>
-                    <li><a href="anime.html" class="navigation__link">Anime</a></li>
-                    <li><a href="mini game.html" class="navigation__link">Mini Game</a></li>
-                </ul>
+    <!--Header-->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="index.html" class="brand" aria-label="Dark Emperium home"><span>Dark <b>Emperium</b></span></a>
+            <nav class="nav-links" id="nav-links" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gaming.html">Gaming</a>
+                <a href="anime.html">Anime</a>
+                <a href="favorite youtube video.html" aria-current="page">Videos</a>
+                <a href="night-walk.html">Night Walk</a>
             </nav>
+            <div class="nav-actions">
+                <button class="search-trigger" data-palette-open aria-label="Search the site"><i class='bx bx-search'></i><span>Search</span><kbd>Ctrl K</kbd></button>
+                <a href="about.html#contact" class="btn btn-primary btn-sm">Contact</a>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+            </div>
         </div>
+    </header>
 
-        <br>
-        <br>
+    <main>
 
-        <h1>FAVORITE <span id="title-exchange"></span> VIDEO</h1>
+        <!--Intro Section-->
+        <section class="page-hero videos-hero">
+            <div class="container">
+                <div class="videos-intro">
+                    <div class="videos-head">
+                        <span class="eyebrow" data-intro><i class='bx bx-play-circle'></i> Curated collection</span>
+                        <h1 class="display" data-intro>Favourite <span class="gradient-text">videos</span></h1>
+                        <p class="lead" data-intro>A personal selection of anime music videos and edits that I return to again and again. Press play on any card to watch it without leaving the page.</p>
+                        <ul class="videos-facts" data-intro>
+                            <li><span class="fact-icon"><i class='bx bx-collection'></i></span><div><strong>16</strong><small>Videos</small></div></li>
+                            <li><span class="fact-icon"><i class='bx bx-cut'></i></span><div><strong>2</strong><small>Personal edits</small></div></li>
+                            <li><span class="fact-icon"><i class='bx bxl-youtube'></i></span><div><strong>14</strong><small>YouTube picks</small></div></li>
+                        </ul>
+                    </div>
 
-    </section>
+                    <article class="card featured-video" data-intro>
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="2HuI7QD1xTs" aria-label="Play the featured video">
+                            <img src="https://i.ytimg.com/vi/2HuI7QD1xTs/hqdefault.jpg" alt="" loading="eager">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="featured-meta">
+                            <span class="chip"><i class='bx bxs-star'></i> Featured pick</span>
+                            <p>A standout from the collection. Start here.</p>
+                        </div>
+                    </article>
+                </div>
 
-    <!--Website Background-->
-    <div class="background-star">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-    </div>
+                <div class="videos-toolbar" data-intro>
+                    <div class="filters" role="group" aria-label="Filter videos">
+                        <button class="filter is-active" data-filter="all">All <span class="count">16</span></button>
+                        <button class="filter" data-filter="edited">Edited <span class="count">2</span></button>
+                        <button class="filter" data-filter="youtube">YouTube <span class="count">14</span></button>
+                    </div>
+                    <p class="videos-count" aria-live="polite">Showing <span id="videos-shown">16</span> videos</p>
+                </div>
+            </div>
+        </section>
 
-    <!--Video Content-->
+        <!--Video Grid-->
+        <section class="section videos-section">
+            <div class="container">
+                <div class="videos-grid" data-reveal-group>
+                    <article class="card video-card" data-source="edited">
+                        <div class="video-frame">
+                            <iframe loading="lazy" allowfullscreen title="Edited video 01" src="https://drive.google.com/file/d/1RkJAl8DLQ6Wijayg5yaYOjDyd2G5qOcn/preview"></iframe>
+                        </div>
+                        <div class="video-meta"><span class="video-num">#01</span><span class="chip"><i class='bx bx-cut'></i> Edited</span></div>
+                    </article>
+                    <article class="card video-card" data-source="edited">
+                        <div class="video-frame">
+                            <iframe loading="lazy" allowfullscreen title="Edited video 02" src="https://drive.google.com/file/d/1Kh9S4bmy9sGFGuHcqc64-r54i5ItMQ7f/preview"></iframe>
+                        </div>
+                        <div class="video-meta"><span class="video-num">#02</span><span class="chip"><i class='bx bx-cut'></i> Edited</span></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="2HuI7QD1xTs" aria-label="Play video 03">
+                            <img src="https://i.ytimg.com/vi/2HuI7QD1xTs/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#03</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=2HuI7QD1xTs" aria-label="Open video 03 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="bYNlZ0KkPuo" aria-label="Play video 04">
+                            <img src="https://i.ytimg.com/vi/bYNlZ0KkPuo/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#04</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=bYNlZ0KkPuo" aria-label="Open video 04 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="MDc1mjrIsPM" aria-label="Play video 05">
+                            <img src="https://i.ytimg.com/vi/MDc1mjrIsPM/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#05</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=MDc1mjrIsPM" aria-label="Open video 05 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="mnta9Pp2LqA" aria-label="Play video 06">
+                            <img src="https://i.ytimg.com/vi/mnta9Pp2LqA/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#06</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=mnta9Pp2LqA" aria-label="Open video 06 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="ApXoWvfEYVU" aria-label="Play video 07">
+                            <img src="https://i.ytimg.com/vi/ApXoWvfEYVU/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#07</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=ApXoWvfEYVU" aria-label="Open video 07 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="uHu3WoRJiKY" aria-label="Play video 08">
+                            <img src="https://i.ytimg.com/vi/uHu3WoRJiKY/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#08</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=uHu3WoRJiKY" aria-label="Open video 08 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="1lYb9nLO_FY" aria-label="Play video 09">
+                            <img src="https://i.ytimg.com/vi/1lYb9nLO_FY/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#09</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=1lYb9nLO_FY" aria-label="Open video 09 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="5CklZVlT7Hs" aria-label="Play video 10">
+                            <img src="https://i.ytimg.com/vi/5CklZVlT7Hs/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#10</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=5CklZVlT7Hs" aria-label="Open video 10 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="EiAhMr6IJTQ" aria-label="Play video 11">
+                            <img src="https://i.ytimg.com/vi/EiAhMr6IJTQ/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#11</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=EiAhMr6IJTQ" aria-label="Open video 11 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="-tKVN2mAKRI" aria-label="Play video 12">
+                            <img src="https://i.ytimg.com/vi/-tKVN2mAKRI/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#12</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=-tKVN2mAKRI" aria-label="Open video 12 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="WAjXT8Q109U" aria-label="Play video 13">
+                            <img src="https://i.ytimg.com/vi/WAjXT8Q109U/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#13</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=WAjXT8Q109U" aria-label="Open video 13 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="6elZkJtv0yM" aria-label="Play video 14">
+                            <img src="https://i.ytimg.com/vi/6elZkJtv0yM/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#14</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=6elZkJtv0yM" aria-label="Open video 14 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="pyDCubgU57g" aria-label="Play video 15">
+                            <img src="https://i.ytimg.com/vi/pyDCubgU57g/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#15</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=pyDCubgU57g" aria-label="Open video 15 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                    <article class="card video-card" data-source="youtube">
+                        <button data-cursor="Play" class="video-frame yt-facade" data-yt="dsZ5sXzJg2g" aria-label="Play video 16">
+                            <img src="https://i.ytimg.com/vi/dsZ5sXzJg2g/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="play-badge"><i class='bx bx-play'></i></span>
+                        </button>
+                        <div class="video-meta"><span class="video-num">#16</span><span class="chip"><i class='bx bxl-youtube'></i> YouTube</span><a class="video-ext" href="https://www.youtube.com/watch?v=dsZ5sXzJg2g" aria-label="Open video 16 on YouTube"><i class='bx bx-link-external'></i></a></div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://drive.google.com/file/d/1RkJAl8DLQ6Wijayg5yaYOjDyd2G5qOcn/preview"></iframe>
-    </div>
+    </main>
 
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://drive.google.com/file/d/1Kh9S4bmy9sGFGuHcqc64-r54i5ItMQ7f/preview"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/2HuI7QD1xTs"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/bYNlZ0KkPuo"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/MDc1mjrIsPM"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/mnta9Pp2LqA"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/ApXoWvfEYVU"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/uHu3WoRJiKY"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/1lYb9nLO_FY"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/5CklZVlT7Hs"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/EiAhMr6IJTQ"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/-tKVN2mAKRI"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/WAjXT8Q109U"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/6elZkJtv0yM"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/pyDCubgU57g"></iframe>
-    </div>
-
-    <div class="video-container">
-        <iframe loading="lazy" allowfullscreen src="https://www.youtube.com/embed/dsZ5sXzJg2g"></iframe>
-    </div>
-
-    <!--Footer Section-->
-    <section class="footer">
-        <div class="icons">
-            <a href="https://www.twitch.tv/dark_emperium"><i class="fa fa-twitch"></i></a>
-            <a href="https://www.instagram.com/dark_emperium/"><i class="fa fa-instagram"></i></a>
-            <a href="https://steamcommunity.com/id/Dark_Emperium/"><i class="fa fa-steam"></i></a>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i class="fa fa-youtube-play"></i></a>
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bar">
+                <p class="footer-copy">&copy; <span id="currentYear"></span> Dark Emperium<span class="footer-sep" aria-hidden="true"></span>Coded with Visual Studio Code</p>
+                <nav class="footer-socials" aria-label="Social links">
+                    <a href="https://github.com/DarkEmperium/" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://discord.com/users/508126529847296002/" aria-label="Discord"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://www.twitch.tv/dark_emperium" aria-label="Twitch"><i class='bx bxl-twitch'></i></a>
+                    <a href="https://www.instagram.com/dark_emperium/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://steamcommunity.com/id/Dark_Emperium/" aria-label="Steam"><i class='bx bxl-steam'></i></a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+                </nav>
+            </div>
+            <div class="footer-wordmark" aria-hidden="true">Dark Emperium</div>
         </div>
-        <h6 style="color: rgb(255, 255, 255);">© <span id="currentYear"></span> Coded With Visual Studio Code - Website owned by Dark Emperium</h6></a>
-        <h6 style="color: rgb(255, 255, 255);">Coded By Dark Emperium Copyright Reserved</h6>
-    </section>
+    </footer>
 
     <!--Javascript Section-->
-
     <!-- PRELOADER -->
-    <script src="javascript/hidePreloader.js"></script>
-    <!-- RELLAX JS -->
-    <script src="javascript/rellax.min.js"></script>
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-    <!-- SCROLL REVEAL -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- FAVOURITE VIDEO JS -->
-    <script src="javascript/favourite-video.js"></script>
+    <script src="javascript/preloader.js?v=202610261302"></script>
     <!-- COPYRIGHT YEAR UPDATE -->
-    <script src="javascript/copyrightDate.js"></script>
+    <script src="javascript/copyrightDate.js?v=202610260001"></script>
     <!-- DISABLE VIEW SOURCE -->
-    <script src="javascript/disableRightClick.js"></script>
-    <!-- Load library from the CDN -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="javascript/disableRightClick.js?v=202610260001"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP SCROLLTRIGGER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SHARED UI INTERACTIONS -->
+    <script src="javascript/interactions.js?v=202610260600"></script>
+    <!-- FAVOURITE VIDEO JS -->
+    <script src="javascript/favourite-video.js?v=202610260001"></script>
 
 </body>
-
 </html>

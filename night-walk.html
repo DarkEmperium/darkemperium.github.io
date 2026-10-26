@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Walk</title>
+    <meta name="description" content="Explore a rainy neon street corner in first person. A real-time WebGL scene you can walk around.">
+    <meta name="theme-color" content="#050a18">
+    <!--Website Icon-->
+    <link rel="icon" type="image/x-icon" href="images/web icon.png">
+    <!--Fonts & Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=general-sans@400,500,600,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <!--CSS Section-->
+    <link rel="stylesheet" href="css/site.css?v=202610261203">
+    <link rel="stylesheet" href="css/ui.css?v=202610260001">
+    <link rel="stylesheet" href="css/night-walk.css?v=202610260700">
+    <!--Page fade : a skipped page-to-page transition is expected, so its promises are marked handled-->
+    <script>for(const t of["pageswap","pagereveal"])addEventListener(t,e=>{const v=e.viewTransition;if(v)for(const p of[v.ready,v.finished,v.updateCallbackDone])p&&p.catch(()=>{})});</script>
+</head>
+
+<body>
+
+    <!--Website Preloader-->
+    <div id="preloader">
+        <canvas class="ld-canvas" aria-hidden="true"></canvas>
+        <div class="ld-ui" role="status">
+            <span class="ld-num">000</span>
+            <span class="ld-msg">Initialising</span>
+            <span class="ld-line"><i></i></span>
+        </div>
+    </div>
+    <noscript><style>#preloader { display: none; }</style></noscript>
+
+    <!--Header-->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="index.html" class="brand" aria-label="Dark Emperium home"><span>Dark <b>Emperium</b></span></a>
+            <nav class="nav-links" id="nav-links" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gaming.html">Gaming</a>
+                <a href="anime.html">Anime</a>
+                <a href="favorite youtube video.html">Videos</a>
+                <a href="night-walk.html" aria-current="page">Night Walk</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="search-trigger" data-palette-open aria-label="Search the site"><i class='bx bx-search'></i><span>Search</span><kbd>Ctrl K</kbd></button>
+                <a href="about.html#contact" class="btn btn-primary btn-sm">Contact</a>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!--Intro Section-->
+        <section class="page-hero walk-hero">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow" data-intro><i class='bx bx-cloud-rain'></i> Interactive 3D</span>
+                    <h1 class="display" data-intro>Night <span class="gradient-text">Walk</span></h1>
+                    <p class="lead" data-intro>A self-written, open-source game that runs right in your browser. Step onto a quiet street corner on a rainy night and explore at your own pace.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--Scene-->
+        <section class="walk-section">
+            <div class="container">
+                <div class="walk-stage" id="walk-stage" data-intro>
+
+                    <div class="walk-overlay" id="walk-overlay">
+                        <div class="walk-card">
+                            <span class="eyebrow"><i class='bx bx-walk'></i> Ready when you are</span>
+                            <h2>Explore the street</h2>
+                            <ul class="walk-keys walk-keys--desktop">
+                                <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>Move</span></li>
+                                <li><kbd>Click</kbd><kbd>Mouse</kbd><span>Look around</span></li>
+                                <li><kbd>Shift</kbd><span>Run</span></li>
+                                <li><kbd>E</kbd><span>Interact, shop, pay</span></li>
+                                <li><kbd>Q</kbd><kbd>I</kbd><span>Put back / bag</span></li>
+                                <li><kbd>V</kbd><span>Walk / overview</span></li>
+                                <li><kbd>C</kbd><span>Cinematic cruise</span></li>
+                                <li><kbd>Esc</kbd><span>Release mouse</span></li>
+                            </ul>
+                            <ul class="walk-keys walk-keys--touch">
+                                <li><kbd>Drag left</kbd><span>Move</span></li>
+                                <li><kbd>Drag right</kbd><span>Look around</span></li>
+                                <li><kbd>Tap prompt</kbd><span>Interact, shop, pay</span></li>
+                            </ul>
+                            <button class="btn btn-primary" id="walk-start"><i class='bx bx-play'></i> Start walking</button>
+                        </div>
+                    </div>
+
+                    <div class="walk-loading" id="walk-loading" role="status" aria-live="polite">
+                        <span class="walk-spinner" aria-hidden="true"></span>
+                        <span id="walk-loading-text">Building the street</span>
+                    </div>
+
+                    <div class="walk-hud">
+                        <span class="walk-crosshair" aria-hidden="true"></span>
+                        <button class="walk-prompt" id="walk-prompt" type="button" tabindex="-1"></button>
+                        <button class="walk-wallet" id="walk-wallet" type="button" aria-expanded="false" aria-controls="walk-bag" title="Bag (I)">
+                            <span><i class='bx bx-wallet'></i><b id="walk-cash">&yen;3,000</b></span>
+                            <span><i class='bx bx-basket'></i><b id="walk-cart">0</b></span>
+                            <span><i class='bx bx-shopping-bag'></i><b id="walk-bagcount">0</b></span>
+                        </button>
+                        <div class="walk-bag" id="walk-bag" hidden>
+                            <h3>Basket <small>unpaid</small></h3>
+                            <ul id="walk-bag-cart"></ul>
+                            <h3>Bag <small>paid</small></h3>
+                            <ul id="walk-bag-paid"></ul>
+                        </div>
+                        <p class="walk-toast" id="walk-toast" role="status" aria-live="polite"></p>
+                    </div>
+
+                    <div class="walk-tools">
+                        <button class="walk-tool" id="walk-view" aria-pressed="false" aria-label="Switch to overview" title="Overview (V)"><i class='bx bx-world'></i></button>
+                        <button class="walk-tool" id="walk-sound" aria-pressed="false" aria-label="Toggle rain sound" title="Rain sound"><i class='bx bx-volume-mute'></i></button>
+                        <button class="walk-tool" id="walk-fullscreen" aria-label="Toggle fullscreen" title="Fullscreen"><i class='bx bx-fullscreen'></i></button>
+                        <button class="walk-tool" id="walk-stop" aria-label="Stop the scene and free the GPU" title="Stop scene"><i class='bx bx-power-off'></i></button>
+                    </div>
+                </div>
+
+                <div class="walk-notes" data-reveal-group>
+                    <div class="card walk-note"><span class="icon-tile"><i class='bx bx-store'></i></span><div><h3>Corner store</h3><p>Fill a basket from the cooler, shelves and hot counter, then pay at the register</p></div></div>
+                    <div class="card walk-note"><span class="icon-tile"><i class='bx bx-building-house'></i></span><div><h3>Apartment 201</h3><p>Climb the steel stairs on the side street, open the door and say hi to the cat</p></div></div>
+                    <div class="card walk-note"><span class="icon-tile"><i class='bx bx-car'></i></span><div><h3>AE86 at the curb</h3><p>Parked on the side road with its wipers sweeping the rain</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!--GPU Notice-->
+        <div class="gpu-modal" id="gpu-modal" hidden>
+            <div class="gpu-panel" role="alertdialog" aria-modal="true" aria-labelledby="gpu-title" aria-describedby="gpu-desc">
+                <span class="gpu-icon" aria-hidden="true"><i class='bx bx-chip'></i></span>
+                <h2 id="gpu-title">This scene is GPU heavy</h2>
+                <p id="gpu-desc">Night Walk renders a real-time 3D street in your browser with reflections, rain, bloom and depth of field. It can use a lot of your graphics card while it runs.</p>
+                <ul class="gpu-list">
+                    <li><i class='bx bx-tachometer'></i><span>Older or integrated graphics and some phones may run slowly or get warm</span></li>
+                    <li><i class='bx bx-battery'></i><span>On a laptop, it drains the battery faster. Plugging in helps</span></li>
+                    <li><i class='bx bx-power-off'></i><span>The power button in the corner stops the scene and frees the GPU at any time</span></li>
+                </ul>
+                <label class="gpu-skip"><input type="checkbox" id="gpu-skip"> Don't show this again on this device</label>
+                <div class="gpu-actions">
+                    <button class="btn btn-ghost" id="gpu-cancel">Not now</button>
+                    <button class="btn btn-primary" id="gpu-continue"><i class='bx bx-play'></i> Launch scene</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bar">
+                <p class="footer-copy">&copy; <span id="currentYear"></span> Dark Emperium<span class="footer-sep" aria-hidden="true"></span>Coded with Visual Studio Code</p>
+                <nav class="footer-socials" aria-label="Social links">
+                    <a href="https://github.com/DarkEmperium/" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://discord.com/users/508126529847296002/" aria-label="Discord"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://www.twitch.tv/dark_emperium" aria-label="Twitch"><i class='bx bxl-twitch'></i></a>
+                    <a href="https://www.instagram.com/dark_emperium/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://steamcommunity.com/id/Dark_Emperium/" aria-label="Steam"><i class='bx bxl-steam'></i></a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+                </nav>
+            </div>
+            <div class="footer-wordmark" aria-hidden="true">Dark Emperium</div>
+        </div>
+    </footer>
+
+    <!--Javascript Section-->
+    <!-- PRELOADER -->
+    <script src="javascript/preloader.js?v=202610261302"></script>
+    <!-- COPYRIGHT YEAR UPDATE -->
+    <script src="javascript/copyrightDate.js?v=202610260001"></script>
+    <!-- DISABLE VIEW SOURCE -->
+    <script src="javascript/disableRightClick.js?v=202610260001"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP SCROLLTRIGGER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SHARED UI INTERACTIONS -->
+    <script src="javascript/interactions.js?v=202610260600"></script>
+    <!-- NIGHT WALK SCENE -->
+    <script src="javascript/night-walk.js?v=202610261400"></script>
+
+</body>
+</html>

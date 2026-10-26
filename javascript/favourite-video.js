@@ -1,49 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-  function generateBoxShadow(count, heightPx) {
-    let shadows = [];
-    for (let i = 0; i < count; i++) {
-      const x = Math.random() * 100; // percent of viewport width
-      const y = Math.random() * heightPx; // pixels
-      shadows.push(`${x}vw ${y}px #FFF`);
-    }
-    return shadows.join(", ");
-  }
+// Click-to-load YouTube players (thumbnails until played)
+document.querySelectorAll(".yt-facade").forEach((facade) => {
+  facade.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube.com/embed/${facade.dataset.yt}?autoplay=1&rel=0`;
+    iframe.title = facade.getAttribute("aria-label").replace("Play", "Playing");
+    iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
 
-  const stars = document.getElementById("stars");
-  const stars2 = document.getElementById("stars2");
-  const stars3 = document.getElementById("stars3");
-
-  const shadows1 = generateBoxShadow(700, 2000);
-  const shadows2 = generateBoxShadow(200, 2000);
-  const shadows3 = generateBoxShadow(100, 2000);
-
-  stars.style.boxShadow = shadows1;
-  stars2.style.boxShadow = shadows2;
-  stars3.style.boxShadow = shadows3;
-
-  // Mirror ::after shadows to avoid gaps
-  const style = document.createElement("style");
-  style.textContent = `
-        #stars::after { box-shadow: ${shadows1}; }
-        #stars2::after { box-shadow: ${shadows2}; }
-        #stars3::after { box-shadow: ${shadows3}; }
-      `;
-  document.head.appendChild(style);
+    const frame = document.createElement("div");
+    frame.className = "video-frame";
+    frame.appendChild(iframe);
+    facade.replaceWith(frame);
+  });
 });
 
-const sr = ScrollReveal({
-  duration: 2500,
-  reset: false,
-});
+// Source filter
+const videoCards = Array.from(document.querySelectorAll(".video-card"));
+const videoFilters = Array.from(document.querySelectorAll(".filter"));
 
-sr.reveal(".video-container", { origin: "bottom", distance: "70px" });
+videoFilters.forEach((button) => {
+  button.addEventListener("click", () => {
+    const source = button.dataset.filter;
+    videoFilters.forEach((f) => f.classList.toggle("is-active", f === button));
 
-document.addEventListener('DOMContentLoaded', function () {
-    var typed = new Typed('#title-exchange', {
-        strings: ['YOUTUBE', 'EDITED'],
-        typeSpeed: 80,
-        loop: true,
-        backSpeed: 80,
-        showCursor: false,
+    const shown = videoCards.filter((card) => {
+      const match = source === "all" || card.dataset.source === source;
+      card.classList.toggle("is-hidden", !match);
+      return match;
     });
+    const counter = document.getElementById("videos-shown");
+    if (counter) counter.textContent = shown.length;
+    if (window.UI) UI.animateIn(shown);
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  });
 });

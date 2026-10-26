@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#060f2c"/>
+      <stop offset="0.55" stop-color="#16346c"/>
+      <stop offset="0.86" stop-color="#3d5899"/>
+      <stop offset="1" stop-color="#f29a6b"/>
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9fb7e6"/>
+      <stop offset="0.5" stop-color="#eef3ff"/>
+      <stop offset="1" stop-color="#6f86bd"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8fd3ff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#8fd3ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="tiers" width="8" height="9" patternUnits="userSpaceOnUse">
+      <rect width="8" height="1.4" fill="#5a73ad"/>
+    </pattern>
+  </defs>
+  <style>
+    .fw * { opacity: 0; animation-duration: var(--t); animation-delay: var(--d); animation-iteration-count: infinite; }
+    .trail { animation-name: rise; animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
+    @keyframes rise { 0% { opacity: 0; transform: translateY(0); } 4% { opacity: 1; } 26% { opacity: 1; transform: translateY(var(--rise)); } 30%, 100% { opacity: 0; transform: translateY(var(--rise)); } }
+    .flash { animation-name: flash; transform-box: fill-box; transform-origin: center; }
+    @keyframes flash { 0%, 27% { opacity: 0; transform: scale(0.2); } 30% { opacity: 0.9; transform: scale(1); } 40%, 100% { opacity: 0; transform: scale(1.6); } }
+    .spark { animation-name: burst; animation-timing-function: cubic-bezier(0.1, 0.8, 0.3, 1); }
+    @keyframes burst {
+      0%, 28% { opacity: 0; transform: translate(0, 0); }
+      31% { opacity: 1; }
+      70% { opacity: 0.9; transform: translate(var(--x), calc(var(--y) + 10px)); }
+      100% { opacity: 0; transform: translate(var(--x), calc(var(--y) + 34px)); }
+    }
+    .beacon { animation: pulse 2.4s ease-in-out infinite; }
+    .halo { animation: pulse 4s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: 0.5; } }
+    .palm { transform-origin: 0 0; animation: sway 5s ease-in-out infinite alternate; }
+    @keyframes sway { to { transform: rotate(3deg); } }
+  </style>
+
+  <rect width="400" height="500" fill="url(#sky)"/>
+  <g>
+    <g class="fw" style="--d:0s; --t:3.6s">
+    <line class="trail" x1="78" y1="190" x2="78" y2="174" stroke="#ffcf6b" stroke-width="2" stroke-linecap="round" style="--rise:-90px"/>
+    <circle class="flash" cx="78" cy="100" r="10" fill="#ffcf6b"/>
+    <circle class="spark" cx="78" cy="100" r="1.4" fill="#ffcf6b" style="--x:41.0px; --y:0.0px"/>
+    <circle class="spark" cx="78" cy="100" r="2.1" fill="#ffcf6b" style="--x:38.5px; --y:11.3px"/>
+    <circle class="spark" cx="78" cy="100" r="1.8" fill="#ffcf6b" style="--x:32.2px; --y:20.7px"/>
+    <circle class="spark" cx="78" cy="100" r="2.0" fill="#ffcf6b" style="--x:25.8px; --y:29.8px"/>
+    <circle class="spark" cx="78" cy="100" r="1.8" fill="#ffcf6b" style="--x:16.3px; --y:35.8px"/>
+    <circle class="spark" cx="78" cy="100" r="2.1" fill="#ffcf6b" style="--x:5.7px; --y:39.5px"/>
+    <circle class="spark" cx="78" cy="100" r="1.9" fill="#ffcf6b" style="--x:-5.5px; --y:38.2px"/>
+    <circle class="spark" cx="78" cy="100" r="2.1" fill="#ffcf6b" style="--x:-17.8px; --y:38.9px"/>
+    <circle class="spark" cx="78" cy="100" r="2.1" fill="#ffcf6b" style="--x:-27.3px; --y:31.5px"/>
+    <circle class="spark" cx="78" cy="100" r="1.9" fill="#ffcf6b" style="--x:-32.1px; --y:20.6px"/>
+    <circle class="spark" cx="78" cy="100" r="1.4" fill="#ffcf6b" style="--x:-43.5px; --y:12.8px"/>
+    <circle class="spark" cx="78" cy="100" r="1.9" fill="#ffcf6b" style="--x:-37.9px; --y:0.0px"/>
+    <circle class="spark" cx="78" cy="100" r="2.0" fill="#ffcf6b" style="--x:-39.5px; --y:-11.6px"/>
+    <circle class="spark" cx="78" cy="100" r="1.8" fill="#ffcf6b" style="--x:-33.0px; --y:-21.2px"/>
+    <circle class="spark" cx="78" cy="100" r="1.7" fill="#ffcf6b" style="--x:-28.6px; --y:-33.0px"/>
+    <circle class="spark" cx="78" cy="100" r="1.5" fill="#ffcf6b" style="--x:-16.1px; --y:-35.2px"/>
+    <circle class="spark" cx="78" cy="100" r="1.6" fill="#ffcf6b" style="--x:-5.6px; --y:-38.7px"/>
+    <circle class="spark" cx="78" cy="100" r="1.8" fill="#ffcf6b" style="--x:6.1px; --y:-42.7px"/>
+    <circle class="spark" cx="78" cy="100" r="1.6" fill="#ffcf6b" style="--x:17.3px; --y:-37.8px"/>
+    <circle class="spark" cx="78" cy="100" r="2.1" fill="#ffcf6b" style="--x:28.6px; --y:-33.0px"/>
+    <circle class="spark" cx="78" cy="100" r="1.8" fill="#ffcf6b" style="--x:38.6px; --y:-24.8px"/>
+    <circle class="spark" cx="78" cy="100" r="1.5" fill="#ffcf6b" style="--x:37.1px; --y:-10.9px"/>
+    </g>
+    <g class="fw" style="--d:-1.2s; --t:3.6s">
+    <line class="trail" x1="330" y1="174" x2="330" y2="158" stroke="#7fd8ff" stroke-width="2" stroke-linecap="round" style="--rise:-90px"/>
+    <circle class="flash" cx="330" cy="84" r="10" fill="#7fd8ff"/>
+    <circle class="spark" cx="330" cy="84" r="1.7" fill="#7fd8ff" style="--x:36.7px; --y:11.3px"/>
+    <circle class="spark" cx="330" cy="84" r="1.8" fill="#7fd8ff" style="--x:37.5px; --y:24.9px"/>
+    <circle class="spark" cx="330" cy="84" r="1.7" fill="#7fd8ff" style="--x:28.3px; --y:33.7px"/>
+    <circle class="spark" cx="330" cy="84" r="1.6" fill="#7fd8ff" style="--x:17.7px; --y:40.4px"/>
+    <circle class="spark" cx="330" cy="84" r="1.5" fill="#7fd8ff" style="--x:5.7px; --y:44.0px"/>
+    <circle class="spark" cx="330" cy="84" r="1.6" fill="#7fd8ff" style="--x:-6.8px; --y:43.0px"/>
+    <circle class="spark" cx="330" cy="84" r="1.8" fill="#7fd8ff" style="--x:-18.1px; --y:38.1px"/>
+    <circle class="spark" cx="330" cy="84" r="2.0" fill="#7fd8ff" style="--x:-26.9px; --y:30.1px"/>
+    <circle class="spark" cx="330" cy="84" r="1.9" fill="#7fd8ff" style="--x:-35.4px; --y:22.0px"/>
+    <circle class="spark" cx="330" cy="84" r="1.9" fill="#7fd8ff" style="--x:-38.3px; --y:10.7px"/>
+    <circle class="spark" cx="330" cy="84" r="1.7" fill="#7fd8ff" style="--x:-41.1px; --y:-0.6px"/>
+    <circle class="spark" cx="330" cy="84" r="2.0" fill="#7fd8ff" style="--x:-39.7px; --y:-12.3px"/>
+    <circle class="spark" cx="330" cy="84" r="1.6" fill="#7fd8ff" style="--x:-31.9px; --y:-21.1px"/>
+    <circle class="spark" cx="330" cy="84" r="1.9" fill="#7fd8ff" style="--x:-24.6px; --y:-29.3px"/>
+    <circle class="spark" cx="330" cy="84" r="1.7" fill="#7fd8ff" style="--x:-16.4px; --y:-37.3px"/>
+    <circle class="spark" cx="330" cy="84" r="1.4" fill="#7fd8ff" style="--x:-5.8px; --y:-45.2px"/>
+    <circle class="spark" cx="330" cy="84" r="2.0" fill="#7fd8ff" style="--x:6.9px; --y:-43.4px"/>
+    <circle class="spark" cx="330" cy="84" r="1.6" fill="#7fd8ff" style="--x:19.4px; --y:-41.0px"/>
+    <circle class="spark" cx="330" cy="84" r="1.9" fill="#7fd8ff" style="--x:29.1px; --y:-32.6px"/>
+    <circle class="spark" cx="330" cy="84" r="2.2" fill="#7fd8ff" style="--x:37.7px; --y:-23.5px"/>
+    <circle class="spark" cx="330" cy="84" r="2.1" fill="#7fd8ff" style="--x:36.9px; --y:-10.2px"/>
+    <circle class="spark" cx="330" cy="84" r="2.0" fill="#7fd8ff" style="--x:38.6px; --y:0.6px"/>
+    </g>
+    <g class="fw" style="--d:-2.4s; --t:3.6s">
+    <line class="trail" x1="306" y1="262" x2="306" y2="246" stroke="#ff8fb8" stroke-width="2" stroke-linecap="round" style="--rise:-90px"/>
+    <circle class="flash" cx="306" cy="172" r="10" fill="#ff8fb8"/>
+    <circle class="spark" cx="306" cy="172" r="2.0" fill="#ff8fb8" style="--x:25.4px; --y:17.4px"/>
+    <circle class="spark" cx="306" cy="172" r="2.1" fill="#ff8fb8" style="--x:19.1px; --y:26.6px"/>
+    <circle class="spark" cx="306" cy="172" r="1.5" fill="#ff8fb8" style="--x:8.9px; --y:31.7px"/>
+    <circle class="spark" cx="306" cy="172" r="1.4" fill="#ff8fb8" style="--x:-2.4px; --y:30.8px"/>
+    <circle class="spark" cx="306" cy="172" r="1.6" fill="#ff8fb8" style="--x:-13.9px; --y:30.6px"/>
+    <circle class="spark" cx="306" cy="172" r="1.5" fill="#ff8fb8" style="--x:-22.5px; --y:23.0px"/>
+    <circle class="spark" cx="306" cy="172" r="2.1" fill="#ff8fb8" style="--x:-26.4px; --y:12.7px"/>
+    <circle class="spark" cx="306" cy="172" r="2.0" fill="#ff8fb8" style="--x:-30.6px; --y:3.0px"/>
+    <circle class="spark" cx="306" cy="172" r="1.8" fill="#ff8fb8" style="--x:-30.5px; --y:-7.8px"/>
+    <circle class="spark" cx="306" cy="172" r="1.5" fill="#ff8fb8" style="--x:-25.0px; --y:-17.1px"/>
+    <circle class="spark" cx="306" cy="172" r="1.9" fill="#ff8fb8" style="--x:-17.7px; --y:-24.7px"/>
+    <circle class="spark" cx="306" cy="172" r="1.8" fill="#ff8fb8" style="--x:-8.3px; --y:-29.7px"/>
+    <circle class="spark" cx="306" cy="172" r="1.7" fill="#ff8fb8" style="--x:2.2px; --y:-28.8px"/>
+    <circle class="spark" cx="306" cy="172" r="1.5" fill="#ff8fb8" style="--x:11.8px; --y:-26.0px"/>
+    <circle class="spark" cx="306" cy="172" r="1.6" fill="#ff8fb8" style="--x:22.2px; --y:-22.7px"/>
+    <circle class="spark" cx="306" cy="172" r="2.2" fill="#ff8fb8" style="--x:27.5px; --y:-13.2px"/>
+    <circle class="spark" cx="306" cy="172" r="1.5" fill="#ff8fb8" style="--x:33.7px; --y:-3.3px"/>
+    <circle class="spark" cx="306" cy="172" r="1.8" fill="#ff8fb8" style="--x:27.8px; --y:7.1px"/>
+    </g>
+    <g class="fw" style="--d:-3.0s; --t:3.6s">
+    <line class="trail" x1="60" y1="280" x2="60" y2="264" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round" style="--rise:-90px"/>
+    <circle class="flash" cx="60" cy="190" r="10" fill="#a7f3d0"/>
+    <circle class="spark" cx="60" cy="190" r="1.6" fill="#a7f3d0" style="--x:18.3px; --y:23.0px"/>
+    <circle class="spark" cx="60" cy="190" r="2.0" fill="#a7f3d0" style="--x:7.6px; --y:26.5px"/>
+    <circle class="spark" cx="60" cy="190" r="2.0" fill="#a7f3d0" style="--x:-3.3px; --y:28.5px"/>
+    <circle class="spark" cx="60" cy="190" r="1.6" fill="#a7f3d0" style="--x:-12.7px; --y:22.9px"/>
+    <circle class="spark" cx="60" cy="190" r="1.6" fill="#a7f3d0" style="--x:-20.4px; --y:16.2px"/>
+    <circle class="spark" cx="60" cy="190" r="1.8" fill="#a7f3d0" style="--x:-25.0px; --y:7.1px"/>
+    <circle class="spark" cx="60" cy="190" r="1.6" fill="#a7f3d0" style="--x:-25.4px; --y:-2.9px"/>
+    <circle class="spark" cx="60" cy="190" r="2.1" fill="#a7f3d0" style="--x:-22.8px; --y:-12.7px"/>
+    <circle class="spark" cx="60" cy="190" r="1.5" fill="#a7f3d0" style="--x:-15.9px; --y:-20.1px"/>
+    <circle class="spark" cx="60" cy="190" r="1.6" fill="#a7f3d0" style="--x:-7.1px; --y:-25.0px"/>
+    <circle class="spark" cx="60" cy="190" r="1.9" fill="#a7f3d0" style="--x:3.1px; --y:-27.3px"/>
+    <circle class="spark" cx="60" cy="190" r="1.8" fill="#a7f3d0" style="--x:12.2px; --y:-22.0px"/>
+    <circle class="spark" cx="60" cy="190" r="1.4" fill="#a7f3d0" style="--x:19.4px; --y:-15.4px"/>
+    <circle class="spark" cx="60" cy="190" r="1.6" fill="#a7f3d0" style="--x:28.2px; --y:-8.1px"/>
+    <circle class="spark" cx="60" cy="190" r="1.7" fill="#a7f3d0" style="--x:26.8px; --y:3.1px"/>
+    <circle class="spark" cx="60" cy="190" r="1.6" fill="#a7f3d0" style="--x:25.6px; --y:14.3px"/>
+    </g>
+  </g>
+
+  <ellipse class="halo" cx="200" cy="240" rx="150" ry="190" fill="url(#halo)"/>
+
+  <g fill="#1a2f63">
+    <rect x="6" y="330" width="40" height="110"/>
+    <rect x="42" y="302" width="30" height="138"/>
+    <rect x="324" y="312" width="36" height="128"/>
+    <rect x="356" y="336" width="50" height="104"/>
+  </g>
+  <rect x="47" y="310" width="20" height="118" fill="#ffd89a" opacity="0.16"/>
+  <rect x="330" y="320" width="24" height="108" fill="#9cc8ff" opacity="0.16"/>
+
+  <g>
+    <path d="M116 440 L116 170 L122 150 L122 120 L127 104 L127 84 L130 72 L130 40 L132 22 L134 40 L134 72 L137 84 L137 104 L142 120 L142 150 L148 170 L148 440 Z" fill="url(#tower)"/>
+    <rect x="118" y="172" width="28" height="266" fill="url(#tiers)" opacity="0.7"/>
+    <circle cx="132" cy="22" r="2.5" fill="#ff6a6a" class="beacon"/>
+    <path d="M252 440 L252 170 L258 150 L258 120 L263 104 L263 84 L266 72 L266 40 L268 22 L270 40 L270 72 L273 84 L273 104 L278 120 L278 150 L284 170 L284 440 Z" fill="url(#tower)"/>
+    <rect x="254" y="172" width="28" height="266" fill="url(#tiers)" opacity="0.7"/>
+    <circle cx="268" cy="22" r="2.5" fill="#ff6a6a" class="beacon"/>
+  </g>
+  <g>
+    <rect x="148" y="258" width="104" height="10" fill="#dfe8ff"/>
+    <rect x="148" y="268" width="104" height="3" fill="#8ea6d8"/>
+    <rect x="148" y="250" width="104" height="2" fill="#b8c8ef"/>
+    <path d="M148 318 L192.0 271 M252 318 L208.0 271" stroke="#b8c8ef" stroke-width="3" stroke-linecap="round"/>
+    <rect x="190.0" y="268" width="20" height="6" rx="2" fill="#c7d5f5"/>
+  </g>
+
+  <rect y="438" width="400" height="62" fill="#08132e"/>
+  <rect y="438" width="400" height="3" fill="#f2a173" opacity="0.5"/>
+
+  <g transform="translate(32 440)">
+    <g class="palm">
+      <path d="M0 0 Q-4 -50 6 -96" stroke="#06102a" stroke-width="5" fill="none"/>
+      <path d="M6 -96 Q-30 -104 -46 -82 M6 -96 Q30 -112 52 -94 M6 -96 Q-20 -126 -34 -124 M6 -96 Q26 -130 44 -122 M6 -96 Q4 -126 10 -136" stroke="#06102a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g transform="translate(376 440) scale(-0.85 0.85)">
+    <g class="palm" style="animation-delay:-2s">
+      <path d="M0 0 Q-4 -50 6 -96" stroke="#06102a" stroke-width="5" fill="none"/>
+      <path d="M6 -96 Q-30 -104 -46 -82 M6 -96 Q30 -112 52 -94 M6 -96 Q-20 -126 -34 -124 M6 -96 Q26 -130 44 -122 M6 -96 Q4 -126 10 -136" stroke="#06102a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
